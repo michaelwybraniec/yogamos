@@ -6,22 +6,24 @@ const navigation = inject<Ref<NavItem[]>>('navigation', ref([]))
 const links = [
   {
     label: 'Docs',
-    to: '/docs',
-  },
-  {
-    label: 'Blog',
-    to: '/blog',
+    to: '/docs'
   },
   {
     label: 'Pricing',
-    to: '/pricing',
+    to: '/pricing'
   },
+  {
+    label: 'Blog',
+    to: '/blog'
+  }
 ]
 </script>
 
 <template>
   <UHeader :links="links">
-    <template #logo> YOGAMOS <UBadge label="ES" variant="subtle" class="mb-0.5" /> </template>
+    <template #logo>
+      YOGAMOS<UBadge label="ES" variant="subtle" class="mb-0.5" />
+    </template>
 
     <template #right>
       <UButton label="Sign in" color="gray" to="/login" />

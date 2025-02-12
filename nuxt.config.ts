@@ -1,5 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  // content: {
+  //   preview: {
+  //     api: 'https://api.nuxt.studio'
+  //   }
+  // },
+
   extends: ['@nuxt/ui-pro'],
 
   modules: [
@@ -34,10 +40,7 @@ export default defineNuxtConfig({
 
   nitro: {
     prerender: {
-      routes: [
-        '/',
-        '/docs'
-      ],
+      routes: ['/', '/docs'],
       crawlLinks: true
     }
   },
@@ -51,7 +54,7 @@ export default defineNuxtConfig({
     'components:extend': (components) => {
       const globals = components.filter(c => ['UButton'].includes(c.pascalName))
 
-      globals.forEach(c => c.global = true)
+      globals.forEach(c => (c.global = true))
     }
   },
 
