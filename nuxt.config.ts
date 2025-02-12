@@ -1,11 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  // content: {
-  //   preview: {
-  //     api: 'https://api.nuxt.studio'
-  //   }
-  // },
-
   extends: ['@nuxt/ui-pro'],
 
   modules: [

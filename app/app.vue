@@ -34,5 +34,7 @@ useSeoMeta({
     </NuxtLayout>
 
     <UNotifications />
+
+    <!-- <ContentDoc /> -->
   </div>
 </template>
