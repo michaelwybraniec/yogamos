@@ -1,12 +1,10 @@
-# yogamos
+# Nuxt Minimal Starter
 
-Yoga delivery to the world.
-
-Look at [Nuxt docs](https://nuxt.com/docs/getting-started/introduction) and [Nuxt UI docs](https://ui.nuxt.com) to learn more.
+Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
 ## Setup
 
-Make sure to install the dependencies:
+Make sure to install dependencies:
 
 ```bash
 # npm
@@ -31,7 +29,7 @@ Start the development server on `http://localhost:3000`:
 npm run dev
 
 # pnpm
-pnpm run dev
+pnpm dev
 
 # yarn
 yarn dev
@@ -49,7 +47,7 @@ Build the application for production:
 npm run build
 
 # pnpm
-pnpm run build
+pnpm build
 
 # yarn
 yarn build
@@ -65,7 +63,7 @@ Locally preview production build:
 npm run preview
 
 # pnpm
-pnpm run preview
+pnpm preview
 
 # yarn
 yarn preview
@@ -76,81 +74,20 @@ bun run preview
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
 
-## Peacock - Quick Usage Guide
+## TOOLS
 
-Peacock is a VS Code extension that allows you to color-code your workspace, making it easier to distinguish between multiple projects.
+### Nuxt Dev tools
 
-### Installation
+Nuxt DevTools is enabled by default in Nuxt v3.8.0.
+You can press Shift + Alt / ⇧ Shift + ⌥ Option + D in your app to open it up.
 
-1. Open VS Code.
-2. Go to the Extensions Marketplace (`Ctrl+Shift+X` or `Cmd+Shift+X` on macOS).
-3. Search for **Peacock** by John Papa.
-4. Click **Install**.
+### Eslint Inspector
 
-### Basic Usage
-
-1. Open a project in VS Code.
-2. Open the **Command Palette** (`Ctrl+Shift+P` or `Cmd+Shift+P` on macOS).
-3. Type **Peacock** and select one of the following commands:
-   - **Peacock: Change to a favorite color**
-   - **Peacock: Enter a color**
-   - **Peacock: Choose a random color**
-4. Your workspace color will change immediately.
-
-### Custom Colors
-
-You can define your own colors in the `.vscode/settings.json` file:
-
-````json
-"peacock.favoriteColors": [
-  { "name": "My Custom Blue", "value": "#1E90FF" },
-  { "name": "Soft Green", "value": "#2E8B57" }
-]
-
-## Code Formatting with Prettier
-
-We use [Prettier](https://prettier.io/) to maintain consistent code formatting.
-
-### Installation
-
-Ensure you have Prettier installed:
-
-```sh
-npm install --save-dev --save-exact prettier
-````
-
-## Nuxt Studio integration
-
-Add `@nuxthq/studio` dependency to your package.json:
+https://github.com/eslint/config-inspector
 
 ```bash
-# npm
-npm install --save-dev @nuxthq/studio
-
-# pnpm
-pnpm add -D @nuxthq/studio
-
-# yarn
-yarn add -D @nuxthq/studio
-
-# bun
-bun add -d @nuxthq/studio
+# Go to the project root that contains eslint.config.js and run:
+npx @eslint/config-inspector@latest
 ```
 
-Add this module to your `nuxt.config.ts`:
-
-```ts
-export default defineNuxtConfig({
-  ...
-  modules: [
-    ...
-    '@nuxthq/studio'
-  ]
-})
-```
-
-Read more on [Nuxt Studio docs](https://nuxt.studio/docs/get-started/setup).
-
-## Renovate integration
-
-Install [Renovate GitHub app](https://github.com/apps/renovate/installations/select_target) on your repository and you are good to go.
+Visit http://localhost:7777/ to view and play with your ESLint config. Changes to the config file will be updated automatically.

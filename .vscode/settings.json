@@ -20,5 +20,6 @@
   },
   "peacock.color": "#5653c8",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "eslint.useFlatConfig": true
 }
