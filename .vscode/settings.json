@@ -27,5 +27,11 @@
   "editor.formatOnType": false,
   "scss.lint.unknownAtRules": "ignore",
   "eslint.format.enable": true,
-  "prettier.useEditorConfig": false
+  "prettier.useEditorConfig": false,
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": "on"
+  }
 }

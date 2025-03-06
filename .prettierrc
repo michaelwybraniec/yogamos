@@ -3,21 +3,27 @@
   "singleQuote": true,
   "trailingComma": "none",
   "tabWidth": 2,
-  "printWidth": 100,
+  "printWidth": 80,
   "bracketSpacing": true,
   "arrowParens": "always",
   "useTabs": false,
   "vueIndentScriptAndStyle": true,
-  "plugins": ["prettier-plugin-tailwindcss"],
+  "plugins": [
+    "prettier-plugin-tailwindcss"
+  ],
   "overrides": [
     {
-      "files": ["*.vue"],
+      "files": [
+        "*.vue"
+      ],
       "options": {
         "parser": "vue"
       }
     },
     {
-      "files": ["*.md"],
+      "files": [
+        "*.md"
+      ],
       "options": {
         "proseWrap": "always"
       }

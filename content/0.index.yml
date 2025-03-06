@@ -1,0 +1,109 @@
+title: Yogamos - Yoga for Mind & Body
+description: Yogamos is a sanctuary for yoga practitioners of all levels. Connect with a supportive community, access guided yoga sessions, and cultivate mindfulness through movement.
+navigation: false
+
+hero:
+  title: Find Balance with Yogamos
+  description: Yogamos is your space to reconnect with yourself through yoga. Whether you're a beginner or an advanced yogi, we offer guided sessions, meditation practices, and wellness insights to help you grow.
+  links:
+    - label: Get Started
+      icon: i-lucide-arrow-right
+      trailing: true
+      to: /get-started
+      size: xl
+    - label: Join Our Community
+      icon: i-simple-icons-github
+      size: xl
+      color: neutral
+      variant: subtle
+      to: /community
+
+sections:
+  - title: Reconnect with Your Inner Self
+    description: Experience the transformative power of yoga with Yogamos. Our platform is designed to help you practice mindfulness, improve flexibility, and strengthen your body.
+    id: features
+    orientation: horizontal
+    features:
+      - name: Yoga for Everyone
+        description: Whether you're a beginner or an experienced practitioner, our guided classes and personalized programs fit your needs.
+        icon: i-lucide-yoga
+      - name: Live & On-Demand Classes
+        description: Join live classes or access a library of recorded sessions to practice anytime, anywhere.
+        icon: i-lucide-video
+      - name: Mindfulness & Meditation
+        description: Learn breathwork, guided meditation, and relaxation techniques for mental clarity and well-being.
+        icon: i-lucide-brain
+
+  - title: A Holistic Approach to Wellness
+    description: Yogamos is more than yoga—it’s a journey toward a balanced, healthy life. Our platform integrates movement, breathwork, and mindfulness to support your well-being.
+    orientation: horizontal
+    reverse: true
+    features:
+      - name: Personalized Programs
+        description: Tailored yoga sequences based on your goals—strength, flexibility, relaxation, or stress relief.
+        icon: i-lucide-settings
+      - name: Community Support
+        description: Connect with fellow yogis, share progress, and find motivation in our supportive community.
+        icon: i-lucide-users
+      - name: Wellness Insights
+        description: Learn about nutrition, mindfulness, and self-care practices to enhance your yoga journey.
+        icon: i-lucide-book
+
+features:
+  title: What Makes Yogamos Special?
+  description: Yogamos is designed to make yoga accessible, engaging, and transformative for everyone.
+  items:
+    - title: Guided Sessions
+      description: Follow structured yoga sessions led by experienced instructors.
+      icon: i-lucide-play
+    - title: Flexibility & Strength
+      description: Build physical strength while improving flexibility and mobility.
+      icon: i-lucide-flexibility
+    - title: Meditation & Relaxation
+      description: Find inner peace with guided meditation and breathwork techniques.
+      icon: i-lucide-moon
+    - title: Mobile & Web Access
+      description: Practice anytime, anywhere with our seamless mobile and web platform.
+      icon: i-lucide-device-mobile
+    - title: Holistic Approach
+      description: Beyond yoga—nutrition, self-care, and mindfulness to support your overall well-being.
+      icon: i-lucide-heart
+    - title: Community-Driven
+      description: Join a supportive network of like-minded yoga practitioners.
+      icon: i-lucide-users
+
+testimonials:
+  headline: Transform Your Life with Yoga
+  title: Hear from Our Yogis
+  description: Thousands of practitioners worldwide trust Yogamos to guide their wellness journey.
+  items:
+    - quote: 'Practicing with Yogamos has been life-changing. The guided sessions and mindfulness techniques have helped me find balance in my daily life.'
+      user:
+        name: Ana Castillo
+        description: Yoga Enthusiast
+        avatar:
+          src: https://i.pravatar.cc/120?img=1
+    - quote: 'I love the flexibility of live and recorded sessions. I can practice anytime, and the community support keeps me motivated.'
+      user:
+        name: Diego Rojas
+        description: Fitness Coach
+        avatar:
+          src: https://i.pravatar.cc/120?img=7
+    - quote: 'The meditation and breathwork lessons have helped me reduce stress and improve my focus. Highly recommended!'
+      user:
+        name: Mariana López
+        description: Meditation Practitioner
+        avatar:
+          src: https://i.pravatar.cc/120?img=3
+
+cta:
+  title: Begin Your Yoga Journey with Yogamos
+  description: Sign up today and start transforming your mind and body with yoga.
+  links:
+    - label: Get Started
+      to: /get-started
+      icon: i-lucide-arrow-right
+    - label: Learn More
+      to: /about
+      trailingIcon: i-lucide-info
+      variant: subtle
