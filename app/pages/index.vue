@@ -15,6 +15,7 @@
 <template>
   <div v-if="page">
     <UPageHero
+      headline="YOGAMOS?"
       :title="page.hero.title"
       :description="page.hero.description"
       :links="page.hero.links"

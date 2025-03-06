@@ -1,6 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxt/eslint', '@nuxt/ui-pro', '@nuxt/content'],
+  modules: ['@nuxt/eslint', '@nuxt/ui-pro', '@nuxt/content', '@nuxtjs/i18n'],
+
+  i18n: {
+    locales: [
+      { code: 'es', iso: 'en-ES', name: 'Español' },
+      { code: 'en', iso: 'en-US', name: 'English' },
+      { code: 'fr', iso: 'fr-fr', name: 'Français' }
+    ]
+  },
 
   devtools: { enabled: true },
 

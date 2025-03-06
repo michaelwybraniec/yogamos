@@ -35,7 +35,10 @@
     <UNavigationMenu :items="items" variant="link" />
 
     <template #right>
-      <UColorModeButton />
+      <!-- <UColorModeButton /> -->
+      <LangSwitcher variant="ghost" />
+
+      <UColorModeSwitch />
       <UButton label="Sign in" color="neutral" variant="ghost" to="/login" />
       <UButton
         label="Sign up"
