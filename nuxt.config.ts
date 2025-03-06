@@ -1,6 +1,34 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2024-11-01',
+  modules: ['@nuxt/eslint'],
+
   devtools: { enabled: true },
-  modules: ['@nuxt/eslint']
+
+  css: ['~/assets/css/main.css'],
+
+  future: {
+    compatibilityVersion: 4
+  },
+
+  compatibilityDate: '2024-11-01',
+
+  nitro: {
+    prerender: {
+      routes: ['/', '/docs'],
+      crawlLinks: true
+    }
+  },
+
+  typescript: {
+    strict: false
+  },
+
+  eslint: {
+    config: {
+      stylistic: {
+        commaDangle: 'never',
+        braceStyle: '1tbs'
+      }
+    }
+  }
 })
