@@ -29,6 +29,7 @@
         <LogoPro class="h-6 w-auto shrink-0" />
       </NuxtLink>
       <TemplateMenu />
+      <NuxtLink to="/"> <b>YOGAMOS?</b> </NuxtLink>
     </template>
 
     <UNavigationMenu :items="items" variant="link" />

@@ -1,10 +1,10 @@
-title: Yogamos - Yoga for Mind & Body
-description: Yogamos is a sanctuary for yoga practitioners of all levels. Connect with a supportive community, access guided yoga sessions, and cultivate mindfulness through movement.
+title: YOGAMOS - Yoga for Mind & Body
+description: YOGAMOS is a sanctuary for yoga practitioners of all levels. Connect with a supportive community, access guided yoga sessions, and cultivate mindfulness through movement.
 navigation: false
 
 hero:
-  title: Find Balance with Yogamos
-  description: Yogamos is your space to reconnect with yourself through yoga. Whether you're a beginner or an advanced yogi, we offer guided sessions, meditation practices, and wellness insights to help you grow.
+  title: Find. Book. Flow.
+  description: Discover the largest yoga platform designed for inner mastery and transformation.
   links:
     - label: Get Started
       icon: i-lucide-arrow-right
@@ -20,7 +20,7 @@ hero:
 
 sections:
   - title: Reconnect with Your Inner Self
-    description: Experience the transformative power of yoga with Yogamos. Our platform is designed to help you practice mindfulness, improve flexibility, and strengthen your body.
+    description: Experience the transformative power of yoga with YOGAMOS. Our platform is designed to help you practice mindfulness, improve flexibility, and strengthen your body.
     id: features
     orientation: horizontal
     features:
@@ -35,7 +35,7 @@ sections:
         icon: i-lucide-brain
 
   - title: A Holistic Approach to Wellness
-    description: Yogamos is more than yoga—it’s a journey toward a balanced, healthy life. Our platform integrates movement, breathwork, and mindfulness to support your well-being.
+    description: YOGAMOS is more than yoga—it’s a journey toward a balanced, healthy life. Our platform integrates movement, breathwork, and mindfulness to support your well-being.
     orientation: horizontal
     reverse: true
     features:
@@ -50,8 +50,8 @@ sections:
         icon: i-lucide-book
 
 features:
-  title: What Makes Yogamos Special?
-  description: Yogamos is designed to make yoga accessible, engaging, and transformative for everyone.
+  title: What Makes YOGAMOS Special?
+  description: YOGAMOS is designed to make yoga accessible, engaging, and transformative for everyone.
   items:
     - title: Guided Sessions
       description: Follow structured yoga sessions led by experienced instructors.
@@ -75,9 +75,9 @@ features:
 testimonials:
   headline: Transform Your Life with Yoga
   title: Hear from Our Yogis
-  description: Thousands of practitioners worldwide trust Yogamos to guide their wellness journey.
+  description: Thousands of practitioners worldwide trust YOGAMOS to guide their wellness journey.
   items:
-    - quote: 'Practicing with Yogamos has been life-changing. The guided sessions and mindfulness techniques have helped me find balance in my daily life.'
+    - quote: 'Practicing with YOGAMOS has been life-changing. The guided sessions and mindfulness techniques have helped me find balance in my daily life.'
       user:
         name: Ana Castillo
         description: Yoga Enthusiast
@@ -97,7 +97,7 @@ testimonials:
           src: https://i.pravatar.cc/120?img=3
 
 cta:
-  title: Begin Your Yoga Journey with Yogamos
+  title: Begin Your Yoga Journey with YOGAMOS
   description: Sign up today and start transforming your mind and body with yoga.
   links:
     - label: Get Started
