@@ -1,13 +1,41 @@
 <script setup lang="ts">
-  import type { BlogPost } from '~/types'
-
   const route = useRoute()
 
-  const { data: post } = await useAsyncData(route.path, async () => {
-    return (await queryCollection('posts')
-      .path(route.path)
-      .first()) as unknown as BlogPost | null
+  const { data: post } = await useAsyncData('single-post', () =>
+    queryCollection('posts')
+      .where('path', 'LIKE', route.path) // 🔥 Correct way in Content v3
+      .first()
+  )
+
+  const segments = route.path.split('/').filter(Boolean) // Remove empty parts
+
+  // Fetch available locales dynamically
+  const i18n = useI18n?.()
+  const availableLocales = (i18n?.locales?.value || []).map((locale) =>
+    typeof locale === 'string' ? locale : locale.code
+  )
+
+  // If first segment matches a locale, remove it
+  const firstSegment = segments[0]
+  const normalizedPath = availableLocales.includes(firstSegment)
+    ? '/' + segments.slice(1).join('/')
+    : route.path
+
+  const { data: post2 } = await useAsyncData('single-post', () =>
+    queryCollection('posts').where('path', 'LIKE', normalizedPath).first()
+  )
+
+  console.log({
+    post3: post.value,
+    post4: post2.value
   })
+
+  const { data: posts2 } = await useAsyncData('all-posts', () =>
+    queryCollection('posts').all()
+  )
+
+  // console.log('All Posts:', posts2.value)
+  // console.log(posts2.value?.map((p) => p.path))
 
   if (!post.value) {
     throw createError({
@@ -48,6 +76,7 @@
 </script>
 
 <template>
+  Post!
   <UContainer v-if="post">
     <UPageHeader :title="post.title" :description="post.description">
       <template #headline>
@@ -88,7 +117,7 @@
       </UPageBody>
 
       <template #right>
-        <UContentToc
+        <!-- <UContentToc
           v-if="post.body && post.body.toc"
           :links="
             post.body.toc.links.map((link) => ({
@@ -97,7 +126,19 @@
               depth: 1
             }))
           "
+        /> -->
+        <UContentToc
+          v-if="post.body && post.body.toc"
+          :links="
+            post.body.toc.links.map((link) => ({
+              ...link,
+              id: link.id,
+              depth: 1
+            }))
+          "
         />
+
+        })) "
       </template>
     </UPage>
   </UContainer>

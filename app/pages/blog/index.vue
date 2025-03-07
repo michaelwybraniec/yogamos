@@ -9,6 +9,8 @@
     queryCollection('posts').all()
   )
 
+  console.log({ route })
+
   if (!page.value) {
     throw createError({
       statusCode: 404,
