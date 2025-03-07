@@ -20,6 +20,6 @@
 }
 
 .dark {
-  /* --ui-bg: var(--ui-color-neutral-950); */
-  --ui-bg: #221a28;
+  --ui-bg: var(--ui-color-neutral-950);
+  /* --ui-bg: #221a28; */
 }

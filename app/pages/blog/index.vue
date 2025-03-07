@@ -32,7 +32,7 @@
   <UContainer>
     <UPageHeader v-bind="page" class="py-[50px]" />
     <UPageBody>
-      <UBlogList>
+      <UBlogPosts>
         <UBlogPost
           v-for="(post, index) in posts"
           :key="index"
@@ -55,7 +55,7 @@
             description: 'line-clamp-2'
           }"
         />
-      </UBlogList>
+      </UBlogPosts>
     </UPageBody>
   </UContainer>
 </template>

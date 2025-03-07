@@ -76,7 +76,6 @@
 </script>
 
 <template>
-  Post!
   <UContainer v-if="post">
     <UPageHeader :title="post.title" :description="post.description">
       <template #headline>
