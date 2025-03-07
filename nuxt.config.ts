@@ -1,6 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxt/eslint', '@nuxt/ui-pro', '@nuxt/content', '@nuxtjs/i18n'],
+  modules: [
+    '@nuxt/eslint',
+    '@nuxt/ui-pro',
+    '@nuxt/content',
+    '@nuxtjs/i18n',
+    'nuxt-og-image'
+  ],
 
   i18n: {
     locales: [

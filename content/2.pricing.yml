@@ -1,0 +1,78 @@
+title: Pricing
+description: Find the perfect plan to deepen your yoga journey.
+navigation.icon: i-heroicons-credit-card
+hero:
+  title: A plan for every yogi
+  description: Whether you're just beginning or an experienced practitioner, our plans are designed to support your journey toward inner mastery.
+  align: center
+plans:
+  - title: Free Flow
+    description: A foundational plan to start your yoga practice.
+    price:
+      month: Free
+      year: Free
+    align: top
+    button:
+      label: Start for Free
+      color: white
+    features:
+      - Access to beginner classes
+      - Guided meditation sessions
+      - Community forum
+      - Weekly wellness tips
+  - title: Inner Balance
+    description: Ideal for regular practitioners seeking deeper transformation.
+    price:
+      month: $19.9
+      year: $199.9
+    highlight: true
+    align: top
+    button:
+      label: Start Now
+      color: black
+    features:
+      - Unlimited class access
+      - Personalized practice recommendations
+      - Live-streamed yoga sessions
+      - Exclusive breathing & meditation courses
+      - Community support
+  - title: Mastery Path
+    description: For dedicated yogis and teachers looking for advanced training.
+    price:
+      month: $29.9
+      year: $299.9
+    align: top
+    button:
+      label: Join the Path
+      color: white
+    features:
+      - All "Inner Balance" features
+      - One-on-one mentorship sessions
+      - Access to teacher training modules
+      - Private yoga & meditation retreats
+      - Certification opportunities
+logos:
+  title: Guided by the Best
+  icons:
+    - i-simple-icons-gaia
+    - i-simple-icons-headspace
+    - i-simple-icons-calm
+    - i-simple-icons-yogaalliance
+    - i-simple-icons-udemy
+faq:
+  title: Your Questions, Answered
+  description: Everything you need to know about joining Yogamos.
+  items:
+    - label: Is Yogamos suitable for beginners?
+      content: Absolutely! Our Free Flow plan offers beginner-friendly classes to help you ease into your practice.
+      defaultOpen: true
+    - label: Can I cancel anytime?
+      content: Yes, you can cancel or switch plans at any time through your account settings.
+    - label: Do you offer live classes?
+      content: Yes! The Inner Balance and Mastery Path plans include live-streamed sessions with expert instructors.
+    - label: Is there a free trial?
+      content: Yes, we offer a free trial so you can experience the platform before committing to a plan.
+    - label: Do I need any equipment?
+      content: A yoga mat is recommended, but all practices can be modified to suit your space and available resources.
+    - label: Do you provide certifications?
+      content: Yes! Our Mastery Path plan includes certification opportunities for aspiring yoga teachers.

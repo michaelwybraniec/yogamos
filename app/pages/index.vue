@@ -26,6 +26,8 @@
         />
 
         <StarsBg />
+        <!-- <StarsSmoothBg /> -->
+        <!-- <YogaBg /> -->
       </template>
 
       <PromotionalVideo />
@@ -89,6 +91,7 @@
       />
 
       <StarsBg />
+      <!-- <OtherBg /> -->
     </UPageCTA>
   </div>
 </template>

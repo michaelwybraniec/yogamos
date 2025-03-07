@@ -63,6 +63,26 @@ export const collections = {
       description: z.string().nonempty()
     })
   }),
+  // posts: defineCollection({
+  //   type: 'page',
+  //   source: '3.blog/**/*',
+  //   schema: z.object({
+  //     title: z.string().nonempty(),
+  //     description: z.string().nonempty(),
+  //     image: z.object({ src: z.string().nonempty() }).optional(),
+  //     authors: z
+  //       .array(
+  //         z.object({
+  //           name: z.string().nonempty(),
+  //           to: z.string().nonempty(),
+  //           avatar: z.object({ src: z.string().nonempty() }).optional()
+  //         })
+  //       )
+  //       .optional(),
+  //     date: z.string().nonempty(),
+  //     badge: z.object({ label: z.string().nonempty() }).optional()
+  //   })
+  // }),
   posts: defineCollection({
     type: 'page',
     source: '3.blog/**/*',
@@ -81,6 +101,7 @@ export const collections = {
       badge: z.object({ label: z.string().nonempty() })
     })
   }),
+
   index: defineCollection({
     source: '0.index.yml',
     type: 'data',
@@ -114,9 +135,9 @@ export const collections = {
             user: z.object({
               name: z.string().nonempty(),
               description: z.string().nonempty(),
-              to: z.string().nonempty(),
-              target: z.string().nonempty(),
-              avatar: imageSchema
+              to: z.string().optional(),
+              target: z.string().optional(),
+              avatar: imageSchema.optional()
             })
           })
         )
@@ -142,11 +163,9 @@ export const collections = {
             month: z.string().nonempty(),
             year: z.string().nonempty()
           }),
-          billing_period: z.string().nonempty(),
-          billing_cycle: z.string().nonempty(),
           button: linkSchema,
           features: z.array(z.string().nonempty()),
-          highlight: z.boolean().optional()
+          highlight: z.boolean().optional().default(false) // Ensure it defaults to false if not provided
         })
       ),
       logos: z.object({
@@ -164,6 +183,11 @@ export const collections = {
       })
     })
   }),
+  // blog: defineCollection({
+  //   source: 'content/blog/**/*',
+  //   type: 'page',
+  //   schema: sectionSchema
+  // })
   blog: defineCollection({
     source: '3.blog.yml',
     type: 'data',
