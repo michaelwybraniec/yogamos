@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-ui-pro-template-saas",
+  "name": "nuxt-app",
   "private": true,
   "type": "module",
   "scripts": {
@@ -9,27 +9,27 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
-    "typecheck": "nuxt typecheck"
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
-    "@iconify-json/heroicons": "^1.2.2",
-    "@iconify-json/simple-icons": "^1.2.22",
-    "@nuxt/content": "^3.1.1",
-    "@nuxt/fonts": "^0.10.3",
-    "@nuxt/image": "^1.9.0",
-    "@nuxt/ui-pro": "^1.7.0",
-    "@vueuse/nuxt": "^12.5.0",
-    "nuxt": "^3.0.0",
-    "nuxt-og-image": "^4.1.2"
+    "@nuxt/content": "^3.3.0",
+    "@nuxt/eslint": "1.1.0",
+    "@nuxt/ui-pro": "3.0.0-beta.2",
+    "@nuxtjs/i18n": "9.0.0-rc.2",
+    "eslint": "^9.21.0",
+    "nuxt": "^3.15.4",
+    "nuxt-og-image": "^4.2.0",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
   },
+  "packageManager": "pnpm@9.15.4+sha512.b2dc20e2fc72b3e18848459b37359a32064663e5627a51e4c74b2c29dd8e8e0491483c3abb40789cfd578bf362fb6ba8261b05f0387d76792ed6e23ea3b1b6a0",
   "devDependencies": {
-    "@nuxt/eslint": "^0.7.5",
-    "@nuxthq/studio": "^2.2.1",
-    "eslint": "^9.19.0",
-    "vue-tsc": "^2.1.10"
-  },
-  "resolutions": {
-    "vue-tsc": "2.1.10"
-  },
-  "packageManager": "pnpm@9.15.4"
+    "eslint-config-prettier": "^10.0.2",
+    "eslint-plugin-prettier": "^5.2.3",
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "typescript": "^5.8.2"
+  }
 }

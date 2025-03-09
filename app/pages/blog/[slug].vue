@@ -1,71 +1,105 @@
 <script setup lang="ts">
-import { withoutTrailingSlash } from 'ufo'
-import type { BlogPost } from '~/types'
+  const route = useRoute()
 
-const route = useRoute()
+  const { data: post } = await useAsyncData('single-post', () =>
+    queryCollection('posts')
+      .where('path', 'LIKE', route.path) // 🔥 Correct way in Content v3
+      .first()
+  )
 
-const { data: post } = await useAsyncData(route.path, () => queryContent<BlogPost>(route.path).findOne())
-if (!post.value) {
-  throw createError({ statusCode: 404, statusMessage: 'Post not found', fatal: true })
-}
+  const segments = route.path.split('/').filter(Boolean) // Remove empty parts
 
-const { data: surround } = await useAsyncData(`${route.path}-surround`, () => queryContent('/blog')
-  .where({ _extension: 'md' })
-  .without(['body', 'excerpt'])
-  .sort({ date: -1 })
-  .findSurround(withoutTrailingSlash(route.path))
-, { default: () => [] })
+  // Fetch available locales dynamically
+  const i18n = useI18n?.()
+  const availableLocales = (i18n?.locales?.value || []).map((locale) =>
+    typeof locale === 'string' ? locale : locale.code
+  )
 
-const title = post.value.head?.title || post.value.title
-const description = post.value.head?.description || post.value.description
+  // If first segment matches a locale, remove it
+  const firstSegment = segments[0]
+  const normalizedPath = availableLocales.includes(firstSegment)
+    ? '/' + segments.slice(1).join('/')
+    : route.path
 
-useSeoMeta({
-  title,
-  ogTitle: title,
-  description,
-  ogDescription: description
-})
+  const { data: post2 } = await useAsyncData('single-post', () =>
+    queryCollection('posts').where('path', 'LIKE', normalizedPath).first()
+  )
 
-if (post.value.image?.src) {
-  defineOgImage({
-    url: post.value.image.src
+  console.log({
+    post3: post.value,
+    post4: post2.value
   })
-} else {
-  defineOgImageComponent('Saas', {
-    headline: 'Blog'
+
+  const { data: posts2 } = await useAsyncData('all-posts', () =>
+    queryCollection('posts').all()
+  )
+
+  // console.log('All Posts:', posts2.value)
+  // console.log(posts2.value?.map((p) => p.path))
+
+  if (!post.value) {
+    throw createError({
+      statusCode: 404,
+      statusMessage: 'Post not found',
+      fatal: true
+    })
+  }
+
+  const { data: surround } = await useAsyncData(
+    `${route.path}-surround`,
+    async () =>
+      await queryCollectionItemSurroundings('posts', route.path, {
+        fields: ['title', 'description', 'navigation']
+      }),
+    { default: () => [] }
+  )
+
+  const title = post.value.title
+  const description = post.value.description
+
+  useSeoMeta({
+    title,
+    ogTitle: title,
+    description,
+    ogDescription: description
   })
-}
+
+  if (post.value.image?.src) {
+    defineOgImage({
+      url: post.value.image.src
+    })
+  } else {
+    defineOgImageComponent('Saas', {
+      headline: 'Blog'
+    })
+  }
 </script>
 
 <template>
   <UContainer v-if="post">
-    <UPageHeader
-      :title="post.title"
-      :description="post.description"
-    >
+    <UPageHeader :title="post.title" :description="post.description">
       <template #headline>
-        <UBadge
-          v-bind="post.badge"
-          variant="subtle"
-        />
+        <UBadge v-bind="post.badge" variant="subtle" />
         <span class="text-gray-500 dark:text-gray-400">&middot;</span>
-        <time class="text-gray-500 dark:text-gray-400">{{ new Date(post.date).toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' }) }}</time>
+        <time class="text-gray-500 dark:text-gray-400">{{
+          new Date(post.date).toLocaleDateString('en', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+          })
+        }}</time>
       </template>
 
-      <div class="flex flex-wrap items-center gap-3 mt-4">
+      <div class="mt-4 flex flex-wrap items-center gap-3">
         <UButton
           v-for="(author, index) in post.authors"
           :key="index"
           :to="author.to"
-          color="white"
+          color="primary"
           target="_blank"
           size="sm"
         >
-          <UAvatar
-            v-bind="author.avatar"
-            alt="Author avatar"
-            size="2xs"
-          />
+          <UAvatar v-bind="author.avatar" alt="Author avatar" size="2xs" />
 
           {{ author.name }}
         </UButton>
@@ -74,21 +108,36 @@ if (post.value.image?.src) {
 
     <UPage>
       <UPageBody prose>
-        <ContentRenderer
-          v-if="post && post.body"
-          :value="post"
-        />
+        <ContentRenderer v-if="post && post.body" :value="post" />
 
-        <hr v-if="surround?.length">
+        <hr v-if="surround?.length" />
 
         <UContentSurround :surround="surround" />
       </UPageBody>
 
       <template #right>
+        <!-- <UContentToc
+          v-if="post.body && post.body.toc"
+          :links="
+            post.body.toc.links.map((link) => ({
+              ...link,
+              id: link.href,
+              depth: 1
+            }))
+          "
+        /> -->
         <UContentToc
           v-if="post.body && post.body.toc"
-          :links="post.body.toc.links"
+          :links="
+            post.body.toc.links.map((link) => ({
+              ...link,
+              id: link.id,
+              depth: 1
+            }))
+          "
         />
+
+        })) "
       </template>
     </UPage>
   </UContainer>

@@ -1,85 +1,78 @@
 title: Pricing
-description: Choose the plan that's right for you.
+description: Find the perfect plan to deepen your yoga journey.
 navigation.icon: i-heroicons-credit-card
 hero:
-  title: A plan for every need
-  description: Our plans are designed to meet the requirements of both beginners and players. Get the right plan that suits you.
+  title: A plan for every yogi
+  description: Whether you're just beginning or an experienced practitioner, our plans are designed to support your journey toward inner mastery.
   align: center
 plans:
-  - title: Basic
-    description: A basic plan for individuals.
+  - title: Free Flow
+    description: A foundational plan to start your yoga practice.
     price:
-      month: $9.9
-      year: $99.9
+      month: Free
+      year: Free
     align: top
     button:
-      label: Get Started
+      label: Start for Free
       color: white
     features:
-      - 1 GB Storage
-      - 1 Email Account
-      - 1 Domain
-      - 1 Website
-      - 1 Database
-      - 1 SSL Certificate
-      - 1 Support Ticket
-  - title: Standard
-    description: A standard plan for small teams.
+      - Access to beginner classes
+      - Guided meditation sessions
+      - Community forum
+      - Weekly wellness tips
+  - title: Inner Balance
+    description: Ideal for regular practitioners seeking deeper transformation.
     price:
       month: $19.9
       year: $199.9
     highlight: true
     align: top
     button:
-      label: Get Started
+      label: Start Now
       color: black
     features:
-      - 10 GB Storage
-      - 10 Email Accounts
-      - 10 Domains
-      - 10 Websites
-      - 10 Databases
-      - 10 SSL Certificates
-      - 10 Support Tickets
-  - title: Premium
-    description: A premium plan for large teams.
+      - Unlimited class access
+      - Personalized practice recommendations
+      - Live-streamed yoga sessions
+      - Exclusive breathing & meditation courses
+      - Community support
+  - title: Mastery Path
+    description: For dedicated yogis and teachers looking for advanced training.
     price:
       month: $29.9
       year: $299.9
     align: top
     button:
-      label: Get Started
+      label: Join the Path
       color: white
     features:
-      - 100 GB Storage
-      - 100 Email Accounts
-      - 100 Domains
-      - 100 Websites
-      - 100 Databases
-      - 100 SSL Certificates
-      - 100 Support Tickets
+      - All "Inner Balance" features
+      - One-on-one mentorship sessions
+      - Access to teacher training modules
+      - Private yoga & meditation retreats
+      - Certification opportunities
 logos:
-  title: Trusted by the world's best
+  title: Guided by the Best
   icons:
-    - i-simple-icons-amazonaws
-    - i-simple-icons-heroku
-    - i-simple-icons-netlify
-    - i-simple-icons-vercel
-    - i-simple-icons-cloudflare
+    - i-simple-icons-gaia
+    - i-simple-icons-headspace
+    - i-simple-icons-calm
+    - i-simple-icons-yogaalliance
+    - i-simple-icons-udemy
 faq:
-  title: Frequently asked questions
-  description: Culpa consectetur dolor pariatur commodo aliqua amet tempor nisi enim deserunt elit cillum.
+  title: Your Questions, Answered
+  description: Everything you need to know about joining Yogamos.
   items:
-    - label: Is this a secure service?
-      content: Qui sunt nostrud aliquip reprehenderit enim proident veniam magna aliquip velit occaecat eiusmod nisi deserunt sunt.
+    - label: Is Yogamos suitable for beginners?
+      content: Absolutely! Our Free Flow plan offers beginner-friendly classes to help you ease into your practice.
       defaultOpen: true
-    - label: How can I cancel my subscription?
-      content: Consectetur irure Lorem nostrud adipisicing aliqua mollit Lorem sit officia magna eiusmod cupidatat.
-    - label: How does the free trial work?
-      content: Quis officia commodo magna eu qui aliquip duis.
-    - label: Can I switch plans later?
-      content: Dolore irure ullamco dolore eu occaecat magna eiusmod dolor aliqua culpa labore.
-    - label: Do you offer refunds?
-      content: Duis mollit nostrud voluptate mollit Lorem dolore commodo veniam incididunt eiusmod.
-    - label: Do you offer support?
-      content: Aliqua sit nisi consequat pariatur Lorem minim irure qui.
+    - label: Can I cancel anytime?
+      content: Yes, you can cancel or switch plans at any time through your account settings.
+    - label: Do you offer live classes?
+      content: Yes! The Inner Balance and Mastery Path plans include live-streamed sessions with expert instructors.
+    - label: Is there a free trial?
+      content: Yes, we offer a free trial so you can experience the platform before committing to a plan.
+    - label: Do I need any equipment?
+      content: A yoga mat is recommended, but all practices can be modified to suit your space and available resources.
+    - label: Do you provide certifications?
+      content: Yes! Our Mastery Path plan includes certification opportunities for aspiring yoga teachers.

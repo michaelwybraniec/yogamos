@@ -1,43 +1,52 @@
 <script setup lang="ts">
-import type { BlogPost } from '~/types'
+  const route = useRoute()
 
-const { data: page } = await useAsyncData('blog', () => queryContent('/blog').findOne())
-if (!page.value) {
-  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
-}
+  const { data: page } = await useAsyncData('blog', () =>
+    queryCollection('blog').first()
+  )
 
-const { data: posts } = await useAsyncData('posts', () => queryContent<BlogPost>('/blog')
-  .where({ _extension: 'md' })
-  .sort({ date: -1 })
-  .find())
+  const { data: posts } = await useAsyncData(route.path, () =>
+    queryCollection('posts').all()
+  )
 
-useSeoMeta({
-  title: page.value.title,
-  ogTitle: page.value.title,
-  description: page.value.description,
-  ogDescription: page.value.description
-})
+  console.log({ route })
 
-defineOgImageComponent('Saas')
+  if (!page.value) {
+    throw createError({
+      statusCode: 404,
+      statusMessage: 'Page not found',
+      fatal: true
+    })
+  }
+  useSeoMeta({
+    title: page.value.title,
+    ogTitle: page.value.title,
+    description: page.value.description,
+    ogDescription: page.value.description
+  })
+
+  defineOgImageComponent('Saas')
 </script>
 
 <template>
   <UContainer>
-    <UPageHeader
-      v-bind="page"
-      class="py-[50px]"
-    />
-
+    <UPageHeader v-bind="page" class="py-[50px]" />
     <UPageBody>
-      <UBlogList>
+      <UBlogPosts>
         <UBlogPost
           v-for="(post, index) in posts"
           :key="index"
-          :to="post._path"
+          :to="post.path"
           :title="post.title"
           :description="post.description"
           :image="post.image"
-          :date="new Date(post.date).toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' })"
+          :date="
+            new Date(post.date).toLocaleDateString('en', {
+              year: 'numeric',
+              month: 'short',
+              day: 'numeric'
+            })
+          "
           :authors="post.authors"
           :badge="post.badge"
           :orientation="index === 0 ? 'horizontal' : 'vertical'"
@@ -46,7 +55,7 @@ defineOgImageComponent('Saas')
             description: 'line-clamp-2'
           }"
         />
-      </UBlogList>
+      </UBlogPosts>
     </UPageBody>
   </UContainer>
 </template>

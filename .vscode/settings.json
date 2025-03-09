@@ -20,5 +20,18 @@
   },
   "peacock.color": "#5653c8",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "eslint.useFlatConfig": true,
+  "prettier.configPath": ".prettierrc",
+  "editor.formatOnPaste": false,
+  "editor.formatOnType": false,
+  "scss.lint.unknownAtRules": "ignore",
+  "eslint.format.enable": true,
+  "prettier.useEditorConfig": false,
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": "on"
+  }
 }
