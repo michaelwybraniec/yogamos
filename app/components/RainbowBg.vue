@@ -5,9 +5,9 @@
       :key="i"
       class="rainbow"
       :style="getRainbowStyle(i)"
-    ></div>
-    <div class="h"></div>
-    <div class="v"></div>
+    />
+    <div class="h" />
+    <div class="v" />
   </div>
 </template>
 

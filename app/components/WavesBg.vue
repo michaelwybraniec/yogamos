@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="wave"></div>
-    <div class="wave"></div>
-    <div class="wave"></div>
+    <div class="wave" />
+    <div class="wave" />
+    <div class="wave" />
   </div>
 </template>
 

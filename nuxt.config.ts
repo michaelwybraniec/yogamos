@@ -8,17 +8,13 @@ export default defineNuxtConfig({
     'nuxt-og-image'
   ],
 
-  i18n: {
-    locales: [
-      { code: 'es', iso: 'en-ES', name: 'Español' },
-      { code: 'en', iso: 'en-US', name: 'English' },
-      { code: 'fr', iso: 'fr-fr', name: 'Français' }
-    ]
-  },
-
   devtools: { enabled: true },
 
   css: ['~/assets/css/main.css'],
+
+  ui: {
+    // fonts: false
+  },
 
   future: {
     compatibilityVersion: 4
@@ -46,7 +42,11 @@ export default defineNuxtConfig({
     }
   },
 
-  ui: {
-    // fonts: false
+  i18n: {
+    locales: [
+      { code: 'es', iso: 'en-ES', name: 'Español' },
+      { code: 'en', iso: 'en-US', name: 'English' },
+      { code: 'fr', iso: 'fr-fr', name: 'Français' }
+    ]
   }
 })

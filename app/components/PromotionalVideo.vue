@@ -9,7 +9,10 @@
       icon="i-mdi-yoga"
       spotlight
     >
-      <img src="/yogamos_logo.svg" alt="Yogamos Logo" />
+      <img
+        src="/yogamos_logo.svg"
+        alt="Yogamos Logo"
+      >
     </UPageCard>
     <!-- <UPageCard
       title="Tailwind CSS"

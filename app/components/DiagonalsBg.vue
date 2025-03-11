@@ -2,9 +2,9 @@
   <div
     class="stars pointer-events-none absolute inset-x-0 top-0 size-full opacity-75"
   >
-    <div class="bg"></div>
-    <div class="bg bg2"></div>
-    <div class="bg bg3"></div>
+    <div class="bg" />
+    <div class="bg bg2" />
+    <div class="bg bg3" />
   </div>
 </template>
 

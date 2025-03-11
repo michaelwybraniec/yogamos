@@ -3,11 +3,11 @@
     class="stars pointer-events-none absolute inset-x-0 top-0 size-full opacity-75"
   > -->
   <span class="ball" />
-  <span class="ball"></span>
-  <span class="ball"></span>
-  <span class="ball"></span>
-  <span class="ball"></span>
-  <span class="ball"></span>
+  <span class="ball" />
+  <span class="ball" />
+  <span class="ball" />
+  <span class="ball" />
+  <span class="ball" />
   <!-- </div> -->
 </template>
 

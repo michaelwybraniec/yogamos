@@ -32,14 +32,22 @@
       <NuxtLink to="/"> <b>YOGAMOS?</b> </NuxtLink>
     </template>
 
-    <UNavigationMenu :items="items" variant="link" />
+    <UNavigationMenu
+      :items="items"
+      variant="link"
+    />
 
     <template #right>
       <!-- <UColorModeButton /> -->
       <LangSwitcher variant="ghost" />
 
       <UColorModeSwitch />
-      <UButton label="Sign in" color="neutral" variant="ghost" to="/login" />
+      <UButton
+        label="Sign in"
+        color="neutral"
+        variant="ghost"
+        to="/login"
+      />
       <UButton
         label="Sign up"
         color="neutral"
@@ -50,7 +58,11 @@
     </template>
 
     <template #body>
-      <UNavigationMenu :items="items" orientation="vertical" class="-mx-2.5" />
+      <UNavigationMenu
+        :items="items"
+        orientation="vertical"
+        class="-mx-2.5"
+      />
 
       <USeparator class="my-6" />
 
@@ -62,7 +74,12 @@
         block
         class="mb-3"
       />
-      <UButton label="Sign up" color="neutral" to="/signup" block />
+      <UButton
+        label="Sign up"
+        color="neutral"
+        to="/signup"
+        block
+      />
     </template>
   </UHeader>
 </template>

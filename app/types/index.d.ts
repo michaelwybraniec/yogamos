@@ -5,7 +5,7 @@ export interface BlogPost extends ParsedContent {
   title: string
   description: string
   date: string
-  image?: { src: string } // ✅ Matches Nuxt Content format
+  image?: { src: string }
   badge?: Badge
   authors?: ({
     name: string
@@ -14,7 +14,7 @@ export interface BlogPost extends ParsedContent {
   } & Link)[]
   body?: {
     toc?: {
-      links: Array<{ text: string; href: string }>
+      links: Array<{ text: string, href: string }>
     }
   }
 }

@@ -27,7 +27,10 @@
 
 <template>
   <UContainer>
-    <UPageHeader v-bind="page" class="py-[50px]" />
+    <UPageHeader
+      v-bind="page"
+      class="py-[50px]"
+    />
     <UPageBody>
       <UBlogPosts>
         <UBlogPost
