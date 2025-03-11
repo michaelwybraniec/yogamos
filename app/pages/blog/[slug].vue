@@ -1,42 +1,33 @@
 <script setup lang="ts">
+  import { computed } from 'vue'
+  import {
+    useRoute,
+    useAsyncData,
+    queryCollectionNavigation,
+    queryCollection
+  } from '#imports'
+
+  // ✅ Get Current Route
   const route = useRoute()
+  const segments = route.path.split('/').filter(Boolean)
 
-  const { data: post } = await useAsyncData('single-post', () =>
-    queryCollection('posts')
-      .where('path', 'LIKE', route.path) // 🔥 Correct way in Content v3
-      .first()
-  )
-
-  const segments = route.path.split('/').filter(Boolean) // Remove empty parts
-
-  // Fetch available locales dynamically
+  // ✅ Handle i18n (Normalize Paths for Multi-language Support)
   const i18n = useI18n?.()
   const availableLocales = (i18n?.locales?.value || []).map((locale) =>
     typeof locale === 'string' ? locale : locale.code
   )
 
-  // If first segment matches a locale, remove it
   const firstSegment = segments[0]
   const normalizedPath = availableLocales.includes(firstSegment)
     ? '/' + segments.slice(1).join('/')
     : route.path
 
-  const { data: post2 } = await useAsyncData('single-post', () =>
+  // ✅ Fetch Post Data
+  const { data: post } = await useAsyncData('single-post', () =>
     queryCollection('posts').where('path', 'LIKE', normalizedPath).first()
   )
 
-  console.log({
-    post3: post.value,
-    post4: post2.value
-  })
-
-  const { data: posts2 } = await useAsyncData('all-posts', () =>
-    queryCollection('posts').all()
-  )
-
-  // console.log('All Posts:', posts2.value)
-  // console.log(posts2.value?.map((p) => p.path))
-
+  // ✅ Throw 404 if Post Not Found
   if (!post.value) {
     throw createError({
       statusCode: 404,
@@ -45,34 +36,51 @@
     })
   }
 
-  const { data: surround } = await useAsyncData(
-    `${route.path}-surround`,
-    async () =>
-      await queryCollectionItemSurroundings('posts', route.path, {
-        fields: ['title', 'description', 'navigation']
-      }),
-    { default: () => [] }
+  // Fetch Navigation Data
+  const { data: navigation } = await useAsyncData('navigation', () =>
+    queryCollectionNavigation('posts')
   )
 
-  const title = post.value.title
-  const description = post.value.description
+  // Helper Functions for Breadcrumbs
+  function findPageBreadcrumb(navigation: any[], path: string): any[] {
+    for (const item of navigation) {
+      if (item.path === path) return [item]
+      if (item.children) {
+        const childBreadcrumb = findPageBreadcrumb(item.children, path)
+        if (childBreadcrumb.length) return [item, ...childBreadcrumb]
+      }
+    }
+    return []
+  }
 
-  useSeoMeta({
-    title,
-    ogTitle: title,
-    description,
-    ogDescription: description
+  function mapContentNavigation(breadcrumb: any[]): any[] {
+    return breadcrumb.map(({ title, path }) => ({ label: title, to: path }))
+  }
+
+  // Compute Breadcrumbs
+  const breadcrumb = computed(() => {
+    if (!navigation.value || !post.value) return []
+    return mapContentNavigation(
+      findPageBreadcrumb(navigation.value, post.value.path)
+    )
   })
 
-  if (post.value.image?.src) {
-    defineOgImage({
-      url: post.value.image.src
-    })
-  } else {
-    defineOgImageComponent('Saas', {
-      headline: 'Blog'
-    })
-  }
+  const { data: surround } = await useAsyncData(
+    `${normalizedPath}-surround`,
+    () => {
+      return queryCollectionItemSurroundings('posts', normalizedPath, {
+        fields: ['description']
+      })
+    }
+  )
+
+  // SEO Meta
+  useSeoMeta({
+    title: post.value.title,
+    ogTitle: post.value.title,
+    description: post.value.description,
+    ogDescription: post.value.description
+  })
 </script>
 
 <template>
@@ -89,43 +97,17 @@
           })
         }}</time>
       </template>
-
-      <div class="mt-4 flex flex-wrap items-center gap-3">
-        <UButton
-          v-for="(author, index) in post.authors"
-          :key="index"
-          :to="author.to"
-          color="primary"
-          target="_blank"
-          size="sm"
-        >
-          <UAvatar v-bind="author.avatar" alt="Author avatar" size="2xs" />
-
-          {{ author.name }}
-        </UButton>
-      </div>
     </UPageHeader>
 
     <UPage>
       <UPageBody prose>
+        <UBreadcrumb :items="breadcrumb" />
         <ContentRenderer v-if="post && post.body" :value="post" />
-
         <hr v-if="surround?.length" />
-
         <UContentSurround :surround="surround" />
       </UPageBody>
 
       <template #right>
-        <!-- <UContentToc
-          v-if="post.body && post.body.toc"
-          :links="
-            post.body.toc.links.map((link) => ({
-              ...link,
-              id: link.href,
-              depth: 1
-            }))
-          "
-        /> -->
         <UContentToc
           v-if="post.body && post.body.toc"
           :links="
@@ -136,8 +118,6 @@
             }))
           "
         />
-
-        })) "
       </template>
     </UPage>
   </UContainer>

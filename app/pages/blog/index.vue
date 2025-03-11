@@ -1,6 +1,5 @@
 <script setup lang="ts">
   const route = useRoute()
-
   const { data: page } = await useAsyncData('blog', () =>
     queryCollection('blog').first()
   )
@@ -8,8 +7,6 @@
   const { data: posts } = await useAsyncData(route.path, () =>
     queryCollection('posts').all()
   )
-
-  console.log({ route })
 
   if (!page.value) {
     throw createError({

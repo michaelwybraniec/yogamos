@@ -61,7 +61,7 @@ export default defineNuxtSchema({
           title: 'Primary',
           description: 'Primary color of your UI.',
           icon: 'i-mdi-palette-outline',
-          default: 'green',
+          default: 'red',
           required: [
             'sky',
             'mint',
