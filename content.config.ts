@@ -89,15 +89,15 @@ export const collections = {
     schema: z.object({
       title: z.string().nonempty(),
       description: z.string().nonempty(),
-      image: z.object({ src: z.string().nonempty() }),
+      image: z.object({ src: z.string().url().nonempty() }),
       authors: z.array(
         z.object({
           name: z.string().nonempty(),
           to: z.string().nonempty(),
-          avatar: z.object({ src: z.string().nonempty() })
+          avatar: z.object({ src: z.string().url().nonempty() })
         })
       ),
-      date: z.string().nonempty(),
+      date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'Invalid date format'),
       badge: z.object({ label: z.string().nonempty() })
     })
   }),

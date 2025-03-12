@@ -33,5 +33,21 @@
   },
   "editor.quickSuggestions": {
     "strings": "on"
+  },
+  "i18n-ally.localesPaths": [],
+  // Required for the extension
+  "mdc.enableFormatting": true,
+  // Recommended (for `mdc` and `md`, depending on your usage)
+  "[mdc]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "editor.formatOnPaste": true
+  },
+  "[md]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "editor.formatOnPaste": true
   }
 }

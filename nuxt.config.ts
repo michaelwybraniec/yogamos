@@ -5,7 +5,8 @@ export default defineNuxtConfig({
     '@nuxt/ui-pro',
     '@nuxt/content',
     '@nuxtjs/i18n',
-    'nuxt-og-image'
+    'nuxt-og-image',
+    '@nuxtjs/mdc'
   ],
 
   devtools: { enabled: true },

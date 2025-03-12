@@ -14,18 +14,19 @@
   "overrides": [
     {
       "files": [
-        "*.vue"
+        "*.md",
+        "*.mdc"
       ],
       "options": {
-        "parser": "vue"
+        "parser": "markdown"
       }
     },
     {
       "files": [
-        "*.md"
+        "*.vue"
       ],
       "options": {
-        "proseWrap": "always"
+        "parser": "vue"
       }
     }
   ]

@@ -1,6 +1,8 @@
 # Nuxt Minimal Starter
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Look at the
+[Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to
+learn more.
 
 ## Setup
 
@@ -72,15 +74,16 @@ yarn preview
 bun run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more
-information.
+Check out the
+[deployment documentation](https://nuxt.com/docs/getting-started/deployment) for
+more information.
 
 ## TOOLS
 
 ### Nuxt Dev tools
 
-Nuxt DevTools is enabled by default in Nuxt v3.8.0. You can press Shift + Alt / ⇧ Shift + ⌥ Option +
-D in your app to open it up.
+Nuxt DevTools is enabled by default in Nuxt v3.8.0. You can press Shift + Alt /
+⇧ Shift + ⌥ Option + D in your app to open it up.
 
 ### Eslint Inspector
 
@@ -91,5 +94,5 @@ https://github.com/eslint/config-inspector
 npx @eslint/config-inspector@latest
 ```
 
-Visit http://localhost:7777/ to view and play with your ESLint config. Changes to the config file
-will be updated automatically.
+Visit http://localhost:7777/ to view and play with your ESLint config. Changes
+to the config file will be updated automatically.
