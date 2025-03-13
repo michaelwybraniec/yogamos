@@ -54,45 +54,46 @@
       'Discover the power of yoga with Yogamos. Improve flexibility, reduce stress, and build strength with our expert-led sessions.'
   })
 
-  // const { data: navigation } = await useAsyncData(
-  //   'navigation',
-  //   () => queryCollectionNavigation('docs'),
-  //   {
-  //     transform: (data) =>
-  //       data.find((item) => item.path === '/docs')?.children || []
-  //   }
-  // )
-  // const { data: files } = useLazyAsyncData(
-  //   'search',
-  //   () => queryCollectionSearchSections('docs'),
-  //   {
-  //     server: false
-  //   }
-  // )
+  const { data: navigation } = await useAsyncData(
+    'navigation',
+    () => queryCollectionNavigation('docs'),
+    {
+      transform: data =>
+        data.find(item => item.path === '/docs')?.children || []
+    }
+  )
+  const { data: files } = useLazyAsyncData(
+    'search',
+    () => queryCollectionSearchSections('docs'),
+    {
+      server: false
+    }
+  )
 
-  // const links = [
-  //   {
-  //     label: 'About',
-  //     icon: 'i-lucide-book',
-  //     to: '/docs/getting-started'
-  //   },
-  //   {
-  //     label: 'About',
-  //     icon: 'i-lucide-credit-card',
-  //     to: '/about'
-  //   },
-  //   {
-  //     label: 'Blog',
-  //     icon: 'i-lucide-pencil',
-  //     to: '/blog'
-  //   }
-  // ]
+  const links = [
+    {
+      label: 'About',
+      icon: 'i-lucide-book',
+      to: '/docs/getting-started'
+    },
+    {
+      label: 'About',
+      icon: 'i-lucide-credit-card',
+      to: '/about'
+    },
+    {
+      label: 'Blog',
+      icon: 'i-lucide-pencil',
+      to: '/blog'
+    }
+  ]
 
-  // provide('navigation', navigation)
+  provide('navigation', navigation)
 </script>
 
 <template>
   <UApp :locale="locales[locale]">
+    <!-- <UApp> -->
     <NuxtLoadingIndicator />
 
     <NuxtLayout>
@@ -100,13 +101,13 @@
     </NuxtLayout>
 
     <ClientOnly>
-      <!-- <LazyUContentSearch
+      <LazyUContentSearch
         :files="files"
         shortcut="meta_k"
         :navigation="navigation"
         :links="links"
         :fuse="{ resultLimit: 42 }"
-      /> -->
+      />
     </ClientOnly>
   </UApp>
 </template>

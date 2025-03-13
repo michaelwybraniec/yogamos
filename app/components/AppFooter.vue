@@ -1,4 +1,6 @@
 <script setup lang="ts">
+  import { useToast } from '#imports'
+
   const columns = [
     {
       label: 'Resources',
@@ -63,16 +65,13 @@
 
     toast.add({
       title: 'Subscribed!',
-      description: 'You\'ve been subscribed to our newsletter.'
+      description: 'You have been subscribed to our newsletter.'
     })
   }
 </script>
 
 <template>
-  <USeparator
-    icon="i-simple-icons-nuxtdotjs"
-    class="h-px"
-  />
+  <USeparator icon="i-simple-icons-nuxtdotjs" class="h-px" />
   <UFooter :ui="{ top: 'border-b border-[var(--ui-border)]' }">
     <template #top>
       <UContainer>

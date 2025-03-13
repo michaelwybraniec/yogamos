@@ -54,11 +54,11 @@ plans:
 logos:
   title: Guided by the Best
   icons:
-    - i-simple-icons-gaia
-    - i-simple-icons-headspace
-    - i-simple-icons-calm
-    - i-simple-icons-yogaalliance
-    - i-simple-icons-udemy
+    - i-simple-icons-amazonaws
+    - i-simple-icons-heroku
+    - i-simple-icons-netlify
+    - i-simple-icons-vercel
+    - i-simple-icons-cloudflare
 faq:
   title: Your Questions, Answered
   description: Everything you need to know about joining Yogamos.

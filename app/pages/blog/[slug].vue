@@ -1,30 +1,16 @@
 <script setup lang="ts">
   import { computed } from 'vue'
   import {
-    useRoute,
     useAsyncData,
     queryCollectionNavigation,
     queryCollection
   } from '#imports'
 
-  // ✅ Get Current Route
-  const route = useRoute()
-  const segments = route.path.split('/').filter(Boolean)
-
-  // ✅ Handle i18n (Normalize Paths for Multi-language Support)
-  const i18n = useI18n?.()
-  const availableLocales = (i18n?.locales?.value || []).map(locale =>
-    typeof locale === 'string' ? locale : locale.code
-  )
-
-  const firstSegment = segments[0]
-  const normalizedPath = availableLocales.includes(firstSegment)
-    ? '/' + segments.slice(1).join('/')
-    : route.path
+  const { normalizedPath } = useNormalizedPath()
 
   // ✅ Fetch Post Data
   const { data: post } = await useAsyncData('single-post', () =>
-    queryCollection('posts').where('path', 'LIKE', normalizedPath).first()
+    queryCollection('posts').where('path', 'LIKE', normalizedPath.value).first()
   )
 
   // ✅ Throw 404 if Post Not Found
@@ -66,9 +52,9 @@
   })
 
   const { data: surround } = await useAsyncData(
-    `${normalizedPath}-surround`,
+    `${normalizedPath.value}-surround`,
     () => {
-      return queryCollectionItemSurroundings('posts', normalizedPath, {
+      return queryCollectionItemSurroundings('posts', normalizedPath.value, {
         fields: ['description']
       })
     }
@@ -85,15 +71,9 @@
 
 <template>
   <UContainer v-if="post">
-    <UPageHeader
-      :title="post.title"
-      :description="post.description"
-    >
+    <UPageHeader :title="post.title" :description="post.description">
       <template #headline>
-        <UBadge
-          v-bind="post.badge"
-          variant="subtle"
-        />
+        <UBadge v-bind="post.badge" variant="subtle" />
         <span class="text-gray-500 dark:text-gray-400">&middot;</span>
         <time class="text-gray-500 dark:text-gray-400">{{
           new Date(post.date).toLocaleDateString('en', {
@@ -108,11 +88,8 @@
     <UPage>
       <UPageBody prose>
         <UBreadcrumb :items="breadcrumb" />
-        <ContentRenderer
-          v-if="post && post.body"
-          :value="post"
-        />
-        <hr v-if="surround?.length">
+        <ContentRenderer v-if="post && post.body" :value="post" />
+        <hr v-if="surround?.length" />
         <UContentSurround :surround="surround" />
       </UPageBody>
 
@@ -120,7 +97,7 @@
         <UContentToc
           v-if="post.body && post.body.toc"
           :links="
-            post.body.toc.links.map((link) => ({
+            post.body.toc.links.map(link => ({
               ...link,
               id: link.id,
               depth: 1

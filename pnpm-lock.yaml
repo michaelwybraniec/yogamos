@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@iconify-json/simple-icons':
+        specifier: ^1.2.28
+        version: 1.2.28
       '@nuxt/content':
         specifier: ^3.3.0
         version: 3.3.0(magicast@0.3.5)(typescript@5.8.2)
@@ -618,6 +621,9 @@ packages:
   '@humanwhocodes/retry@0.4.2':
     resolution: {integrity: sha512-xeO57FpIu4p1Ri3Jq/EXq4ClRm86dVF2z/+kvFnyqVYRavTZmaFaUBbWCOuuTh0o/g7DSsk6kc2vrS4Vl5oPOQ==}
     engines: {node: '>=18.18'}
+
+  '@iconify-json/simple-icons@1.2.28':
+    resolution: {integrity: sha512-KoCuXgJ2AysGjzOAMUtNPrXeOvvC3zRR+REbYhei2mx5LGTSSrrlVJdaSBv4f8LH9hgfhG7E4Us3hH3XwreP+A==}
 
   '@iconify/collections@1.0.524':
     resolution: {integrity: sha512-sNik5nCxiBdmb8JAEgn82Q0Ev9uk8qn1RmPML324RHTfyBf4QSTdY2MOWdIT0AqfqN1XSG5qzdqJ1IfQ8tISHw==}
@@ -6015,6 +6021,10 @@ snapshots:
   '@humanwhocodes/retry@0.3.1': {}
 
   '@humanwhocodes/retry@0.4.2': {}
+
+  '@iconify-json/simple-icons@1.2.28':
+    dependencies:
+      '@iconify/types': 2.0.0
 
   '@iconify/collections@1.0.524':
     dependencies:
