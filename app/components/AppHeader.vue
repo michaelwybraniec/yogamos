@@ -38,7 +38,8 @@
       <!-- <UColorModeButton /> -->
       <LangSwitcher variant="ghost" />
 
-      <UColorModeSwitch />
+      <!-- <UColorModeSwitch /> -->
+      <UColorModeButton />
       <UButton label="Sign in" color="neutral" variant="ghost" to="/login" />
       <UButton
         label="Sign up"
