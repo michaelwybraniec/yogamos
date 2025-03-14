@@ -27,10 +27,7 @@
 
 <template>
   <UContainer>
-    <UPageHeader
-      v-bind="page"
-      class="py-[50px]"
-    />
+    <UPageHeader v-bind="page" class="py-[50px]" />
     <UPageBody>
       <UBlogPosts>
         <UBlogPost
@@ -54,6 +51,7 @@
           :ui="{
             description: 'line-clamp-2'
           }"
+          variant="soft"
         />
       </UBlogPosts>
     </UPageBody>

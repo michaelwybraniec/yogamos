@@ -18,6 +18,7 @@
     "titleBar.inactiveBackground": "#5653c899",
     "titleBar.inactiveForeground": "#e7e7e799"
   },
+  "explorer.sortOrder": "default",
   "peacock.color": "#5653c8",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
@@ -35,9 +36,7 @@
     "strings": "on"
   },
   "i18n-ally.localesPaths": [],
-  // Required for the extension
   "mdc.enableFormatting": true,
-  // Recommended (for `mdc` and `md`, depending on your usage)
   "[mdc]": {
     "editor.tabSize": 2,
     "editor.insertSpaces": true,

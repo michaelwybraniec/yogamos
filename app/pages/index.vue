@@ -14,6 +14,8 @@
 
 <template>
   <div v-if="page">
+    <StarsBg />
+
     <UPageHero
       headline="YOGAMOS?"
       :title="page.hero.title"
@@ -24,10 +26,6 @@
         <div
           class="absolute left-1/2 size-60 -translate-x-1/2 -translate-y-80 transform rounded-full blur-[300px] sm:size-80 dark:bg-(--ui-primary)"
         />
-
-        <StarsBg />
-        <!-- <StarsSmoothBg /> -->
-        <!-- <YogaBg /> -->
       </template>
 
       <PromotionalVideo />
@@ -77,10 +75,7 @@
           }"
         >
           <template #footer>
-            <UUser
-              v-bind="testimonial.user"
-              size="lg"
-            />
+            <UUser v-bind="testimonial.user" size="lg" />
           </template>
         </UPageCard>
       </UPageColumns>
@@ -88,11 +83,7 @@
 
     <USeparator />
 
-    <UPageCTA
-      v-bind="page.cta"
-      variant="naked"
-      class="overflow-hidden"
-    >
+    <UPageCTA v-bind="page.cta" variant="naked" class="overflow-hidden">
       <div
         class="absolute left-1/2 size-40 -translate-x-1/2 -translate-y-80 transform rounded-full blur-[250px] sm:size-50 dark:bg-(--ui-primary)"
       />

@@ -28,18 +28,15 @@
       <NuxtLink to="/">
         <LogoPro class="h-6 w-auto shrink-0" />
       </NuxtLink>
-      <!-- <TemplateMenu /> -->
+      <TemplateMenu />
       <NuxtLink to="/"> <b>YOGAMOS?</b> </NuxtLink>
     </template>
 
     <UNavigationMenu :items="items" variant="link" />
 
     <template #right>
-      <!-- <UColorModeButton /> -->
       <LangSwitcher variant="ghost" />
-
-      <!-- <UColorModeSwitch /> -->
-      <UColorModeButton />
+      <UColorModeSwitch />
       <UButton label="Sign in" color="neutral" variant="ghost" to="/login" />
       <UButton
         label="Sign up"

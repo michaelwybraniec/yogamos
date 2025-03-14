@@ -4,18 +4,14 @@
 @source "../../../content";
 
 @theme {
+  --font-sans:
+    ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-serif: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
   --font-poppins: Poppins, sans-serif;
-  /* --light-50: #fefcfa;
-  --light-100: #fdf7f2;
-  --light-200: #f9ede1;
-  --light-300: #f4ddc5;
-  --light-400: #ecc9a5;
-  --light-500: #e4b585;
-  --light-600: #d59d6c;
-  --light-700: #b47f52;
-  --light-800: #92633e;
-  --light-900: #6f4930;
-  --light-950: #4c2e1f; */
 
   --light-50: #fcfcfa;
   --light-100: #f9f8f5;
@@ -27,31 +23,58 @@
   --light-700: #96887b;
   --light-800: #796e64;
   --light-900: #5f554f;
-  --light-950: #3d3733;
+  --light-950: #201c19;
 }
 
 :root {
   /* Main background color */
   --ui-bg: var(--light-200);
   /* Subtle background */
-  --ui-bg-muted: var(--light-300);
+  --ui-bg-muted: var(--light-200);
   /* Slightly elevated background */
   --ui-bg-elevated: var(--light-300);
   /* More prominent background */
   --ui-bg-accented: var(--light-500);
   /* Inverted background color */
-  --ui-bg-inverted: var(--light-950);
+  --ui-bg-inverted: var(--light-900);
+
+  --ui-border: var(--light-300);
+
+  /* --font-sans: var(--font-poppins); */
+
+  .max-w-\(\-\-ui-container\) {
+    background-color: rgba(
+      202,
+      141,
+      88,
+      0.05
+    ) !important; /* Temporary background */
+  }
 }
 
 .dark {
   /* Main background color */
-  --ui-bg: oklch(0.216 0.006 56.043);
+  --ui-bg: var(--light-950);
   /* Subtle background */
-  --ui-bg-muted: var(--ui-color-stone-50);
+  --ui-bg-muted: var(--light-900);
   /* Slightly elevated background */
-  --ui-bg-elevated: var(--ui-color-stone-900);
+  --ui-bg-elevated: var(--light-900);
   /* More prominent background */
-  --ui-bg-accented: var(--ui-color-stone-200);
+  --ui-bg-accented: var(--light-800);
   /* Inverted background color */
-  --ui-bg-inverted: var(--ui-color-stone-100);
+  --ui-bg-inverted: var(--light-200);
+
+  --ui-border: var(--light-950);
+
+  .max-w-\(\-\-ui-container\) {
+    background-color: rgba(
+      81,
+      69,
+      69,
+      0.01
+    ) !important; /* Temporary background */
+  }
+}
+body {
+  @apply bg-(--ui-bg) text-(--ui-text) antialiased;
 }
