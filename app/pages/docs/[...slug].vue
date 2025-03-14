@@ -1,40 +1,40 @@
 <script setup lang="ts">
-  const { normalizedPath } = useNormalizedPath()
+  const route = useRoute()
 
   definePageMeta({
     layout: 'docs'
   })
 
-  console.log('Normalized Path:', normalizedPath.value)
-
-  const { data: page } = await useAsyncData(normalizedPath.value, () => {
-    return queryCollection('docs')
-      .where('path', 'LIKE', `%${normalizedPath.value}%`)
+  const { data: page } = await useAsyncData(route.path, async () => {
+    let content = await queryCollection('docs')
+      .where('path', 'LIKE', route.path)
       .first()
+
+    if (!content) {
+      console.warn(
+        `No content found for ${route.path}, falling back to navigation.`
+      )
+      content = await queryCollection('docs').path(route.path).first()
+    }
+
+    console.log('Loaded Content:', content) // Debugging
+    return content
   })
 
-  // const { data: page } = await useAsyncData(normalizedPath.value, () =>
-  //   queryCollection('docs')
-  //     .where('path', '=', normalizedPath.value)
-  //     .where('extension', '=', 'md') // Only Markdown files
-  //     .first()
-  // )
+  console.log({
+    page,
+    routePath: route.path
+    // availablePaths: allDocs.map(doc => doc.path)
+  })
 
-  console.log('page', page)
-
-  // const allDocs = await queryCollection('docs').all()
-  // console.log(
-  //   'Available Paths:',
-  //   allDocs.map(doc => doc.path)
-  // )
-  // console.log('Normalized Path:', normalizedPath.value)
-
-  const allDocs = await queryCollection('docs').all()
-  console.log(
-    'Available Paths:',
-    allDocs.map(doc => doc.path)
+  const { data: surround } = await useAsyncData(
+    `${route.path}-surround`,
+    () => {
+      return queryCollectionItemSurroundings('docs', route.path, {
+        fields: ['description']
+      })
+    }
   )
-  console.log('Normalized Path:', normalizedPath.value)
 
   if (!page.value) {
     throw createError({
@@ -43,23 +43,6 @@
       fatal: true
     })
   }
-
-  // if (!page.value || page.value.extension !== 'md') {
-  //   throw createError({
-  //     statusCode: 404,
-  //     statusMessage: 'Page not found',
-  //     fatal: true
-  //   })
-  // }
-
-  const { data: surround } = await useAsyncData(
-    `${normalizedPath.value}-surround`,
-    () => {
-      return queryCollectionItemSurroundings('docs', normalizedPath.value, {
-        fields: ['description']
-      })
-    }
-  )
 
   useSeoMeta({
     title: page.value.title,
@@ -73,12 +56,11 @@
 
 <template>
   <UPage v-if="page">
+    <!-- <UPage> -->
     <UPageHeader :title="page.title" :description="page.description" />
 
     <UPageBody>
       <ContentRenderer v-if="page.body" :value="page" />
-
-      <USeparator v-if="surround?.length" />
 
       <UContentSurround :surround="surround" />
     </UPageBody>

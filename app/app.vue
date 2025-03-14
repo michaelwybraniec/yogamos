@@ -1,16 +1,16 @@
 <script setup lang="ts">
-  import * as locales from '@nuxt/ui/locale'
+  // import * as locales from '@nuxt/ui/locale'
 
-  const { locale } = useI18n()
-  const lang = computed(() => locales[locale.value].code)
-  const dir = computed(() => locales[locale.value].dir)
+  // const { locale } = useI18n()
+  // const lang = computed(() => locales[locale.value].code)
+  // const dir = computed(() => locales[locale.value].dir)
 
-  useHead({
-    htmlAttrs: {
-      lang,
-      dir
-    }
-  })
+  // useHead({
+  //   htmlAttrs: {
+  //     lang,
+  //     dir
+  //   }
+  // })
 
   const colorMode = useColorMode()
 
@@ -31,10 +31,10 @@
         content: color
       }
     ],
-    link: [{ rel: 'icon', href: '/favicon.ico' }],
-    htmlAttrs: {
-      lang: 'en'
-    }
+    link: [{ rel: 'icon', href: '/favicon.ico' }]
+    // htmlAttrs: {
+    //   lang: 'en'
+    // }
   })
 
   useSeoMeta({
@@ -92,8 +92,8 @@
 </script>
 
 <template>
-  <UApp :locale="locales[locale]">
-    <!-- <UApp> -->
+  <!-- <UApp :locale="locales[locale]"> -->
+  <UApp>
     <NuxtLoadingIndicator />
 
     <NuxtLayout>

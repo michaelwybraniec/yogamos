@@ -8,11 +8,11 @@
     }
   })
 
-  useHead({
-    htmlAttrs: {
-      lang: 'en'
-    }
-  })
+  // useHead({
+  //   htmlAttrs: {
+  //     lang: 'en'
+  //   }
+  // })
 
   useSeoMeta({
     title: 'Page not found',

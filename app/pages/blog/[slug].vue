@@ -6,11 +6,13 @@
     queryCollection
   } from '#imports'
 
-  const { normalizedPath } = useNormalizedPath()
+  // const { normalizedPath } = useNormalizedPath()
+
+  const route = useRoute()
 
   // ✅ Fetch Post Data
   const { data: post } = await useAsyncData('single-post', () =>
-    queryCollection('posts').where('path', 'LIKE', normalizedPath.value).first()
+    queryCollection('posts').where('path', 'LIKE', route.path).first()
   )
 
   // ✅ Throw 404 if Post Not Found
@@ -52,9 +54,9 @@
   })
 
   const { data: surround } = await useAsyncData(
-    `${normalizedPath.value}-surround`,
+    `${route.path}-surround`,
     () => {
-      return queryCollectionItemSurroundings('posts', normalizedPath.value, {
+      return queryCollectionItemSurroundings('posts', route.path, {
         fields: ['description']
       })
     }

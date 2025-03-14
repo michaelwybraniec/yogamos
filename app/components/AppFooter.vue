@@ -3,50 +3,50 @@
 
   const columns = [
     {
-      label: 'Resources',
+      label: 'Yoga Resources',
       children: [
         {
-          label: 'Help center'
+          label: 'Asana Library'
         },
         {
-          label: 'Docs'
+          label: 'Meditation Guides'
         },
         {
-          label: 'Roadmap'
+          label: 'Breathwork Techniques'
         },
         {
-          label: 'Changelog'
+          label: 'Philosophy & Sutras'
         }
       ]
     },
     {
-      label: 'Features',
+      label: 'Practice',
       children: [
         {
-          label: 'Affiliates'
+          label: 'Online Classes'
         },
         {
-          label: 'Portal'
+          label: 'Workshops'
         },
         {
-          label: 'Jobs'
+          label: 'Challenges'
         },
         {
-          label: 'Sponsors'
+          label: 'Community Forum'
         }
       ]
     },
     {
-      label: 'Company',
+      label: 'About Us',
       children: [
         {
-          label: 'About'
+          label: 'Our Story'
         },
         {
-          label: 'Pricing'
+          label: 'Yoga Retreats'
         },
         {
-          label: 'Careers'
+          label: 'Instructors'
         },
         {
           label: 'Blog'
@@ -56,7 +56,6 @@
   ]
 
   const toast = useToast()
-
   const email = ref('')
   const loading = ref(false)
 
@@ -64,25 +63,21 @@
     loading.value = true
 
     toast.add({
-      title: 'Subscribed!',
-      description: 'You have been subscribed to our newsletter.'
+      title: 'Namaste! 🌿',
+      description: 'You’ve joined our yoga journey. Stay mindful!'
     })
   }
 </script>
 
 <template>
-  <USeparator icon="i-simple-icons-nuxtdotjs" class="h-px" />
+  <USeparator icon="i-ph-flower-duotone" class="h-px" />
   <UFooter :ui="{ top: 'border-b border-[var(--ui-border)]' }">
     <template #top>
       <UContainer>
         <UFooterColumns :columns="columns">
           <template #right>
             <form @submit.prevent="onSubmit">
-              <UFormField
-                name="email"
-                label="Subscribe to our newsletter"
-                size="lg"
-              >
+              <UFormField name="email" label="Join our Yoga Journey" size="lg">
                 <UInput
                   v-model="email"
                   type="email"
@@ -93,8 +88,8 @@
                     <UButton
                       type="submit"
                       size="xs"
-                      color="neutral"
-                      label="Subscribe"
+                      color="primary"
+                      label="Join"
                     />
                   </template>
                 </UInput>
@@ -107,7 +102,7 @@
 
     <template #left>
       <p class="text-sm text-(--ui-text-muted)">
-        Copyright © {{ new Date().getFullYear() }}. All rights reserved.
+        © {{ new Date().getFullYear() }} Yogamos. Stay present, stay balanced.
       </p>
     </template>
 

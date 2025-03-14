@@ -26,13 +26,13 @@ sections:
     features:
       - name: Yoga for Everyone
         description: Whether you're a beginner or an experienced practitioner, our guided classes and personalized programs fit your needs.
-        icon: i-lucide-yoga
+        icon: i-lucide-cog
       - name: Live & On-Demand Classes
         description: Join live classes or access a library of recorded sessions to practice anytime, anywhere.
-        icon: i-lucide-video
+        icon: i-lucide-check
       - name: Mindfulness & Meditation
         description: Learn breathwork, guided meditation, and relaxation techniques for mental clarity and well-being.
-        icon: i-lucide-brain
+        icon: i-lucide-lock
 
   - title: A Holistic Approach to Wellness
     description: YOGAMOS? is more than yoga—it’s a journey toward a balanced, healthy life. Our platform integrates movement, breathwork, and mindfulness to support your well-being.

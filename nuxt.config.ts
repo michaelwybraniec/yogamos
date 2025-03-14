@@ -4,14 +4,20 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/ui-pro',
     '@nuxt/content',
-    '@nuxtjs/i18n',
     'nuxt-og-image',
-    '@nuxtjs/mdc'
+    '@vueuse/nuxt',
+    '@nuxt/image'
   ],
 
   devtools: { enabled: true },
 
   css: ['~/assets/css/main.css'],
+
+  content: {
+    preview: {
+      api: 'https://api.nuxt.studio'
+    }
+  },
 
   ui: {
     // fonts: false
@@ -41,13 +47,15 @@ export default defineNuxtConfig({
         braceStyle: '1tbs'
       }
     }
-  },
-
-  i18n: {
-    locales: [
-      { code: 'es', iso: 'en-ES', name: 'Español' },
-      { code: 'en', iso: 'en-US', name: 'English' },
-      { code: 'fr', iso: 'fr-fr', name: 'Français' }
-    ]
   }
+
+  // i18n: {
+  //   strategy: 'no_prefix',
+  //   defaultLocale: 'en',
+  //   locales: [
+  //     { code: 'es', iso: 'en-ES', name: 'Español' },
+  //     { code: 'en', iso: 'en-US', name: 'English' },
+  //     { code: 'fr', iso: 'fr-fr', name: 'Français' }
+  //   ]
+  // }
 })
