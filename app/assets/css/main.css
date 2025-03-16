@@ -24,30 +24,107 @@
   --light-800: #796e64;
   --light-900: #5f554f;
   --light-950: #201c19;
+  /* Pebble */
+  --pebble-50: #e8e8e8;
+  --pebble-100: #d2d2d2;
+  --pebble-200: #bcbcbc;
+  --pebble-300: #a6a6a6;
+  --pebble-400: #909090;
+  --pebble-500: #7a7a7a;
+  --pebble-600: #656565;
+  --pebble-700: #505050;
+  --pebble-800: #3b3b3b;
+  --pebble-900: #272727;
+  --pebble-950: #151515;
+
+  /* Olive */
+  --olive-50: #f0eeea;
+  --olive-100: #dfdcd3;
+  --olive-200: #cfcaba;
+  --olive-300: #beb8a2;
+  --olive-400: #ada689;
+  --olive-500: #9c9471;
+  --olive-600: #8a8364;
+  --olive-700: #6f6950;
+  --olive-800: #55503d;
+  --olive-900: #3a3629;
+  --olive-950: #211e16;
+
+  /* Fern */
+  --fern-50: #f2f2e9;
+  --fern-100: #e1e1d3;
+  --fern-200: #d1d1bb;
+  --fern-300: #c1c1a4;
+  --fern-400: #b0b08c;
+  --fern-500: #9b997b;
+  --fern-600: #88886d;
+  --fern-700: #6d6d58;
+  --fern-800: #525244;
+  --fern-900: #37372f;
+  --fern-950: #1d1d1a;
+
+  /* Dusk */
+  --dusk-50: #f6f1f0;
+  --dusk-100: #ebdfdd;
+  --dusk-200: #deccc9;
+  --dusk-300: #d1b9b4;
+  --dusk-400: #c2a49f;
+  --dusk-500: #b38f8a;
+  --dusk-600: #9c7e78;
+  --dusk-700: #7f6561;
+  --dusk-800: #634c4a;
+  --dusk-900: #463433;
+  --dusk-950: #2a1e1d;
+
+  /* Ivory */
+  --ivory-50: #ffffff;
+  --ivory-100: #fefdfc;
+  --ivory-200: #fbf9f6;
+  --ivory-300: #f8f5f0;
+  --ivory-400: #f5f1ea;
+  --ivory-500: #f2ede4;
+  --ivory-600: #dcd6cd;
+  --ivory-700: #beb8af;
+  --ivory-800: #a09891;
+  --ivory-900: #837c74;
+  --ivory-950: #67605a;
+
+  /* Oat */
+  --oat-50: #faf8f7;
+  --oat-100: #f3edea;
+  --oat-200: #eae0db;
+  --oat-300: #dfd1c9;
+  --oat-400: #d3c1b6;
+  --oat-500: #c6b1a3;
+  --oat-600: #ad998c;
+  --oat-700: #8e7c70;
+  --oat-800: #6f6056;
+  --oat-900: #50443d;
+  --oat-950: #322925;
 }
 
 :root {
   /* Main background color */
-  --ui-bg: var(--light-200);
+  --ui-bg: var(--dusk-50);
   /* Subtle background */
-  --ui-bg-muted: var(--light-200);
+  --ui-bg-muted: var(--dusk-100);
   /* Slightly elevated background */
-  --ui-bg-elevated: var(--light-300);
+  --ui-bg-elevated: var(--dusk-200);
   /* More prominent background */
-  --ui-bg-accented: var(--light-500);
+  --ui-bg-accented: var(--dusk-300);
   /* Inverted background color */
-  --ui-bg-inverted: var(--light-900);
+  --ui-bg-inverted: var(--dusk-500);
 
-  --ui-border: var(--light-300);
+  --ui-border: var(--light-200);
 
   /* --font-sans: var(--font-poppins); */
 
   .max-w-\(\-\-ui-container\) {
     background-color: rgba(
-      202,
-      141,
-      88,
-      0.05
+      255,
+      255,
+      255,
+      0.2
     ) !important; /* Temporary background */
   }
 }
@@ -62,7 +139,7 @@
   /* More prominent background */
   --ui-bg-accented: var(--light-800);
   /* Inverted background color */
-  --ui-bg-inverted: var(--light-200);
+  --ui-bg-inverted: var(--light-300);
 
   --ui-border: var(--light-950);
 
@@ -71,7 +148,7 @@
       81,
       69,
       69,
-      0.01
+      0.013
     ) !important; /* Temporary background */
   }
 }

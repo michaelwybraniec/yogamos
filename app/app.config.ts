@@ -1,5 +1,7 @@
 export default defineAppConfig({
   ui: {
+    // primary: '#E0B892', // Dark mode
+    // primaryLight: '#FFDDC1', // Light mode
     colors: {
       primary: 'red',
       neutral: 'stone'

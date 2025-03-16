@@ -1,4 +1,6 @@
 <script setup lang="ts">
+  const colorMode = useColorMode()
+
   const { data: page } = await useAsyncData('index', () =>
     queryCollection('index').first()
   )
@@ -14,20 +16,14 @@
 
 <template>
   <div v-if="page">
-    <StarsBg />
+    <StarsBg v-if="colorMode.value === 'dark'" />
 
     <UPageHero
-      headline="YOGAMOS?"
+      :headline="page.hero.headline"
       :title="page.hero.title"
       :description="page.hero.description"
       :links="page.hero.links"
     >
-      <template #top>
-        <div
-          class="absolute left-1/2 size-60 -translate-x-1/2 -translate-y-80 transform rounded-full blur-[300px] sm:size-80 dark:bg-(--ui-primary)"
-        />
-      </template>
-
       <PromotionalVideo />
     </UPageHero>
 
@@ -88,8 +84,7 @@
         class="absolute left-1/2 size-40 -translate-x-1/2 -translate-y-80 transform rounded-full blur-[250px] sm:size-50 dark:bg-(--ui-primary)"
       />
 
-      <StarsBg />
-      <!-- <OtherBg /> -->
+      <StarsBg v-if="colorMode.value === 'dark'" />
     </UPageCTA>
   </div>
 </template>
