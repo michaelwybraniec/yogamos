@@ -1,44 +1,49 @@
-name: studio-nuxt-build
-run-name: studio nuxt build
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - 'main'
-  workflow_dispatch:
+      - main # Change this if your branch is different
 
 permissions:
-  contents: write
-
-concurrency:
-  group: 'pages'
-  cancel-in-progress: true
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Setup pnpm (Respect package.json)
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9.15.4 # Match the version from package.json
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: pnpm
+          node-version: 18
+          cache: 'pnpm'
 
-      - name: Install Dependencies
+      - name: Install pnpm
+        run: corepack enable && corepack prepare pnpm@latest --activate
+
+      - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Generate Static Site
+      - name: Generate static site
         run: pnpm run generate
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          folder: ./dist
+          path: .output/public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
