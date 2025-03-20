@@ -1,0 +1,53 @@
+title: About Us
+description: Discover the mission, values, and people behind Yogamos.
+navigation.icon: i-heroicons-information-circle
+hero:
+  title: A Sanctuary for Every Yogi
+  description: Yogamos is more than just yoga—it’s a journey toward balance, mindfulness, and self-discovery.
+  align: center
+mission:
+  title: Our Mission
+  description: 'At Yogamos, we aim to create a welcoming space where everyone, regardless of experience, can connect with their inner self through yoga, meditation, and mindfulness practices.'
+story:
+  title: Our Story
+  description: 'Yogamos was founded with the vision of making yoga accessible to all. Inspired by ancient traditions and modern wellness approaches, we have created a space that nurtures both body and mind.'
+founders:
+  title: Meet Our Instructors
+  description: 'Our team of experienced yogis and wellness experts bring their knowledge and passion to help guide you on your journey.'
+  team:
+    - name: Sebastian
+      role: Founder & Lead Instructor
+      bio: 'Sebastian has over 15 years of experience in yoga and mindfulness, specializing in Hatha and Pranayama practices.'
+      avatar:
+        src: https://i.pravatar.cc/120?img=1
+    - name: Anna
+      role: Senior Instructor
+      bio: 'A dedicated teacher with a background in Vinyasa and Yin Yoga, Sofia integrates movement and breathwork for holistic healing.'
+      avatar:
+        src: https://i.pravatar.cc/120?img=1
+    - name: Yash Joshi
+      role: Yoga & KingFu Coach
+      bio: 'Yash leads guided meditation and mindfulness workshops to help practitioners find inner peace and clarity.'
+      avatar:
+        src: https://media.licdn.com/dms/image/v2/D4E03AQGcWBxvOnu4tg/profile-displayphoto-shrink_400_400/B4EZRV2x_nHEAg-/0/1736607211888?e=1747872000&v=beta&t=wiasG_U6FaA-SSYqJNa5osMQs_SNA1oJHOQI486Qfj4
+faq:
+  title: Your Questions, Answered
+  description: Everything you need to know about Yogamos and our offerings.
+  items:
+    - label: What styles of yoga does Yogamos offer?
+      content: We offer a variety of styles including Hatha, Vinyasa, Yin, and guided meditation sessions.
+      defaultOpen: true
+    - label: Can beginners join Yogamos?
+      content: Absolutely! We provide beginner-friendly classes and resources to help you start your journey.
+    - label: How can I access live classes?
+      content: Live-streamed sessions are available in the Inner Balance and Mastery Path plans.
+    - label: Are there in-person events?
+      content: Yes! We organize retreats, workshops, and community gatherings throughout the year.
+    - label: Is Yogamos only online?
+      content: While our platform is digital-first, we also offer in-person retreats and pop-up classes in select locations.
+    - label: How do I become a certified yoga instructor through Yogamos?
+      content: The Mastery Path plan includes teacher training modules and certification opportunities.
+    - label: What equipment do I need?
+      content: A yoga mat is recommended, but many classes can be done with minimal or no equipment.
+    - label: Can I cancel my subscription anytime?
+      content: Yes, you can cancel or change plans anytime through your account settings.

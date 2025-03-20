@@ -10,7 +10,7 @@ hero:
     - label: Get Started
       icon: i-lucide-arrow-right
       trailing: true
-      to: /get-started
+      to: /pricing
       size: xl
     - label: Join Our Community
       icon: i-simple-icons-github
@@ -80,29 +80,29 @@ testimonials:
   items:
     - quote: 'Practicing with YOGAMOS? has been life-changing. The guided sessions and mindfulness techniques have helped me find balance in my daily life.'
       user:
-        name: Ana Castillo
-        description: Yoga Enthusiast
+        name: Sebastian
+        description: Yoga Teacher
         avatar:
           src: https://i.pravatar.cc/120?img=1
     - quote: 'I love the flexibility of live and recorded sessions. I can practice anytime, and the community support keeps me motivated.'
       user:
-        name: Diego Rojas
-        description: Fitness Coach
+        name: Yash Joshi
+        description: Yoga and Meditation enthusiast
         avatar:
-          src: https://i.pravatar.cc/120?img=7
+          src: https://media.licdn.com/dms/image/v2/D4E03AQGcWBxvOnu4tg/profile-displayphoto-shrink_400_400/B4EZRV2x_nHEAg-/0/1736607211888?e=1747872000&v=beta&t=wiasG_U6FaA-SSYqJNa5osMQs_SNA1oJHOQI486Qfj4
     - quote: 'The meditation and breathwork lessons have helped me reduce stress and improve my focus. Highly recommended!'
       user:
-        name: Mariana López
-        description: Meditation Practitioner
+        name: Michael Wybraniec
+        description: Yoga Practitioner
         avatar:
-          src: https://i.pravatar.cc/120?img=3
+          src: https://media.licdn.com/dms/image/v2/C4E03AQEKznnbjsuliQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1656410796143?e=1746662400&v=beta&t=TGYPBD1jyQlXOab9Whmp8A6CGB2aHX-BtZopFRLYUeU
 
 cta:
   title: Begin Your Yoga Journey with YOGAMOS?
   description: Sign up today and start transforming your mind and body with yoga.
   links:
     - label: Get Started
-      to: /get-started
+      to: /pricing
       icon: i-lucide-arrow-right
     - label: Learn More
       to: /about

@@ -74,10 +74,14 @@
   <UFooter :ui="{ top: 'border-b border-[var(--ui-border)]' }">
     <template #top>
       <UContainer>
-        <UFooterColumns :columns="columns">
+        <UFooterColumns :columns="columns" class="p-10">
           <template #right>
             <form @submit.prevent="onSubmit">
-              <UFormField name="email" label="Join our Yoga Journey" size="lg">
+              <UFormField
+                name="email"
+                label="Join our Yoga Journey"
+                size="lg"
+              >
                 <UInput
                   v-model="email"
                   type="email"
@@ -102,7 +106,10 @@
 
     <template #left>
       <p class="text-sm text-(--ui-text-muted)">
-        © {{ new Date().getFullYear() }} Yogamos. Stay present, stay balanced.
+        © {{ new Date().getFullYear() }} Yogamos! Powered by
+        <NuxtLink class="font-bold" to="https://one-front.com">
+          ONE-FRONT™
+        </NuxtLink>
       </p>
     </template>
 

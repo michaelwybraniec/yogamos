@@ -5,12 +5,13 @@
 
 @theme {
   --font-sans:
-    ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-    'Segoe UI Symbol', 'Noto Color Emoji';
-  --font-serif: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+    ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-serif:
+    ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
   --font-mono:
-    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
-    'Courier New', monospace;
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    'Liberation Mono', 'Courier New', monospace;
   --font-poppins: Poppins, sans-serif;
 
   --light-50: #fcfcfa;
@@ -20,10 +21,10 @@
   --light-400: #d9cfc0;
   --light-500: #cbbba8;
   --light-600: #b4a393;
-  --light-700: #96887b;
-  --light-800: #796e64;
-  --light-900: #5f554f;
-  --light-950: #201c19;
+  --light-700: #6c5f54;
+  --light-800: #3e3632;
+  --light-900: #302a28;
+  --light-950: #141212;
   /* Pebble */
   --pebble-50: #e8e8e8;
   --pebble-100: #d2d2d2;
@@ -73,7 +74,7 @@
   --dusk-600: #9c7e78;
   --dusk-700: #7f6561;
   --dusk-800: #634c4a;
-  --dusk-900: #463433;
+  --dusk-900: #382929;
   --dusk-950: #2a1e1d;
 
   /* Ivory */
@@ -109,13 +110,20 @@
   /* Subtle background */
   --ui-bg-muted: var(--dusk-100);
   /* Slightly elevated background */
-  --ui-bg-elevated: var(--dusk-200);
+  --ui-bg-elevated: var(--dusk-100);
   /* More prominent background */
   --ui-bg-accented: var(--dusk-300);
   /* Inverted background color */
-  --ui-bg-inverted: var(--dusk-500);
+  --ui-bg-inverted: var(--dusk-800);
 
-  --ui-border: var(--light-200);
+  /* Default border color */
+  --ui-border: var(--dusk-50);
+  /* Subtle border */
+  --ui-border-muted: var(--dusk-50);
+  /* More prominent border */
+  --ui-border-accented: var(--dusk-100);
+  /* Inverted border color */
+  --ui-border-inverted: var(--dusk-800);
 
   /* --font-sans: var(--font-poppins); */
 
@@ -124,7 +132,7 @@
       255,
       255,
       255,
-      0.2
+      0.5
     ) !important; /* Temporary background */
   }
 }
@@ -141,14 +149,22 @@
   /* Inverted background color */
   --ui-bg-inverted: var(--light-300);
 
+  /* --ui-border: var(--light-950); */
+  /* Default border color */
   --ui-border: var(--light-950);
+  /* Subtle border */
+  --ui-border-muted: var(--light-950);
+  /* More prominent border */
+  --ui-border-accented: var(--light-950);
+  /* Inverted border color */
+  --ui-border-inverted: var(--light-650);
 
   .max-w-\(\-\-ui-container\) {
     background-color: rgba(
-      81,
-      69,
-      69,
-      0.013
+      71,
+      57,
+      57,
+      0.068
     ) !important; /* Temporary background */
   }
 }

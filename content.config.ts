@@ -289,7 +289,7 @@ export const collections = {
               description: z.string().nonempty(),
               to: z.string().nonempty(),
               target: z.string().nonempty(),
-              avatar: imageSchema
+              avatar: z.object({ src: z.string().url().nonempty() })
             })
           })
         )
@@ -327,6 +327,50 @@ export const collections = {
         icons: z.array(z.string())
       }),
       faq: sectionSchema.extend({
+        items: z.array(
+          z.object({
+            label: z.string().nonempty(),
+            content: z.string().nonempty(),
+            defaultOpen: z.boolean().optional()
+          })
+        )
+      })
+    })
+  }),
+  about: defineCollection({
+    source: '4.about.yml',
+    type: 'data',
+    schema: z.object({
+      title: z.string().nonempty(),
+      description: z.string().optional(),
+      hero: z.object({
+        title: z.string().nonempty(),
+        description: z.string().nonempty(),
+        align: z.string().optional()
+      }),
+      mission: z.object({
+        title: z.string().nonempty(),
+        description: z.string().nonempty()
+      }),
+      story: z.object({
+        title: z.string().nonempty(),
+        description: z.string().nonempty()
+      }),
+      founders: z.object({
+        title: z.string().nonempty(),
+        description: z.string().nonempty(),
+        team: z.array(
+          z.object({
+            name: z.string().nonempty(),
+            role: z.string().nonempty(),
+            bio: z.string().nonempty(),
+            avatar: imageSchema.optional()
+          })
+        )
+      }),
+      faq: z.object({
+        title: z.string().nonempty(),
+        description: z.string().optional(),
         items: z.array(
           z.object({
             label: z.string().nonempty(),

@@ -28,7 +28,6 @@
       <NuxtLink to="/">
         <LogoPro class="h-6 w-auto shrink-0" />
       </NuxtLink>
-      <TemplateMenu />
       <NuxtLink to="/"> <b>YOGAMOS?</b> </NuxtLink>
     </template>
 
@@ -37,7 +36,13 @@
     <template #right>
       <LangSwitcher variant="ghost" />
       <UColorModeSwitch />
-      <UButton label="Sign in" color="neutral" variant="ghost" to="/login" />
+      <!-- <UColorModeSelect /> -->
+      <UButton
+        label="Sign in"
+        color="neutral"
+        variant="ghost"
+        to="/login"
+      />
       <UButton
         label="Sign up"
         color="neutral"
@@ -48,7 +53,11 @@
     </template>
 
     <template #body>
-      <UNavigationMenu :items="items" orientation="vertical" class="-mx-2.5" />
+      <UNavigationMenu
+        :items="items"
+        orientation="vertical"
+        class="-mx-2.5"
+      />
 
       <USeparator class="my-6" />
 

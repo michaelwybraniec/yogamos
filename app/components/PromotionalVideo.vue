@@ -9,7 +9,7 @@
       :class="
         colorMode.value === 'dark'
           ? 'rounded-2xl [--spotlight-size:1000px]'
-          : 'rounded-2xl [--spotlight-color:var(--dusk-800)] [--spotlight-size:100px]'
+          : 'rounded-2xl [--spotlight-color:var(--dusk-500)] [--spotlight-size:150px]'
       "
       title="Find Balance with Yogamos!"
       description="Experience the benefits of yoga with Yogamos. Improve flexibility, strength, and mindfulness through guided sessions and community support. It is your space to reconnect with yourself through yoga. Whether you’re just starting or deepening your practice, we provide guided sessions, meditation practices, and wellness insights to support your journey. "

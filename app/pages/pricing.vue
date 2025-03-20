@@ -30,6 +30,7 @@
 <template>
   <div v-if="page">
     <!-- Page Hero Section -->
+
     <UPageHero v-bind="page.hero">
       <template #links>
         <UTabs
@@ -51,7 +52,9 @@
           :title="plan.title"
           :description="plan.description"
           :features="plan.features"
-          :price="isYearly === '1' ? plan.price.year : plan.price.month"
+          :price="
+            isYearly === '1' ? plan.price.year : plan.price.month
+          "
           :billing-cycle="isYearly === '1' ? '/year' : '/month'"
         />
       </UPricingPlans>
@@ -69,11 +72,14 @@
     </UPageSection>
 
     <!-- FAQ Section -->
-    <UPageSection :title="page.faq?.title" :description="page.faq?.description">
+    <UPageSection
+      :title="page.faq?.title"
+      :description="page.faq?.description"
+    >
       <UPageAccordion
         :items="page.faq?.items ?? []"
         multiple
-        class="mx-auto max-w-4xl"
+        class="mx-auto max-w-7xl"
       />
     </UPageSection>
   </div>

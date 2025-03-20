@@ -16,8 +16,14 @@
 
 <template>
   <div v-if="page">
-    <StarsBg v-if="colorMode.value === 'dark'" />
-
+    <UBanner
+      to="https://one-front.com"
+      size="xs"
+      target="_blank"
+      color="stone"
+      icon="i-lucide-info"
+      title="The Yogamos service is currently in development, powered by ONE-FRONT™."
+    />
     <UPageHero
       :headline="page.hero.headline"
       :title="page.hero.title"
@@ -25,6 +31,7 @@
       :links="page.hero.links"
     >
       <PromotionalVideo />
+      <StarsBg v-show="colorMode.value === 'dark'" />
     </UPageHero>
 
     <UPageSection
@@ -43,12 +50,17 @@
       :title="page.features.title"
       :description="page.features.description"
     >
-      <UPageGrid>
+      <UPageGrid v-if="colorMode.value">
         <UPageCard
           v-for="(item, index) in page.features.items"
           :key="index"
           v-bind="item"
           spotlight
+          :class="
+            colorMode.value === 'dark'
+              ? 'rounded-2xl [--spotlight-size:1000px]'
+              : 'rounded-2xl [--spotlight-color:var(--dusk-400)] [--spotlight-size:50px]'
+          "
         />
       </UPageGrid>
     </UPageSection>
@@ -79,12 +91,16 @@
 
     <USeparator />
 
-    <UPageCTA v-bind="page.cta" variant="naked" class="overflow-hidden">
+    <UPageCTA
+      v-bind="page.cta"
+      variant="naked"
+      class="overflow-hidden"
+    >
       <div
         class="absolute left-1/2 size-40 -translate-x-1/2 -translate-y-80 transform rounded-full blur-[250px] sm:size-50 dark:bg-(--ui-primary)"
       />
 
-      <StarsBg v-if="colorMode.value === 'dark'" />
+      <StarsBg v-show="colorMode.value === 'dark'" />
     </UPageCTA>
   </div>
 </template>
