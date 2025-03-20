@@ -11,6 +11,13 @@ export default defineNuxtConfig({
 
   devtools: { enabled: true },
 
+  app: {
+    baseURL: '/yogamos/' // Required for GitHub Pages
+  },
+  generate: {
+    routes: ['/']
+  },
+
   css: ['~/assets/css/main.css'],
 
   content: {
