@@ -19,6 +19,24 @@
   //     })
   //   }
   // })
+
+  const features = [
+    {
+      title: page.value.mission.title,
+      description: page.value.mission.description,
+      icon: 'i-lucide-smile'
+    },
+    {
+      title: page.value.story.title,
+      description: page.value.story.description,
+      icon: 'i-lucide-rocket'
+    },
+    {
+      title: page.value.founders.title,
+      description: page.value.founders.description,
+      icon: 'i-lucide-user-circle'
+    }
+  ]
 </script>
 
 <template>
@@ -27,14 +45,25 @@
   </div>
 
   <div v-else>
-    <!-- <UPageHeader v-bind="page" class="py-[50px]" /> -->
     <UPageSection
       :title="page.title"
       :description="page.description"
-    />
-    <!-- {{ page }} -->
+      :features="features"
+      orientation="horizontal"
+      icon="i-lucide-users"
+      reverse
+    >
+      <NuxtImg
+        src="/yogamos_logo.svg"
+        alt="Yogamos Logo"
+        sizes="100vw sm:50vw md:400px"
+        densities="x1 x2"
+        placeholder="/yogamos_logo.svg"
+        class="w-full rounded-[calc(var(--ui-radius)*2)]"
+      />
+    </UPageSection>
 
-    <!-- <USeparator /> -->
+    <USeparator />
     <UContainer>
       <UCard variant="soft">
         <UPageGrid class="gap-6">
