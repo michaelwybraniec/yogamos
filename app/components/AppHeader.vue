@@ -72,4 +72,12 @@
       <UButton label="Sign up" color="neutral" to="/signup" block />
     </template>
   </UHeader>
+  <UBanner
+    to="https://one-front.com"
+    size="xs"
+    target="_blank"
+    class="bg-stone-500 text-stone-50"
+    icon="i-lucide-info"
+    title="The Yogamos service is currently in development, powered by ONE-FRONT™."
+  />
 </template>
