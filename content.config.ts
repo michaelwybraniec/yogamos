@@ -261,11 +261,7 @@ export const collections = {
       title: z.string().nonempty(),
       description: z.string().nonempty(),
       hero: sectionSchema.extend({
-        headline: z.object({
-          label: z.string().nonempty(),
-          to: z.string().nonempty(),
-          icon: z.string().nonempty()
-        }),
+        headline: z.string().nonempty(), // Updated to expect a string
         links: z.array(linkSchema)
       }),
       sections: z.array(

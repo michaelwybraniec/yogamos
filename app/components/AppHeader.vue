@@ -24,6 +24,14 @@
 
 <template>
   <UHeader>
+    <UBanner
+      to="https://one-front.com"
+      size="xs"
+      target="_blank"
+      class="bg-stone-500 text-white"
+      icon="i-lucide-info"
+      title="The Yogamos service is currently in development, powered by ONE-FRONT™."
+    />
     <template #left>
       <NuxtLink to="/">
         <LogoPro class="h-6 w-auto shrink-0" />
