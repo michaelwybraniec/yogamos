@@ -19,9 +19,7 @@ export default defineNuxtConfig({
     }
   },
 
-  ui: {
-    // fonts: false
-  },
+  ui: {},
 
   future: {
     compatibilityVersion: 4
@@ -50,16 +48,7 @@ export default defineNuxtConfig({
   },
 
   app: {
-    baseURL: process.env.NUXT_PUBLIC_APP_BASE_URL || '/'
+    baseURL: process.env.NUXT_PUBLIC_APP_BASE_URL || '/yogamos/',
+    cdnURL: undefined
   }
-
-  // i18n: {
-  //   strategy: 'no_prefix',
-  //   defaultLocale: 'en',
-  //   locales: [
-  //     { code: 'es', iso: 'en-ES', name: 'Español' },
-  //     { code: 'en', iso: 'en-US', name: 'English' },
-  //     { code: 'fr', iso: 'fr-fr', name: 'Français' }
-  //   ]
-  // }
 })
