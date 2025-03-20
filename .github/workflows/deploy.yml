@@ -21,10 +21,10 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Install pnpm
-        run: |
-          corepack enable
-          corepack prepare pnpm@latest --activate
+      - name: Setup pnpm (Respect package.json)
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.4 # Match the version from package.json
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
