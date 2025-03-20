@@ -47,6 +47,10 @@ export default defineNuxtConfig({
         braceStyle: '1tbs'
       }
     }
+  },
+
+  app: {
+    baseURL: process.env.NUXT_PUBLIC_APP_BASE_URL || '/'
   }
 
   // i18n: {

@@ -32,6 +32,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Set correct base URL for GitHub Pages
+        run: echo "NUXT_PUBLIC_APP_BASE_URL=/yogamos/" >> $GITHUB_ENV
+
       - name: Generate static site
         run: pnpm run generate
 
