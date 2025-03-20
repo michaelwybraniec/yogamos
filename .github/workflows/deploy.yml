@@ -26,6 +26,9 @@ jobs:
           node-version: 18
           cache: 'pnpm'
 
+      - name: Inject Nuxt UI Pro License
+        run: echo "NUXT_UI_PRO_LICENSE=${{ secrets.NUXT_UI_PRO_LICENSE }}" >> $GITHUB_ENV
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
