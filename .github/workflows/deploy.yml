@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main # Change this if your branch is different
+      - main
 
 permissions:
   contents: read
@@ -17,11 +17,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 🟢 Install pnpm before using it
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
-        with:
-          version: 9.15.4 # Ensure this matches package.json
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
