@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - gh_pages # Change from main to gh_pages
+      - gh_pages
 
 permissions:
   contents: read
