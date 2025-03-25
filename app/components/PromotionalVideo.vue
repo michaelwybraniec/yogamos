@@ -20,16 +20,14 @@
       :ui="{
         description: 'text-[18px]',
         title: 'text-[24px]'
-      }"
-    >
+      }">
       <NuxtImg
         src="/yogamos_logo.svg"
         alt="Yogamos Logo"
         sizes="100vw sm:50vw md:400px"
         densities="x1 x2"
         class="w-full"
-        placeholder="/yogamos_logo.svg"
-      />
+        placeholder="/yogamos_logo.svg" />
     </UPageCard>
   </div>
 </template>

@@ -38,8 +38,7 @@
           :items="items"
           color="neutral"
           class="w-72"
-          :ui="{ list: 'rounded-full', indicator: 'rounded-full' }"
-        />
+          :ui="{ list: 'rounded-full', indicator: 'rounded-full' }" />
       </template>
     </UPageHero>
 
@@ -55,8 +54,7 @@
           :price="
             isYearly === '1' ? plan.price.year : plan.price.month
           "
-          :billing-cycle="isYearly === '1' ? '/year' : '/month'"
-        />
+          :billing-cycle="isYearly === '1' ? '/year' : '/month'" />
       </UPricingPlans>
     </UContainer>
 
@@ -66,21 +64,18 @@
           v-for="icon in page.logos.icons"
           :key="icon"
           :name="icon"
-          class="h-12 w-12 flex-shrink-0 text-(--ui-text-muted)"
-        />
+          class="h-12 w-12 flex-shrink-0 text-(--ui-text-muted)" />
       </UPageLogos>
     </UPageSection>
 
     <!-- FAQ Section -->
     <UPageSection
       :title="page.faq?.title"
-      :description="page.faq?.description"
-    >
+      :description="page.faq?.description">
       <UPageAccordion
         :items="page.faq?.items ?? []"
         multiple
-        class="mx-auto max-w-7xl"
-      />
+        class="mx-auto max-w-7xl" />
     </UPageSection>
   </div>
 </template>

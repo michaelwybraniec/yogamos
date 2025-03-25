@@ -51,16 +51,14 @@
       :features="features"
       orientation="horizontal"
       icon="i-lucide-users"
-      reverse
-    >
+      reverse>
       <NuxtImg
         src="/yogamos_logo.svg"
         alt="Yogamos Logo"
         sizes="100vw sm:50vw md:400px"
         densities="x1 x2"
         placeholder="/yogamos_logo.svg"
-        class="w-full rounded-[calc(var(--ui-radius)*2)]"
-      />
+        class="w-full rounded-[calc(var(--ui-radius)*2)]" />
     </UPageSection>
 
     <USeparator />
@@ -73,26 +71,22 @@
             orientation="vertical"
             reverse
             variant="soft"
-            class="inverted flex flex-col rounded-xl p-6 text-center"
-          >
+            class="inverted flex flex-col rounded-xl p-6 text-center">
             <NuxtImg
               :src="person.avatar.src"
               alt="Team member avatar"
               placeholder
               class="h-auto w-24 rounded-full border-5 sm:w-[10cm] md:w-[10cm]"
-              densities="x1 x2"
-            />
+              densities="x1 x2" />
             <div
-              class="mt-4 text-xl font-semibold text-gray-900 dark:text-white"
-            >
+              class="mt-4 text-xl font-semibold text-gray-900 dark:text-white">
               {{ person.name }}
             </div>
             <div class="text-md text-gray-600 dark:text-gray-400">
               {{ person.role }}
             </div>
             <div
-              class="text-sm text-gray-500 italic dark:text-gray-400"
-            >
+              class="text-sm text-gray-500 italic dark:text-gray-400">
               {{ person.bio }}
             </div>
           </UPageCard>
@@ -108,13 +102,11 @@
     <!-- FAQ Section -->
     <UPageSection
       :title="page.faq?.title"
-      :description="page.faq?.description"
-    >
+      :description="page.faq?.description">
       <UPageAccordion
         :items="page.faq?.items ?? []"
         multiple
-        class="mx-auto max-w-4xl"
-      />
+        class="mx-auto max-w-4xl" />
     </UPageSection>
   </div>
 </template>

@@ -51,8 +51,7 @@
           :ui="{
             description: 'line-clamp-2'
           }"
-          variant="soft"
-        />
+          variant="soft" />
       </UBlogPosts>
     </UPageBody>
   </UContainer>

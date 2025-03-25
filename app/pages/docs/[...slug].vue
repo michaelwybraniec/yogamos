@@ -17,15 +17,15 @@
       content = await queryCollection('docs').path(route.path).first()
     }
 
-    console.log('Loaded Content:', content) // Debugging
+    // console.log('Loaded Content:', content) // Debugging
     return content
   })
 
-  console.log({
-    page,
-    routePath: route.path
-    // availablePaths: allDocs.map(doc => doc.path)
-  })
+  // console.log({
+  // page,
+  // routePath: route.path
+  // availablePaths: allDocs.map(doc => doc.path)
+  // })
 
   const { data: surround } = await useAsyncData(
     `${route.path}-surround`,
@@ -57,7 +57,9 @@
 <template>
   <UPage v-if="page">
     <!-- <UPage> -->
-    <UPageHeader :title="page.title" :description="page.description" />
+    <UPageHeader
+      :title="page.title"
+      :description="page.description" />
 
     <UPageBody>
       <ContentRenderer v-if="page.body" :value="page" />

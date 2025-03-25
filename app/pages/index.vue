@@ -20,8 +20,7 @@
       :headline="page.hero.headline"
       :title="page.hero.title"
       :description="page.hero.description"
-      :links="page.hero.links"
-    >
+      :links="page.hero.links">
       <PromotionalVideo />
       <StarsBg v-show="colorMode.value === 'dark'" />
     </UPageHero>
@@ -33,15 +32,13 @@
       :description="section.description"
       :orientation="section.orientation"
       :reverse="section.reverse"
-      :features="section.features"
-    >
+      :features="section.features">
       <ImagePlaceholder />
     </UPageSection>
 
     <UPageSection
       :title="page.features.title"
-      :description="page.features.description"
-    >
+      :description="page.features.description">
       <UPageGrid v-if="colorMode.value">
         <UPageCard
           v-for="(item, index) in page.features.items"
@@ -52,8 +49,7 @@
             colorMode.value === 'dark'
               ? 'rounded-2xl [--spotlight-size:1000px]'
               : 'rounded-2xl [--spotlight-color:var(--dusk-400)] [--spotlight-size:50px]'
-          "
-        />
+          " />
       </UPageGrid>
     </UPageSection>
 
@@ -61,8 +57,7 @@
       id="testimonials"
       :headline="page.testimonials.headline"
       :title="page.testimonials.title"
-      :description="page.testimonials.description"
-    >
+      :description="page.testimonials.description">
       <UPageColumns class="xl:columns-4">
         <UPageCard
           v-for="(testimonial, index) in page.testimonials.items"
@@ -72,8 +67,7 @@
           :ui="{
             description:
               'before:content-[open-quote] after:content-[close-quote]'
-          }"
-        >
+          }">
           <template #footer>
             <UUser v-bind="testimonial.user" size="lg" />
           </template>
@@ -86,11 +80,9 @@
     <UPageCTA
       v-bind="page.cta"
       variant="naked"
-      class="overflow-hidden"
-    >
+      class="overflow-hidden">
       <div
-        class="absolute left-1/2 size-40 -translate-x-1/2 -translate-y-80 transform rounded-full blur-[250px] sm:size-50 dark:bg-(--ui-primary)"
-      />
+        class="absolute left-1/2 size-40 -translate-x-1/2 -translate-y-80 transform rounded-full blur-[250px] sm:size-50 dark:bg-(--ui-primary)" />
 
       <StarsBg v-show="colorMode.value === 'dark'" />
     </UPageCTA>

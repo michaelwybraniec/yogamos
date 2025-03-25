@@ -80,21 +80,18 @@
               <UFormField
                 name="email"
                 label="Join our Yoga Journey"
-                size="lg"
-              >
+                size="lg">
                 <UInput
                   v-model="email"
                   type="email"
                   class="w-full"
-                  placeholder="Enter your email"
-                >
+                  placeholder="Enter your email">
                   <template #trailing>
                     <UButton
                       type="submit"
                       size="xs"
                       color="primary"
-                      label="Join"
-                    />
+                      label="Join" />
                   </template>
                 </UInput>
               </UFormField>
@@ -122,8 +119,7 @@
         icon="i-simple-icons-github"
         aria-label="GitHub"
         color="neutral"
-        variant="ghost"
-      />
+        variant="ghost" />
     </template>
   </UFooter>
 </template>

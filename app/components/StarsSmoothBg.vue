@@ -1,10 +1,6 @@
 <template>
   <div class="streaks">
-    <div
-      v-for="i in 20"
-      :key="i"
-      class="streak"
-    />
+    <div v-for="i in 20" :key="i" class="streak" />
   </div>
 </template>
 

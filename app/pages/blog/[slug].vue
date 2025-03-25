@@ -30,11 +30,17 @@
   )
 
   // Helper Functions for Breadcrumbs
-  function findPageBreadcrumb(navigation: any[], path: string): any[] {
+  function findPageBreadcrumb(
+    navigation: any[],
+    path: string
+  ): any[] {
     for (const item of navigation) {
       if (item.path === path) return [item]
       if (item.children) {
-        const childBreadcrumb = findPageBreadcrumb(item.children, path)
+        const childBreadcrumb = findPageBreadcrumb(
+          item.children,
+          path
+        )
         if (childBreadcrumb.length) return [item, ...childBreadcrumb]
       }
     }
@@ -42,7 +48,10 @@
   }
 
   function mapContentNavigation(breadcrumb: any[]): any[] {
-    return breadcrumb.map(({ title, path }) => ({ label: title, to: path }))
+    return breadcrumb.map(({ title, path }) => ({
+      label: title,
+      to: path
+    }))
   }
 
   // Compute Breadcrumbs
@@ -91,7 +100,7 @@
       <UPageBody prose>
         <UBreadcrumb :items="breadcrumb" />
         <ContentRenderer v-if="post && post.body" :value="post" />
-        <hr v-if="surround?.length" />
+        <hr v-if="surround?.length">
         <UContentSurround :surround="surround" />
       </UPageBody>
 
@@ -104,8 +113,7 @@
               id: link.id,
               depth: 1
             }))
-          "
-        />
+          " />
       </template>
     </UPage>
   </UContainer>

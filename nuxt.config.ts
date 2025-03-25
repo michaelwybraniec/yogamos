@@ -21,6 +21,7 @@ export default defineNuxtConfig({
 
   ui: {
     // fonts: false
+    // icons: ['ph', 'simple-icons']
   },
 
   future: {

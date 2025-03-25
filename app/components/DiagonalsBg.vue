@@ -1,7 +1,6 @@
 <template>
   <div
-    class="stars pointer-events-none absolute inset-x-0 top-0 size-full opacity-75"
-  >
+    class="stars pointer-events-none absolute inset-x-0 top-0 size-full opacity-75">
     <div class="bg" />
     <div class="bg bg2" />
     <div class="bg bg3" />
