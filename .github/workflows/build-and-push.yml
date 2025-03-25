@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Build and Push to gh-pages branch
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 permissions:
-  contents: read
+  contents: write # Allows pushing to gh-pages
   pages: write
   id-token: write
 
@@ -35,21 +35,8 @@ jobs:
       - name: Generate static site
         run: pnpm run generate
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Push to gh-pages
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          path: .output/public
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v4
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          branch: gh-pages
+          folder: .output/public

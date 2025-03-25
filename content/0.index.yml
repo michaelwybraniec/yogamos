@@ -13,7 +13,7 @@ hero:
       to: /pricing
       size: xl
     - label: Join Our Community
-      icon: i-simple-icons-github
+      icon: i-mingcute-group-3-fill
       size: xl
       color: neutral
       variant: subtle

@@ -45,11 +45,15 @@
           :key="index"
           v-bind="item"
           spotlight
-          :class="
-            colorMode.value === 'dark'
-              ? 'rounded-2xl [--spotlight-size:1000px]'
-              : 'rounded-2xl [--spotlight-color:var(--dusk-400)] [--spotlight-size:50px]'
-          " />
+          class="rounded-2xl"
+          :style="{
+            '--spotlight-size':
+              colorMode.value === 'dark' ? '1000px' : '300px', // Ensure same value on both SSR and client
+            '--spotlight-color':
+              colorMode.value === 'dark'
+                ? undefined
+                : 'var(--dusk-400)'
+          }" />
       </UPageGrid>
     </UPageSection>
 

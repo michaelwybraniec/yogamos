@@ -6,7 +6,8 @@ export default defineNuxtConfig({
     '@nuxt/content',
     'nuxt-og-image',
     '@vueuse/nuxt',
-    '@nuxt/image'
+    '@nuxt/image',
+    '@nuxt/test-utils/module'
   ],
 
   devtools: { enabled: true },

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+  const colorMode = useColorMode()
+
   const { data: page } = await useAsyncData('about', () =>
     queryCollection('about').first()
   )
@@ -6,19 +8,6 @@
 
   // Define Open Graph Image Component
   defineOgImageComponent('Saas')
-
-  console.log({ page, routePath: route.path })
-  // Ensure page data is available before setting meta tags
-  // watchEffect(() => {
-  //   if (page.value) {
-  //     useSeoMeta({
-  //       title: page.value?.title,
-  //       ogTitle: page.value?.title,
-  //       description: page.value?.description,
-  //       ogDescription: page.value?.description
-  //     })
-  //   }
-  // })
 
   const features = [
     {
@@ -72,12 +61,23 @@
             reverse
             variant="soft"
             class="inverted flex flex-col rounded-xl p-6 text-center">
-            <NuxtImg
-              :src="person.avatar.src"
-              alt="Team member avatar"
-              placeholder
-              class="h-auto w-24 rounded-full border-5 sm:w-[10cm] md:w-[10cm]"
-              densities="x1 x2" />
+            <StarsBg v-show="colorMode.value === 'dark'" />
+
+            <div class="flex justify-center">
+              <NuxtImg
+                :src="person.avatar.src"
+                alt="Team member avatar"
+                placeholder
+                class="h-auto w-60 rounded-full border-[10px] sm:w-60 md:w-60 lg:w-60"
+                :style="{
+                  borderColor:
+                    colorMode.value === 'dark'
+                      ? 'var(--light-900)'
+                      : 'var(--dusk-100)'
+                }"
+                densities="x1 x2" />
+            </div>
+
             <div
               class="mt-4 text-xl font-semibold text-gray-900 dark:text-white">
               {{ person.name }}

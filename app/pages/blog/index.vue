@@ -23,6 +23,10 @@
   })
 
   defineOgImageComponent('Saas')
+
+  definePageMeta({
+    layout: 'default'
+  })
 </script>
 
 <template>
