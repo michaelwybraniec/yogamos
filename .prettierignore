@@ -1,8 +1,0 @@
-node_modules
-dist
-.output
-.nuxt
-yarn.lock
-pnpm-lock.yaml
-package-lock.json
-content/**/*.md
