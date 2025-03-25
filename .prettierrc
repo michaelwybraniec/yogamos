@@ -1,6 +1,5 @@
 {
   "semi": false,
-  "singleQuote": true,
   "trailingComma": "none",
   "tabWidth": 2,
   "printWidth": 70,
@@ -9,23 +8,19 @@
   "useTabs": false,
   "vueIndentScriptAndStyle": true,
   "endOfLine": "auto",
-  "plugins": [
-    "prettier-plugin-tailwindcss"
-  ],
+  "bracketSameLine": true,
+  "singleQuote": true,
+  "quoteProps": "as-needed",
+  "plugins": ["prettier-plugin-tailwindcss"],
   "overrides": [
     {
-      "files": [
-        "*.md",
-        "*.mdc"
-      ],
+      "files": ["*.md", "*.mdc"],
       "options": {
         "parser": "markdown"
       }
     },
     {
-      "files": [
-        "*.vue"
-      ],
+      "files": ["*.vue"],
       "options": {
         "parser": "vue"
       }

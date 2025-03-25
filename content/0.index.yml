@@ -59,13 +59,13 @@ features:
       icon: i-lucide-play
     - title: Flexibility & Strength
       description: Build physical strength while improving flexibility and mobility.
-      icon: i-lucide-flexibility
+      icon: i-lucide-cat
     - title: Meditation & Relaxation
       description: Find inner peace with guided meditation and breathwork techniques.
       icon: i-lucide-moon
     - title: Mobile & Web Access
       description: Practice anytime, anywhere with our seamless mobile and web platform.
-      icon: i-lucide-device-mobile
+      icon: i-lucide-smartphone
     - title: Holistic Approach
       description: Beyond yoga—nutrition, self-care, and mindfulness to support your overall well-being.
       icon: i-lucide-heart

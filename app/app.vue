@@ -106,8 +106,7 @@
         shortcut="meta_k"
         :navigation="navigation"
         :links="links"
-        :fuse="{ resultLimit: 42 }"
-      />
+        :fuse="{ resultLimit: 42 }" />
     </ClientOnly>
   </UApp>
 </template>

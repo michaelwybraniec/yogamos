@@ -29,7 +29,8 @@ export default defineNuxtSchema({
             light: field({
               type: 'icon',
               title: 'Light mode',
-              description: 'Icon of color mode button for light mode.',
+              description:
+                'Icon of color mode button for light mode.',
               icon: 'i-mdi-white-balance-sunny',
               default: 'i-lucide-sun'
             }),

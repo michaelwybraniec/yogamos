@@ -39,14 +39,20 @@
       label: 'Google',
       icon: 'i-simple-icons-google',
       onClick: () => {
-        toast.add({ title: 'Google', description: 'Login with Google' })
+        toast.add({
+          title: 'Google',
+          description: 'Login with Google'
+        })
       }
     },
     {
       label: 'GitHub',
       icon: 'i-simple-icons-github',
       onClick: () => {
-        toast.add({ title: 'GitHub', description: 'Login with GitHub' })
+        toast.add({
+          title: 'GitHub',
+          description: 'Login with GitHub'
+        })
       }
     }
   ]
@@ -58,8 +64,25 @@
 
   type Schema = z.output<typeof schema>
 
-  function onSubmit(payload: FormSubmitEvent<Schema>) {
+  // function onSubmit(payload: FormSubmitEvent<Schema>) {
+  //   console.log('Submitted', payload)
+  // }
+
+  const loading = ref(false)
+
+  async function onSubmit(payload: FormSubmitEvent<Schema>) {
+    if (loading.value) return
+    loading.value = true
+
     console.log('Submitted', payload)
+    toast.add({
+      title: 'Submitted successfully!',
+      description: `${payload.data.email}`
+    })
+
+    setTimeout(() => {
+      loading.value = false
+    }, 2000) // Simulating API call
   }
 </script>
 
@@ -70,11 +93,13 @@
     :providers="providers"
     title="Welcome back"
     icon="i-lucide-lock"
-    @submit="onSubmit"
-  >
+    :submit="{ label: 'Create account', loading }"
+    @submit="onSubmit">
     <template #description>
       Don't have an account?
-      <ULink to="/signup" class="text-primary-500 font-medium">Sign up</ULink>.
+      <ULink to="/signup" class="text-primary-500 font-medium">
+        Sign up.
+      </ULink>
     </template>
 
     <template #password-hint>
@@ -85,8 +110,9 @@
 
     <template #footer>
       By signing in, you agree to our
-      <ULink to="/" class="text-primary-500 font-medium">Terms of Service</ULink
-      >.
+      <ULink to="/" class="text-primary-500 font-medium">
+        Terms of Service.
+      </ULink>
     </template>
   </UAuthForm>
 </template>

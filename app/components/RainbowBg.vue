@@ -4,8 +4,7 @@
       v-for="i in 25"
       :key="i"
       class="rainbow"
-      :style="getRainbowStyle(i)"
-    />
+      :style="getRainbowStyle(i)" />
     <div class="h" />
     <div class="v" />
   </div>

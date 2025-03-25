@@ -38,26 +38,23 @@
       <UColorModeSwitch />
       <!-- <UColorModeSelect /> -->
       <UButton
-        label="Sign in"
+        label="Login"
         color="neutral"
         variant="ghost"
-        to="/login"
-      />
+        to="/login" />
       <UButton
         label="Sign up"
         color="neutral"
         trailing-icon="i-lucide-arrow-right"
         class="hidden lg:flex"
-        to="/signup"
-      />
+        to="/signup" />
     </template>
 
     <template #body>
       <UNavigationMenu
         :items="items"
         orientation="vertical"
-        class="-mx-2.5"
-      />
+        class="-mx-2.5" />
 
       <USeparator class="my-6" />
 
@@ -67,8 +64,7 @@
         variant="subtle"
         to="/login"
         block
-        class="mb-3"
-      />
+        class="mb-3" />
       <UButton label="Sign up" color="neutral" to="/signup" block />
     </template>
   </UHeader>
@@ -78,6 +74,5 @@
     target="_blank"
     class="bg-stone-500 text-stone-50"
     icon="i-lucide-info"
-    title="The Yogamos service is currently in development, powered by ONE-FRONT™."
-  />
+    title="The Yogamos service is currently in development, powered by ONE-FRONT™." />
 </template>

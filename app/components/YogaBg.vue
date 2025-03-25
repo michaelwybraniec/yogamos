@@ -4,8 +4,7 @@
       v-for="(orb, index) in orbs"
       :key="index"
       class="orb"
-      :style="getOrbStyle(index)"
-    />
+      :style="getOrbStyle(index)" />
   </div>
 </template>
 
@@ -64,7 +63,9 @@
     '--orb-speed': orbs[index].speed,
     '--orb-orbit': orbs[index].orbit,
     '--orb-color':
-      colorMode.value === 'dark' ? orbs[index].dark : orbs[index].light,
+      colorMode.value === 'dark'
+        ? orbs[index].dark
+        : orbs[index].light,
     '--start-rotation': `${Math.random() * 360}deg`
   })
 </script>
@@ -72,8 +73,8 @@
 <style scoped>
   @keyframes orbit {
     0% {
-      transform: rotate(var(--start-rotation)) translateX(var(--orb-orbit))
-        rotate(0deg);
+      transform: rotate(var(--start-rotation))
+        translateX(var(--orb-orbit)) rotate(0deg);
     }
     100% {
       transform: rotate(calc(var(--start-rotation) + 360deg))
