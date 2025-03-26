@@ -21,12 +21,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'yarn'
+          cache: yarn
+          cache-dependency-path: yarn.lock
 
       - name: Inject Nuxt UI Pro License
         run: |
           echo "NUXT_UI_PRO_LICENSE=${{ secrets.NUXT_UI_PRO_LICENSE }}" >> $GITHUB_ENV
-          echo "NITRO_PRESET=static" >> $GITHUB_ENV
+          echo "NITRO_PRESET=github_pages" >> $GITHUB_ENV
           echo "NUXT_PUBLIC_APP_BASE_URL=/yogamos/" >> $GITHUB_ENV
 
       - name: Install dependencies
@@ -41,6 +42,9 @@ jobs:
         run: |
           ls -la .output/public
           cat .output/public/index.html
+
+      - name: Debug Base URL
+        run: grep '<base href=' .output/public/index.html || echo "No <base> tag found!"
 
       - name: Push to gh-pages
         uses: JamesIves/github-pages-deploy-action@v4
