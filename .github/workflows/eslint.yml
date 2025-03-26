@@ -3,12 +3,12 @@ name: ESLint Check
 on:
   push:
     branches:
-      - dev # Run ESLint on dev pushes
-      - main # Also run on main pushes (to catch issues before rebasing)
+      - dev
+      - main
   pull_request:
     branches:
-      - dev # Run on PRs merging into dev
-      - main # Run on PRs merging into main
+      - dev
+      - main
 
 jobs:
   lint:
@@ -25,8 +25,10 @@ jobs:
           node-version: 18
           cache: 'pnpm'
 
-      - name: Install pnpm
-        run: npm install -g pnpm
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8 # Adjust if needed
 
       - name: Install dependencies
         run: pnpm install
