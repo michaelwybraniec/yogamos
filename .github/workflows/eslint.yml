@@ -23,28 +23,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: 'pnpm'
+          cache: 'yarn'
 
-      - name: Install pnpm
-        run: npm install -g pnpm@9.15.4
-
-      - name: Enable and Prepare Corepack
-        run: |
-          corepack enable
-          corepack prepare pnpm@9.15.4 --activate
-          echo "Checking pnpm version..."
-          pnpm --version
-
-      - name: Verify pnpm Installation
-        run: |
-          if ! command -v pnpm &> /dev/null
-          then
-            echo "pnpm could not be found"
-            exit 1
-          fi
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
 
       - name: Run ESLint
-        run: pnpm lint
+        run: yarn lint
