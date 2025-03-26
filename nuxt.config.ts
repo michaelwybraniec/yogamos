@@ -10,7 +10,6 @@ export default defineNuxtConfig({
     '@nuxt/test-utils/module'
   ],
 
-
   devtools: { enabled: true },
 
   app: {
