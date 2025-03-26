@@ -65,7 +65,11 @@
         to="/login"
         block
         class="mb-3" />
-      <UButton label="Sign up" color="neutral" to="/signup" block />
+      <UButton
+        label="Sign up"
+        color="neutral"
+        to="/signup"
+        block />
     </template>
   </UHeader>
   <UBanner

@@ -1,8 +1,13 @@
-name: Lint Check
+name: ESLint Check
 
 on:
+  push:
+    branches:
+      - dev
+      - main
   pull_request:
     branches:
+      - dev
       - main
 
 permissions:
@@ -11,9 +16,11 @@ permissions:
 
 jobs:
   lint:
+    name: Run ESLint
     runs-on: ubuntu-latest
     permissions:
       contents: read
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4

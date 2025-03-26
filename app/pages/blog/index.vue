@@ -50,8 +50,7 @@
           "
           :authors="post.authors"
           :badge="post.badge"
-          :orientation="index === 0 ? 'horizontal' : 'vertical'"
-          :class="[index === 0 && 'col-span-full']"
+          orientation="vertical"
           :ui="{
             description: 'line-clamp-2'
           }"
