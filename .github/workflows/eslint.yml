@@ -26,10 +26,10 @@ jobs:
           cache: 'pnpm'
 
       - name: Install pnpm
-        run: corepack enable && corepack prepare pnpm@latest --activate
-
-      - name: Verify pnpm installation
-        run: pnpm --version
+        run: |
+          corepack enable
+          corepack prepare pnpm@latest --activate
+          pnpm --version  # Check if pnpm is installed correctly
 
       - name: Install dependencies
         run: pnpm install
