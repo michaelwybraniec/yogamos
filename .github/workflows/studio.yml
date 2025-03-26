@@ -30,7 +30,12 @@ jobs:
       - name: Install Dependencies
         run: yarn install --frozen-lockfile
 
+      - name: Set Nuxt UI Pro License
+        run: echo "NUXT_UI_PRO_LICENSE=${{ secrets.NUXT_UI_PRO_LICENSE }}" >> $GITHUB_ENV
+
       - name: Generate Static Site
+        env:
+          NUXT_UI_PRO_LICENSE: ${{ secrets.NUXT_UI_PRO_LICENSE }}
         run: yarn generate
 
       - name: Deploy 🚀
