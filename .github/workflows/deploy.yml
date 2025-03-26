@@ -3,10 +3,10 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - gh-pages
+      - main  # This triggers the workflow when you push to main
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -23,35 +23,20 @@ jobs:
           node-version: 20
           cache: 'yarn'
 
-      - name: Inject Nuxt UI Pro License
-        run: |
-          echo "NUXT_UI_PRO_LICENSE=${{ secrets.NUXT_UI_PRO_LICENSE }}" >> $GITHUB_ENV
-          echo "NITRO_PRESET=static" >> $GITHUB_ENV
-
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Set correct base URL for GitHub Pages
-        run: echo "NUXT_PUBLIC_APP_BASE_URL=/yogamos/" >> $GITHUB_ENV
+      - name: Set environment variables
+        run: |
+          echo "NUXT_UI_PRO_LICENSE=${{ secrets.NUXT_UI_PRO_LICENSE }}" >> $GITHUB_ENV
+          echo "NITRO_PRESET=static" >> $GITHUB_ENV
+          echo "NUXT_PUBLIC_APP_BASE_URL=/yogamos/" >> $GITHUB_ENV
 
       - name: Generate static site
         run: yarn generate
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy to gh-pages
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          path: .output/public
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v4
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          branch: gh-pages  # Deploy output to gh-pages branch
+          folder: .output/public  # Ensure correct path for static files
