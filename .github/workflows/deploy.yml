@@ -17,14 +17,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
-          cache: 'pnpm'
+          node-version: 20
+          cache: 'yarn'
 
       - name: Inject Nuxt UI Pro License
         run: |
@@ -32,13 +29,13 @@ jobs:
           echo "NITRO_PRESET=static" >> $GITHUB_ENV
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: yarn install --frozen-lockfile
 
       - name: Set correct base URL for GitHub Pages
         run: echo "NUXT_PUBLIC_APP_BASE_URL=/yogamos/" >> $GITHUB_ENV
 
       - name: Generate static site
-        run: pnpm run generate
+        run: yarn generate
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
