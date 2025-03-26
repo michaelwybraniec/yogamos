@@ -26,3 +26,5 @@ logs
 # Other
 design
 node_modules
+
+.github/workflows/studio.yml
