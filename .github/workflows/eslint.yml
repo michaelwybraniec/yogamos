@@ -1,13 +1,20 @@
-name: Lint Check
+name: ESLint Check
 
 on:
+  push:
+    branches:
+      - dev
+      - main
   pull_request:
     branches:
+      - dev
       - main
 
 jobs:
   lint:
+    name: Run ESLint
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -15,11 +22,11 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: pnpm
+          node-version: 20 # Updated to Node 20
+          cache: 'yarn'
 
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
 
       - name: Run ESLint
-        run: pnpm run lint
+        run: yarn lint

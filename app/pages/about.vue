@@ -4,7 +4,6 @@
   const { data: page } = await useAsyncData('about', () =>
     queryCollection('about').first()
   )
-  const route = useRoute()
 
   // Define Open Graph Image Component
   defineOgImageComponent('Saas')
