@@ -7,6 +7,7 @@ on:
       - main # Also run on main pushes (to catch issues before rebasing)
   pull_request:
     branches:
+      - dev # Run on PRs merging into dev
       - main # Run on PRs merging into main
 
 jobs:
