@@ -28,7 +28,7 @@ jobs:
         run: |
           echo "NUXT_UI_PRO_LICENSE=${{ secrets.NUXT_UI_PRO_LICENSE }}" >> $GITHUB_ENV
           echo "NITRO_PRESET=github_pages" >> $GITHUB_ENV
-          echo "NUXT_PUBLIC_APP_BASE_URL=/yogamos/" >> $GITHUB_ENV
+          echo "NUXT_PUBLIC_APP_BASE_URL=/" >> $GITHUB_ENV
 
       - name: Install dependencies
         run: yarn install --immutable

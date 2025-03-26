@@ -13,7 +13,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   app: {
-    baseURL: process.env.NUXT_PUBLIC_APP_BASE_URL || '/'
+    baseURL: '/'
   },
 
   css: ['~/assets/css/main.css'],
