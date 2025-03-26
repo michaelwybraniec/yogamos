@@ -6,7 +6,7 @@ on:
       - main
 
 permissions:
-  contents: write # Allows pushing to gh-pages
+  contents: write
   pages: write
   id-token: write
 
@@ -27,13 +27,16 @@ jobs:
         run: echo "NUXT_UI_PRO_LICENSE=${{ secrets.NUXT_UI_PRO_LICENSE }}" >> $GITHUB_ENV
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install --immutable
 
       - name: Generate static site
-        run: yarn generate
+        run: |
+          yarn generate
+          ls -la .output/public
 
       - name: Push to gh-pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
           folder: .output/public
+          clean: true
