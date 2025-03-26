@@ -32,6 +32,14 @@ jobs:
           echo "Checking pnpm version..."
           pnpm --version
 
+      - name: Verify pnpm Installation
+        run: |
+          if ! command -v pnpm &> /dev/null
+          then
+            echo "pnpm could not be found"
+            exit 1
+          fi
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
