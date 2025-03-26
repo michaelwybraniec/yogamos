@@ -32,6 +32,12 @@ jobs:
           echo "Checking pnpm version..."
           pnpm --version || (echo "pnpm not found, installing manually..." && npm install -g pnpm)
           export PATH=$(npm bin -g):$PATH
+          # Check if pnpm is in the PATH
+          if ! command -v pnpm &> /dev/null
+          then
+              echo "pnpm could not be found in the PATH, installation failed."
+              exit 1
+          fi
           pnpm --version
 
       - name: Install dependencies
