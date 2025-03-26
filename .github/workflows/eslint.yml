@@ -29,10 +29,9 @@ jobs:
         run: |
           corepack enable
           corepack prepare pnpm@latest --activate
-          curl -fsSL https://get.pnpm.io/install.sh | sh
-          echo "$HOME/.local/share/pnpm" >> $GITHUB_PATH
-          export PATH="$HOME/.local/share/pnpm:$PATH"
-          pnpm --version  # Debugging step
+          echo "Checking pnpm version..."
+          pnpm --version || (echo "pnpm not found, installing manually..." && npm install -g pnpm)
+          pnpm --version
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
