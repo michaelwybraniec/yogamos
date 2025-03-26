@@ -30,15 +30,12 @@ jobs:
           corepack enable
           corepack prepare pnpm@latest --activate
           echo "Checking pnpm version..."
-          pnpm --version || (echo "pnpm not found, installing manually..." && npm install -g pnpm)
-          export PATH=$(npm bin -g):$PATH
-          # Check if pnpm is in the PATH
-          if ! command -v pnpm &> /dev/null
-          then
-              echo "pnpm could not be found in the PATH, installation failed."
-              exit 1
+          if ! pnpm --version; then
+            echo "pnpm not found, installing manually..."
+            npm install -g pnpm
           fi
-          pnpm --version
+          export PATH=$(npm bin -g):$PATH
+          echo "pnpm version: $(pnpm --version)"
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
