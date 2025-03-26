@@ -24,7 +24,10 @@ jobs:
           cache: 'yarn'
 
       - name: Inject Nuxt UI Pro License
-        run: echo "NUXT_UI_PRO_LICENSE=${{ secrets.NUXT_UI_PRO_LICENSE }}" >> $GITHUB_ENV
+        run: |
+          echo "NUXT_UI_PRO_LICENSE=${{ secrets.NUXT_UI_PRO_LICENSE }}" >> $GITHUB_ENV
+          echo "NITRO_PRESET=static" >> $GITHUB_ENV
+          echo "NUXT_PUBLIC_APP_BASE_URL=/yogamos/" >> $GITHUB_ENV
 
       - name: Install dependencies
         run: yarn install --immutable
@@ -33,6 +36,11 @@ jobs:
         run: |
           yarn generate
           ls -la .output/public
+
+      - name: Debug Output
+        run: |
+          ls -la .output/public
+          cat .output/public/index.html
 
       - name: Push to gh-pages
         uses: JamesIves/github-pages-deploy-action@v4

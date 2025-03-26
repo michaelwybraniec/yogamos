@@ -10,7 +10,12 @@ export default defineNuxtConfig({
     '@nuxt/test-utils/module'
   ],
 
+
   devtools: { enabled: true },
+
+  app: {
+    baseURL: process.env.NUXT_PUBLIC_APP_BASE_URL || '/'
+  },
 
   css: ['~/assets/css/main.css'],
 
