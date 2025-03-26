@@ -1,13 +1,19 @@
-name: Lint Check
+name: ESLint Check
 
 on:
+  push:
+    branches:
+      - dev # Run ESLint on dev pushes
+      - main # Also run on main pushes (to catch issues before rebasing)
   pull_request:
     branches:
-      - main
+      - main # Run on PRs merging into main
 
 jobs:
   lint:
+    name: Run ESLint
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -15,11 +21,14 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: pnpm
+          node-version: 18
+          cache: 'pnpm'
+
+      - name: Install pnpm
+        run: npm install -g pnpm
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
 
       - name: Run ESLint
-        run: pnpm run lint
+        run: pnpm lint
