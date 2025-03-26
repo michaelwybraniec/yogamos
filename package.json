@@ -43,7 +43,6 @@
     "eslint-plugin-prettier": "^5.2.3",
     "happy-dom": "^17.4.4",
     "jsdom": "^26.0.0",
-    "nuxt-vitest": "^0.11.5",
     "playwright-core": "^1.51.1",
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",

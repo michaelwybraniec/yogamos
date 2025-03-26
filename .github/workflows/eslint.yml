@@ -25,17 +25,12 @@ jobs:
           node-version: 18
           cache: 'pnpm'
 
-      - name: Install pnpm
+      - name: Enable and Prepare Corepack
         run: |
           corepack enable
-          corepack prepare pnpm@latest --activate
+          corepack prepare pnpm@9.15.4 --activate
           echo "Checking pnpm version..."
-          if ! pnpm --version; then
-            echo "pnpm not found, installing manually..."
-            npm install -g pnpm
-          fi
-          export PATH=$(npm bin -g):$PATH
-          echo "pnpm version: $(pnpm --version)"
+          pnpm --version
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
