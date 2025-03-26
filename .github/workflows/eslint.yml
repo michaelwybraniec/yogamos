@@ -26,13 +26,16 @@ jobs:
           cache: 'pnpm'
 
       - name: Install pnpm
-        run: npm install -g pnpm
-
-      - name: Verify pnpm installation
-        run: pnpm --version
+        run: |
+          corepack enable
+          corepack prepare pnpm@latest --activate
+          curl -fsSL https://get.pnpm.io/install.sh | sh
+          echo "$HOME/.local/share/pnpm" >> $GITHUB_PATH
+          export PATH="$HOME/.local/share/pnpm:$PATH"
+          pnpm --version  # Debugging step
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
       - name: Run ESLint
         run: pnpm lint
