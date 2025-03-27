@@ -5,5 +5,7 @@
 </script>
 
 <template>
-  <ULocaleSelect v-model="locale" :locales="[en, es, fr]" />
+  <ULocaleSelect
+    v-model="locale"
+    :locales="[en, es, fr]" />
 </template>

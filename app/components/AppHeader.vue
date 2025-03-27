@@ -28,10 +28,12 @@
       <NuxtLink to="/">
         <LogoPro class="h-6 w-auto shrink-0" />
       </NuxtLink>
-      <NuxtLink to="/"> <b>YOGAMOS?</b> </NuxtLink>
+      <NuxtLink to="/"><b>YOGAMOS?</b></NuxtLink>
     </template>
 
-    <UNavigationMenu :items="items" variant="link" />
+    <UNavigationMenu
+      :items="items"
+      variant="link" />
 
     <template #right>
       <LangSwitcher variant="ghost" />

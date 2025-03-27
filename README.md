@@ -2,6 +2,12 @@
 
 YOGAMOS is a modern web application built with Nuxt.js, designed to provide a seamless development experience with powerful tools and features.
 
+**Website URL:** [www.yogamos.es](https://www.yogamos.es)
+
+<img src="https://www.yogamos.es/screenshots/home.png"  alt="Home Page">
+<img src="https://www.yogamos.es/screenshots/blog.png"  alt="Blog Page">
+<img src="https://www.yogamos.es/screenshots/search.png"  alt="Search Page">
+
 ## Features
 
 - **Nuxt 3**: Leverage the power of the latest Nuxt framework for server-side rendering and static site generation.
@@ -138,4 +144,8 @@ https://github.com/eslint/config-inspector
 npx @eslint/config-inspector@latest
 ```
 
-Visit http://localhost:7777/ to view and play with your ESLint config. Changes to the config file will be updated automatically.
+Visit `http://localhost:7777/` to visualize your ESLint configuration.
+
+---
+
+<img src="https://www.yogamos.es/yogamos_logo.svg" alt="Yogamos Logo">

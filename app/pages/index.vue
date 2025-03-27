@@ -73,7 +73,9 @@
               'before:content-[open-quote] after:content-[close-quote]'
           }">
           <template #footer>
-            <UUser v-bind="testimonial.user" size="lg" />
+            <UUser
+              v-bind="testimonial.user"
+              size="lg" />
           </template>
         </UPageCard>
       </UPageColumns>

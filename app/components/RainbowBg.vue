@@ -19,7 +19,7 @@
   const animationTime = 45
   const length = 25
 
-  const getRainbowStyle = (i) => {
+  const getRainbowStyle = i => {
     const shuffledColors = [...colors].sort(() => Math.random() - 0.5)
     return {
       boxShadow: `-130px 0 80px 40px white, -50px 0 50px 25px ${shuffledColors[0]},

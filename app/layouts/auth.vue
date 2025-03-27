@@ -8,7 +8,9 @@
       variant="subtle"
       class="absolute top-8 left-8 rounded-full" />
 
-    <UPageCard variant="subtle" class="w-full max-w-sm">
+    <UPageCard
+      variant="subtle"
+      class="w-full max-w-sm">
       <slot />
     </UPageCard>
   </div>

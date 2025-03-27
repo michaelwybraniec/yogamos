@@ -10,7 +10,9 @@
         <div class="flex justify-center">
           <StarsBg v-show="colorMode.value === 'dark'" />
 
-          <UIcon name="i-mingcute-group-3-fill" class="size-50" />
+          <UIcon
+            name="i-mingcute-group-3-fill"
+            class="size-50" />
         </div>
         <div class="flex justify-center">
           Community page in construction.
