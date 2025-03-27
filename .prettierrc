@@ -2,11 +2,13 @@
   "semi": false,
   "trailingComma": "none",
   "tabWidth": 2,
+  "htmlWhitespaceSensitivity": "ignore",
   "printWidth": 70,
   "bracketSpacing": true,
   "arrowParens": "avoid",
   "useTabs": false,
   "vueIndentScriptAndStyle": true,
+  "singleAttributePerLine": true,
   "endOfLine": "auto",
   "bracketSameLine": true,
   "singleQuote": true,
@@ -22,7 +24,15 @@
     {
       "files": ["*.vue"],
       "options": {
-        "parser": "vue"
+        "parser": "vue",
+        "vueIndentScriptAndStyle": true,
+        "htmlWhitespaceSensitivity": "ignore"
+      }
+    },
+    {
+      "files": ["*.d.ts"],
+      "options": {
+        "parser": "typescript"
       }
     }
   ]

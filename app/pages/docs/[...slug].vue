@@ -62,12 +62,16 @@
       :description="page.description" />
 
     <UPageBody>
-      <ContentRenderer v-if="page.body" :value="page" />
+      <ContentRenderer
+        v-if="page.body"
+        :value="page" />
 
       <UContentSurround :surround="surround" />
     </UPageBody>
 
-    <template v-if="page?.body?.toc?.links?.length" #right>
+    <template
+      v-if="page?.body?.toc?.links?.length"
+      #right>
       <UContentToc :links="page.body.toc.links" />
     </template>
   </UPage>

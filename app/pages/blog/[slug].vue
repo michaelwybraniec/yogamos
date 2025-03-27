@@ -10,12 +10,13 @@
 
   const route = useRoute()
 
-  // ✅ Fetch Post Data
-  const { data: post } = await useAsyncData('single-post', () =>
-    queryCollection('posts').where('path', 'LIKE', route.path).first()
+  // const { data: post } = await useAsyncData('single-post', () =>
+  //   queryCollection('posts').where('path', 'LIKE', route.path).first()
+  // )
+  const { data: post } = await useAsyncData(route.path, () =>
+    queryCollection('posts').path(route.path).first()
   )
 
-  // ✅ Throw 404 if Post Not Found
   if (!post.value) {
     throw createError({
       statusCode: 404,
@@ -82,25 +83,33 @@
 
 <template>
   <UContainer v-if="post">
-    <UPageHeader :title="post.title" :description="post.description">
+    <UPageHeader
+      :title="post.title"
+      :description="post.description">
       <template #headline>
-        <UBadge v-bind="post.badge" variant="subtle" />
+        <UBadge
+          v-bind="post.badge"
+          variant="subtle" />
         <span class="text-gray-500 dark:text-gray-400">&middot;</span>
-        <time class="text-gray-500 dark:text-gray-400">{{
-          new Date(post.date).toLocaleDateString('en', {
-            year: 'numeric',
-            month: 'short',
-            day: 'numeric'
-          })
-        }}</time>
+        <time class="text-gray-500 dark:text-gray-400">
+          {{
+            new Date(post.date).toLocaleDateString('en', {
+              year: 'numeric',
+              month: 'short',
+              day: 'numeric'
+            })
+          }}
+        </time>
       </template>
     </UPageHeader>
 
     <UPage>
       <UPageBody prose>
         <UBreadcrumb :items="breadcrumb" />
-        <ContentRenderer v-if="post && post.body" :value="post" />
-        <hr v-if="surround?.length">
+        <ContentRenderer
+          v-if="post && post.body"
+          :value="post" />
+        <hr v-if="surround?.length" />
         <UContentSurround :surround="surround" />
       </UPageBody>
 

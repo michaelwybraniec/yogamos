@@ -70,11 +70,15 @@
 </script>
 
 <template>
-  <USeparator icon="i-ph-flower-duotone" class="h-px" />
+  <USeparator
+    icon="i-ph-flower-duotone"
+    class="h-px" />
   <UFooter :ui="{ top: 'border-b border-[var(--ui-border)]' }">
     <template #top>
       <UContainer>
-        <UFooterColumns :columns="columns" class="p-10">
+        <UFooterColumns
+          :columns="columns"
+          class="p-10">
           <template #right>
             <form @submit.prevent="onSubmit">
               <UFormField
@@ -104,7 +108,9 @@
     <template #left>
       <p class="text-sm text-(--ui-text-muted)">
         © {{ new Date().getFullYear() }} Yogamos! Powered by
-        <NuxtLink class="font-bold" to="https://one-front.com">
+        <NuxtLink
+          class="font-bold"
+          to="https://one-front.com">
           ONE-FRONT™
         </NuxtLink>
       </p>

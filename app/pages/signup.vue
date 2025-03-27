@@ -97,14 +97,18 @@
     @submit="onSubmit">
     <template #description>
       Already have an account?
-      <ULink to="/login" class="text-primary-500 font-medium">
+      <ULink
+        to="/login"
+        class="text-primary-500 font-medium">
         Login.
       </ULink>
     </template>
 
     <template #footer>
       By signing up, you agree to our
-      <ULink to="/" class="text-primary-500 font-medium">
+      <ULink
+        to="/"
+        class="text-primary-500 font-medium">
         Terms of Service.
       </ULink>
     </template>
