@@ -1,0 +1,1 @@
+import{r as e}from"./Bu9lAwui.js";import t from"./CYEw4BnL.js";import{d as n,z as a,C as r,w as p,G as i,i as c}from"./Bnb4jpu3.js";const f=n({__name:"Tip",setup(m){const o=a();return(s,u)=>(c(),r(t,{color:"success",icon:i(o).ui.icons.tip},{default:p(()=>[e(s.$slots,"default",{mdcUnwrap:"p"})]),_:3},8,["icon"]))}}),C=Object.assign(f,{__name:"ProseTip"});export{C as default};

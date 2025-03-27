@@ -1,0 +1,1 @@
+import{j as c,c as a,i as s,f as n,bP as r,w as p,D as l,bQ as u,bR as d}from"./Bnb4jpu3.js";const f={};function m(e,i){const t=r,o=u,_=d;return s(),a("div",null,[n(t),n(o,null,{default:p(()=>[l(e.$slots,"default")]),_:3}),n(_)])}const b=c(f,[["render",m]]);export{b as default};

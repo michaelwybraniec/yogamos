@@ -1,1 +1,0 @@
-import{r as t}from"./D5WK2dRB.js";import n from"./DZMm2-ev.js";import{d as s,z as a,C as r,w as i,G as c,i as p}from"./mVGLNkGI.js";const f=s({__name:"Note",setup(m){const o=a();return(e,l)=>(p(),r(n,{color:"info",icon:c(o).ui.icons.info},{default:i(()=>[t(e.$slots,"default",{mdcUnwrap:"p"})]),_:3},8,["icon"]))}}),C=Object.assign(f,{__name:"ProseNote"});export{C as default};
