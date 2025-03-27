@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const config = useRuntimeConfig()
   // import * as locales from '@nuxt/ui/locale'
 
   // const { locale } = useI18n()
@@ -31,7 +32,8 @@
       //   content:
       // }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    // link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: `${config.app.baseURL}favicon.ico` }]
 
     // htmlAttrs: {
     //   lang: 'en'
