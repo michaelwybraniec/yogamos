@@ -14,6 +14,10 @@ export default defineNuxtConfig({
   app: {
     baseURL: '/',
     head: {
+      title: 'Yogamos',
+      htmlAttrs: {
+        lang: 'en'
+      },
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
       ]
