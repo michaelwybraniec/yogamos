@@ -12,7 +12,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   app: {
-    baseURL: '/yogamos/',
+    baseURL: '/',
     head: {
       title: 'Yogamos',
       htmlAttrs: {
