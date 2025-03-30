@@ -1,0 +1,80 @@
+locale: fr
+path: '/pricing'
+title: Tarifs
+description: Trouvez le plan parfait pour approfondir votre pratique du yoga.
+navigation.icon: i-heroicons-credit-card
+hero:
+  title: Un plan pour chaque yogi
+  description: Que vous soyez débutant ou pratiquant expérimenté, nos plans sont conçus pour soutenir votre chemin vers la maîtrise intérieure.
+  align: center
+plans:
+  - title: Flux Libre
+    description: Un plan de base pour débuter votre pratique du yoga.
+    price:
+      month: Gratuit
+      year: Gratuit
+    align: top
+    button:
+      label: Commencer Gratuitement
+      color: white
+    features:
+      - Accès aux cours pour débutants
+      - Séances de méditation guidées
+      - Forum communautaire
+      - Conseils bien-être hebdomadaires
+  - title: Équilibre Intérieur
+    description: Idéal pour les pratiquants réguliers en quête de transformation.
+    price:
+      month: €19.9
+      year: €199.9
+    highlight: true
+    align: top
+    button:
+      label: Commencer Maintenant
+      color: black
+    features:
+      - Accès illimité aux cours
+      - Recommandations personnalisées de pratique
+      - Séances de yoga en direct
+      - Cours exclusifs sur la respiration et la méditation
+      - Support communautaire
+  - title: Chemin de Maîtrise
+    description: Pour les yogis engagés et les enseignants recherchant une formation avancée.
+    price:
+      month: €29.9
+      year: €299.9
+    align: top
+    button:
+      label: Rejoindre le Chemin
+      color: white
+    features:
+      - Toutes les fonctionnalités de "Équilibre Intérieur"
+      - Séances de mentorat personnalisées
+      - Accès aux modules de formation pour enseignants
+      - Retraites privées de yoga et de méditation
+      - Opportunités de certification
+logos:
+  title: Guidé par les Meilleurs
+  icons:
+    - i-simple-icons-amazonaws
+    - i-simple-icons-heroku
+    - i-simple-icons-netlify
+    - i-simple-icons-vercel
+    - i-simple-icons-cloudflare
+faq:
+  title: Vos Questions, Nos Réponses
+  description: Tout ce que vous devez savoir avant de rejoindre Yogamos.
+  items:
+    - label: Yogamos est-il adapté aux débutants ?
+      content: Absolument ! Notre plan Flux Libre propose des cours adaptés aux débutants pour vous aider à démarrer en douceur.
+      defaultOpen: true
+    - label: Puis-je annuler à tout moment ?
+      content: Oui, vous pouvez annuler ou changer de plan à tout moment depuis les paramètres de votre compte.
+    - label: Proposez-vous des cours en direct ?
+      content: Oui ! Les plans Équilibre Intérieur et Chemin de Maîtrise incluent des séances en direct avec des instructeurs expérimentés.
+    - label: Y a-t-il une période d'essai gratuite ?
+      content: Oui, nous proposons un essai gratuit pour que vous puissiez découvrir la plateforme avant de choisir un plan.
+    - label: Ai-je besoin d’un équipement spécifique ?
+      content: Un tapis de yoga est recommandé, mais toutes les pratiques peuvent être adaptées en fonction de votre espace et de vos ressources.
+    - label: Offrez-vous des certifications ?
+      content: Oui ! Notre plan Chemin de Maîtrise inclut des opportunités de certification pour les futurs enseignants de yoga.

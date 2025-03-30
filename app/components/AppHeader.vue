@@ -1,23 +1,24 @@
 <script setup lang="ts">
-  const route = useRoute()
+  // import { useRoute } from 'vue-router'
+  import { useI18n } from 'vue-i18n'
+  import { useLocalePath } from '#i18n'
+
+  // const route = useRoute()
+  const { t } = useI18n()
+  const localePath = useLocalePath()
 
   const items = computed(() => [
     {
-      label: 'Docs',
-      to: '/docs',
-      active: route.path.startsWith('/docs')
+      label: t('nav.about'),
+      to: localePath('/about')
     },
     {
-      label: 'Pricing',
-      to: '/pricing'
+      label: t('nav.blog'),
+      to: localePath('/blog')
     },
     {
-      label: 'About',
-      to: '/about'
-    },
-    {
-      label: 'Blog',
-      to: '/blog'
+      label: t('nav.pricing'),
+      to: localePath('/pricing')
     }
   ])
 </script>
@@ -25,10 +26,11 @@
 <template>
   <UHeader>
     <template #left>
-      <NuxtLink to="/">
+      <NuxtLink :to="localePath('/')">
+        <!-- ✅ Ensure homepage is localized -->
         <LogoPro class="h-6 w-auto shrink-0" />
       </NuxtLink>
-      <NuxtLink to="/"><b>YOGAMOS?</b></NuxtLink>
+      <NuxtLink :to="localePath('/')"><b>YOGAMOS?</b></NuxtLink>
     </template>
 
     <UNavigationMenu
@@ -38,18 +40,17 @@
     <template #right>
       <LangSwitcher variant="ghost" />
       <UColorModeSwitch />
-      <!-- <UColorModeSelect /> -->
       <UButton
-        label="Login"
+        :label="t('nav.login')"
         color="neutral"
         variant="ghost"
-        to="/login" />
+        :to="localePath('/login')" />
       <UButton
-        label="Sign up"
+        :label="t('nav.signup')"
         color="neutral"
         trailing-icon="i-lucide-arrow-right"
         class="hidden lg:flex"
-        to="/signup" />
+        :to="localePath('/signup')" />
     </template>
 
     <template #body>
@@ -61,16 +62,16 @@
       <USeparator class="my-6" />
 
       <UButton
-        label="Sign in"
+        :label="t('nav.login')"
         color="neutral"
         variant="subtle"
-        to="/login"
+        :to="localePath('/login')"
         block
         class="mb-3" />
       <UButton
-        label="Sign up"
+        :label="t('nav.signup')"
         color="neutral"
-        to="/signup"
+        :to="localePath('/signup')"
         block />
     </template>
   </UHeader>
@@ -80,5 +81,5 @@
     target="_blank"
     class="bg-stone-500 text-stone-50"
     icon="i-lucide-info"
-    title="The Yogamos service is currently in development, powered by ONE-FRONT™." />
+    :title="t('nav.banner')" />
 </template>

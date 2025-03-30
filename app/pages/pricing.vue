@@ -1,6 +1,22 @@
 <script setup lang="ts">
-  const { data: page } = await useAsyncData('pricing', () =>
-    queryCollection('pricing').first()
+  import { useI18n } from 'vue-i18n'
+  import type { Collections } from '@nuxt/content'
+
+  const { locale } = useI18n()
+
+  // const { data: page } = await useAsyncData('pricing', () => queryCollection('pricing').first())
+
+  const collection = computed(() => {
+    return (locale.value === 'en' ? 'pricing_en' : `pricing_${locale.value}`) as keyof Collections
+  })
+
+  const { data: page } = await useAsyncData(
+    collection.value,
+    async () =>
+      (await queryCollection(collection.value).first()) as
+        | Collections['pricing_en']
+        | Collections['pricing_es']
+        | Collections['pricing_fr']
   )
 
   // Ensure page data is available before setting meta tags
@@ -14,6 +30,12 @@
       })
     }
   })
+
+  if (!page.value)
+    throw createError({
+      statusCode: 404,
+      statusMessage: 'Page not found'
+    })
 
   // Define Open Graph Image Component
   defineOgImageComponent('Saas')
@@ -51,9 +73,7 @@
           :title="plan.title"
           :description="plan.description"
           :features="plan.features"
-          :price="
-            isYearly === '1' ? plan.price.year : plan.price.month
-          "
+          :price="isYearly === '1' ? plan.price.year : plan.price.month"
           :billing-cycle="isYearly === '1' ? '/year' : '/month'" />
       </UPricingPlans>
     </UContainer>

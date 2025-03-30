@@ -1,9 +1,11 @@
+locale: en
+path: '/about'
 title: About Us
 description: Discover the mission, values, and people behind Yogamos.
 navigation.icon: i-heroicons-information-circle
 hero:
   title: A Sanctuary for Every Yogi
-  description: Yogamos is more than just yoga—it’s a journey toward balance, mindfulness, and self-discovery.
+  description: 'Yogamos is more than just yoga—it’s a journey toward balance, mindfulness, and self-discovery.'
   align: center
 mission:
   title: Our Mission

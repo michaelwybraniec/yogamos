@@ -3,6 +3,7 @@ import withNuxt from './.nuxt/eslint.config.mjs'
 
 export default withNuxt({
   rules: {
+    '@stylistic/indent-binary-ops': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     '@stylistic/arrow-parens': 'off',
     'vue/multi-word-component-names': 'off',

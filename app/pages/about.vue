@@ -1,9 +1,28 @@
 <script setup lang="ts">
+  import { useI18n } from 'vue-i18n'
+  import type { Collections } from '@nuxt/content'
+
+  const { locale } = useI18n()
   const colorMode = useColorMode()
 
-  const { data: page } = await useAsyncData('about', () =>
-    queryCollection('about').first()
+  const collection = computed(() => {
+    return (locale.value === 'en' ? 'about_en' : `about_${locale.value}`) as keyof Collections
+  })
+
+  const { data: page } = await useAsyncData(
+    collection.value,
+    async () =>
+      (await queryCollection(collection.value).first()) as
+        | Collections['about_en']
+        | Collections['about_fr']
+        | Collections['about_es']
   )
+
+  if (!page.value)
+    throw createError({
+      statusCode: 404,
+      statusMessage: 'Page not found'
+    })
 
   // Define Open Graph Image Component
   defineOgImageComponent('Saas')
@@ -63,29 +82,26 @@
             <StarsBg v-show="colorMode.value === 'dark'" />
 
             <div class="flex justify-center">
-              <NuxtImg
-                :src="person.avatar.src"
-                alt="Team member avatar"
-                placeholder
-                class="h-auto w-60 rounded-full border-[10px] sm:w-60 md:w-60 lg:w-60"
-                :style="{
-                  borderColor:
-                    colorMode.value === 'dark'
-                      ? 'var(--light-900)'
-                      : 'var(--dusk-100)'
-                }"
-                densities="x1 x2" />
+              <client-only>
+                <NuxtImg
+                  :src="person.avatar.src"
+                  alt="Team member avatar"
+                  placeholder
+                  class="h-auto w-60 rounded-full border-[10px] sm:w-60 md:w-60 lg:w-60"
+                  :style="{
+                    borderColor: colorMode.value === 'dark' ? 'var(--light-900)' : 'var(--dusk-100)'
+                  }"
+                  densities="x1 x2" />
+              </client-only>
             </div>
 
-            <div
-              class="mt-4 text-xl font-semibold text-gray-900 dark:text-white">
+            <div class="mt-4 text-xl font-semibold text-gray-900 dark:text-white">
               {{ person.name }}
             </div>
             <div class="text-md text-gray-600 dark:text-gray-400">
               {{ person.role }}
             </div>
-            <div
-              class="text-sm text-gray-500 italic dark:text-gray-400">
+            <div class="text-sm text-gray-500 italic dark:text-gray-400">
               {{ person.bio }}
             </div>
           </UPageCard>

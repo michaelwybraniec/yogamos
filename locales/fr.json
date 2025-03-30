@@ -1,0 +1,40 @@
+{
+  "welcome": "Bonjour! 🌍",
+  "nav": {
+    "docs": "Documentation",
+    "pricing": "Tarification",
+    "about": "À propos",
+    "blog": "Blog",
+    "login": "Connexion",
+    "signup": "S'inscrire",
+    "banner": "Le service Yogamos est actuellement en développement, propulsé par ONE-FRONT™."
+  },
+  "footer": {
+    "yoga_resources": "Ressources de Yoga",
+    "asana_library": "Bibliothèque d'Asanas",
+    "meditation_guides": "Guides de Méditation",
+    "breathwork_techniques": "Techniques de Respiration",
+    "philosophy_sutras": "Philosophie et Sutras",
+    "practice": "Pratique",
+    "online_classes": "Cours en Ligne",
+    "workshops": "Ateliers",
+    "challenges": "Défis",
+    "community_forum": "Forum Communautaire",
+    "about_us": "À Propos",
+    "our_story": "Notre Histoire",
+    "yoga_retreats": "Retraites de Yoga",
+    "instructors": "Instructeurs",
+    "blog": "Blog",
+    "join_journey": "Rejoignez notre Voyage de Yoga",
+    "email_placeholder": "Entrez votre e-mail",
+    "join": "Rejoindre",
+    "namaste_title": "Namaste ! 🌿",
+    "namaste_description": "Vous avez rejoint notre voyage de yoga. Restez attentif !",
+    "copyright": "© {year} Yogamos ! Propulsé par"
+  },
+  "hero": {
+    "title": "Trouvez l'équilibre avec Yogamos !",
+    "description": "Découvrez les bienfaits du yoga avec Yogamos. Améliorez votre flexibilité, votre force et votre pleine conscience grâce à des séances guidées et au soutien de la communauté. C'est votre espace pour vous reconnecter à vous-même à travers le yoga. Que vous débutiez ou approfondissiez votre pratique, nous proposons des séances guidées, des pratiques de méditation et des conseils bien-être pour vous accompagner dans votre voyage.",
+    "logo_alt": "Logo de Yogamos"
+  }
+}

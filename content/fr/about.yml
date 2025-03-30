@@ -1,0 +1,55 @@
+locale: fr
+path: '/fr/about'
+title: À Propos de Nous
+description: Découvrez la mission, les valeurs et les personnes derrière Yogamos.
+navigation.icon: i-heroicons-information-circle
+hero:
+  title: Un Sanctuaire pour Chaque Yogi
+  description: "Yogamos est plus qu'un simple yoga : c'est un voyage vers l'équilibre, la pleine conscience et la découverte de soi."
+  align: center
+mission:
+  title: Notre Mission
+  description: "Chez Yogamos, nous cherchons à créer un espace accueillant où chacun, quel que soit son niveau d'expérience, peut se connecter à son être intérieur à travers le yoga, la méditation et la pleine conscience."
+story:
+  title: Notre Histoire
+  description: "Yogamos est né de la volonté de rendre le yoga accessible à tous. Inspirés par des traditions ancestrales et des approches modernes du bien-être, nous avons créé un espace qui nourrit à la fois le corps et l'esprit."
+founders:
+  title: Rencontrez Nos Instructeurs
+  description: "Notre équipe de yogis et d'experts en bien-être apporte son savoir et sa passion pour vous accompagner sur votre chemin."
+  team:
+    - name: Sebastián
+      role: Fondateur et Instructeur Principal
+      bio: "Sebastián a plus de 15 ans d'expérience en yoga et en pleine conscience, avec une spécialisation en Hatha et Pranayama."
+      avatar:
+        src: https://i.pravatar.cc/120?img=1
+    - name: Anna
+      role: Instructrice Senior
+      bio: 'Professeure dévouée avec une expertise en Vinyasa et Yin Yoga, Sofia intègre mouvement et respiration pour une guérison holistique.'
+      avatar:
+        src: https://i.pravatar.cc/120?img=1
+    - name: Yash Joshi
+      role: Entraîneur de Yoga et Kung Fu
+      bio: 'Yash anime des sessions de méditation guidée et des ateliers de pleine conscience pour aider les pratiquants à trouver la paix intérieure et la clarté.'
+      avatar:
+        src: https://media.licdn.com/dms/image/v2/D4E03AQGcWBxvOnu4tg/profile-displayphoto-shrink_400_400/B4EZRV2x_nHEAg-/0/1736607211888?e=1747872000&v=beta&t=wiasG_U6FaA-SSYqJNa5osMQs_SNA1oJHOQI486Qfj4
+faq:
+  title: Vos Questions, Nos Réponses
+  description: Tout ce que vous devez savoir sur Yogamos et nos services.
+  items:
+    - label: Quels styles de yoga propose Yogamos ?
+      content: Nous offrons une variété de styles, y compris Hatha, Vinyasa, Yin et des séances de méditation guidée.
+      defaultOpen: true
+    - label: Les débutants peuvent-ils rejoindre Yogamos ?
+      content: Bien sûr ! Nous avons des cours et des ressources spécialement conçus pour les débutants.
+    - label: Comment puis-je accéder aux cours en direct ?
+      content: Les sessions en direct sont disponibles dans les abonnements Inner Balance et Mastery Path.
+    - label: Y a-t-il des événements en présentiel ?
+      content: Oui, nous organisons des retraites, des ateliers et des rencontres communautaires tout au long de l'année.
+    - label: Yogamos est-il uniquement en ligne ?
+      content: Bien que notre plateforme soit numérique, nous proposons également des retraites et des cours en présentiel dans certaines localisations.
+    - label: Comment puis-je me certifier comme instructeur de yoga avec Yogamos ?
+      content: L'abonnement Mastery Path inclut des modules de formation pour enseignants et des opportunités de certification.
+    - label: De quel équipement ai-je besoin ?
+      content: Un tapis de yoga est recommandé, mais de nombreux cours peuvent être suivis avec peu ou aucun équipement.
+    - label: Puis-je annuler mon abonnement à tout moment ?
+      content: Oui, vous pouvez annuler ou modifier votre abonnement à tout moment depuis les paramètres de votre compte.

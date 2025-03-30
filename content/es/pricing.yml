@@ -1,0 +1,80 @@
+locale: es
+path: '/pricing'
+title: Precios
+description: Encuentra el plan perfecto para profundizar en tu viaje de yoga.
+navigation.icon: i-heroicons-credit-card
+hero:
+  title: Un plan para cada yogui
+  description: Ya seas principiante o un practicante experimentado, nuestros planes están diseñados para apoyar tu camino hacia la maestría interior.
+  align: center
+plans:
+  - title: Flujo Libre
+    description: Un plan básico para comenzar tu práctica de yoga.
+    price:
+      month: Gratis
+      year: Gratis
+    align: top
+    button:
+      label: Comenzar Gratis
+      color: white
+    features:
+      - Acceso a clases para principiantes
+      - Sesiones de meditación guiada
+      - Foro comunitario
+      - Consejos de bienestar semanales
+  - title: Equilibrio Interior
+    description: Ideal para practicantes regulares que buscan una transformación más profunda.
+    price:
+      month: €19.9
+      year: €199.9
+    highlight: true
+    align: top
+    button:
+      label: Empezar Ahora
+      color: black
+    features:
+      - Acceso ilimitado a clases
+      - Recomendaciones personalizadas de práctica
+      - Sesiones de yoga en vivo
+      - Cursos exclusivos de respiración y meditación
+      - Soporte de la comunidad
+  - title: Camino de Maestría
+    description: Para yoguis dedicados y maestros que buscan formación avanzada.
+    price:
+      month: €29.9
+      year: €299.9
+    align: top
+    button:
+      label: Únete al Camino
+      color: white
+    features:
+      - Todas las funciones de "Equilibrio Interior"
+      - Sesiones de mentoría personalizadas
+      - Acceso a módulos de formación para maestros
+      - Retiros privados de yoga y meditación
+      - Oportunidades de certificación
+logos:
+  title: Guiados por los Mejores
+  icons:
+    - i-simple-icons-amazonaws
+    - i-simple-icons-heroku
+    - i-simple-icons-netlify
+    - i-simple-icons-vercel
+    - i-simple-icons-cloudflare
+faq:
+  title: Tus Preguntas, Respondidas
+  description: Todo lo que necesitas saber sobre unirte a Yogamos.
+  items:
+    - label: ¿Yogamos es adecuado para principiantes?
+      content: ¡Por supuesto! Nuestro plan Flujo Libre ofrece clases para principiantes que te ayudarán a empezar con facilidad.
+      defaultOpen: true
+    - label: ¿Puedo cancelar en cualquier momento?
+      content: Sí, puedes cancelar o cambiar de plan en cualquier momento desde la configuración de tu cuenta.
+    - label: ¿Ofrecen clases en vivo?
+      content: ¡Sí! Los planes Equilibrio Interior y Camino de Maestría incluyen sesiones en vivo con instructores expertos.
+    - label: ¿Hay una prueba gratuita?
+      content: Sí, ofrecemos una prueba gratuita para que puedas experimentar la plataforma antes de comprometerte con un plan.
+    - label: ¿Necesito algún equipo especial?
+      content: Se recomienda una esterilla de yoga, pero todas las prácticas pueden adaptarse según tu espacio y recursos disponibles.
+    - label: ¿Ofrecen certificaciones?
+      content: ¡Sí! Nuestro plan Camino de Maestría incluye oportunidades de certificación para futuros maestros de yoga.
