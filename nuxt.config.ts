@@ -11,7 +11,8 @@ export default defineNuxtConfig({
     '@nuxt/test-utils/module',
     '@nuxtjs/i18n',
     '@nuxtjs/seo',
-    'nuxt-gtag'
+    'nuxt-gtag',
+    '@zadigetvoltaire/nuxt-gtm'
   ],
 
   devtools: { enabled: true },
@@ -81,7 +82,13 @@ export default defineNuxtConfig({
   },
 
   gtag: {
-    tags: ['G-R07RC0PQFE', 'GTM-KRT53PKV']
+    id: 'G-R07RC0PQFE'
+  },
+
+  gtm: {
+    id: 'GTM-KRT53PKV',
+    enableRouterSync: true, // Sync GTM with Nuxt Router
+    loadScript: true // Ensures the GTM script loads
   },
 
   i18n: {
