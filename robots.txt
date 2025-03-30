@@ -1,1 +1,8 @@
+# START nuxt-robots (indexable)
+User-agent: *
+Disallow: /admin
+Disallow: /es/admin
+Disallow: /fr/admin
 
+Sitemap: https://yogamos.es/sitemap_index.xml
+# END nuxt-robots
