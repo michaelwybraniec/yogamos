@@ -81,7 +81,7 @@ export default defineNuxtConfig({
   },
 
   gtag: {
-    id: 'G-R07RC0PQFE'
+    tags: ['G-R07RC0PQFE', 'GTM-KRT53PKV']
   },
 
   i18n: {
