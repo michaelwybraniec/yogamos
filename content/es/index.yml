@@ -1,0 +1,112 @@
+locale: es
+path: '/'
+title: YOGAMOS? - Yoga para Mente y Cuerpo
+description: YOGAMOS? es un santuario para practicantes de yoga de todos los niveles. Conéctate con una comunidad de apoyo, accede a sesiones guiadas de yoga y cultiva la atención plena a través del movimiento.
+navigation: false
+
+hero:
+  headline: Transforma tu Mente y Cuerpo con Yoga
+  title: Encuentra. Reserva. Fluye.
+  description: Descubre la plataforma de yoga más grande diseñada para el dominio interior y la transformación.
+  links:
+    - label: Comenzar
+      icon: i-lucide-arrow-right
+      trailing: true
+      to: /pricing
+      size: xl
+    - label: Únete a Nuestra Comunidad
+      icon: i-mingcute-group-3-fill
+      size: xl
+      color: neutral
+      variant: subtle
+      to: /community
+
+sections:
+  - title: Reconéctate con tu Interior
+    description: Experimenta el poder transformador del yoga con YOGAMOS?. Nuestra plataforma está diseñada para ayudarte a practicar la atención plena, mejorar la flexibilidad y fortalecer tu cuerpo.
+    id: features
+    orientation: horizontal
+    features:
+      - name: Yoga para Todos
+        description: Ya seas principiante o un practicante experimentado, nuestras clases guiadas y programas personalizados se adaptan a tus necesidades.
+        icon: i-lucide-cog
+      - name: Clases en Vivo y Bajo Demanda
+        description: Únete a clases en vivo o accede a una biblioteca de sesiones grabadas para practicar en cualquier momento y lugar.
+        icon: i-lucide-check
+      - name: Atención Plena y Meditación
+        description: Aprende técnicas de respiración, meditación guiada y relajación para claridad mental y bienestar.
+        icon: i-lucide-lock
+
+  - title: Un Enfoque Holístico para el Bienestar
+    description: YOGAMOS? es más que yoga—es un viaje hacia una vida equilibrada y saludable. Nuestra plataforma integra movimiento, respiración y atención plena para apoyar tu bienestar.
+    orientation: horizontal
+    reverse: true
+    features:
+      - name: Programas Personalizados
+        description: 'Secuencias de yoga adaptadas a tus objetivos: fuerza, flexibilidad, relajación o alivio del estrés.'
+        icon: i-lucide-settings
+      - name: Apoyo Comunitario
+        description: Conéctate con otros yoguis, comparte tu progreso y encuentra motivación en nuestra comunidad de apoyo.
+        icon: i-lucide-users
+      - name: Consejos de Bienestar
+        description: Aprende sobre nutrición, atención plena y autocuidado para mejorar tu experiencia con el yoga.
+        icon: i-lucide-book
+
+features:
+  title: ¿Qué Hace Especial a YOGAMOS?
+  description: YOGAMOS? está diseñado para hacer que el yoga sea accesible, atractivo y transformador para todos.
+  items:
+    - title: Sesiones Guiadas
+      description: Sigue sesiones estructuradas dirigidas por instructores experimentados.
+      icon: i-lucide-play
+    - title: Flexibilidad y Fuerza
+      description: Desarrolla fuerza física mientras mejoras tu flexibilidad y movilidad.
+      icon: i-lucide-cat
+    - title: Meditación y Relajación
+      description: Encuentra paz interior con meditación guiada y técnicas de respiración.
+      icon: i-lucide-moon
+    - title: Acceso Móvil y Web
+      description: Practica en cualquier momento y lugar con nuestra plataforma móvil y web.
+      icon: i-lucide-smartphone
+    - title: Enfoque Holístico
+      description: Más allá del yoga—nutrición, autocuidado y atención plena para apoyar tu bienestar integral.
+      icon: i-lucide-heart
+    - title: Impulsado por la Comunidad
+      description: Únete a una red de apoyo de practicantes de yoga con ideas afines.
+      icon: i-lucide-users
+
+testimonials:
+  headline: Transforma tu Vida con el Yoga
+  title: Escucha a Nuestros Yoguis
+  description: Miles de practicantes en todo el mundo confían en YOGAMOS? para guiar su camino hacia el bienestar.
+  items:
+    - quote: 'Practicar con YOGAMOS? ha cambiado mi vida. Las sesiones guiadas y las técnicas de atención plena me han ayudado a encontrar equilibrio en mi día a día.'
+      user:
+        name: Sebastián
+        description: Profesor de Yoga
+        avatar:
+          src: https://i.pravatar.cc/120?img=1
+    - quote: 'Me encanta la flexibilidad de las sesiones en vivo y grabadas. Puedo practicar en cualquier momento, y el apoyo de la comunidad me mantiene motivado.'
+      user:
+        name: Yash Joshi
+        description: Entusiasta del Yoga y la Meditación
+        avatar:
+          src: https://media.licdn.com/dms/image/v2/D4E03AQGcWBxvOnu4tg/profile-displayphoto-shrink_400_400/B4EZRV2x_nHEAg-/0/1736607211888?e=1747872000&v=beta&t=wiasG_U6FaA-SSYqJNa5osMQs_SNA1oJHOQI486Qfj4
+    - quote: 'Las lecciones de meditación y respiración me han ayudado a reducir el estrés y mejorar mi concentración. ¡Altamente recomendado!'
+      user:
+        name: Michael Wybraniec
+        description: Practicante de Yoga
+        avatar:
+          src: https://media.licdn.com/dms/image/v2/C4E03AQEKznnbjsuliQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1656410796143?e=1746662400&v=beta&t=TGYPBD1jyQlXOab9Whmp8A6CGB2aHX-BtZopFRLYUeU
+
+cta:
+  title: Comienza tu Viaje de Yoga con YOGAMOS?
+  description: Regístrate hoy y empieza a transformar tu mente y cuerpo con el yoga.
+  links:
+    - label: Comenzar
+      to: /pricing
+      icon: i-lucide-arrow-right
+    - label: Más Información
+      to: /about
+      trailingIcon: i-lucide-info
+      variant: subtle

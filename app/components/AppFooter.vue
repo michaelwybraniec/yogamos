@@ -1,59 +1,41 @@
 <script setup lang="ts">
-  import { useToast } from '#imports'
+  import { useToast, useI18n } from '#imports'
 
-  const columns = [
-    {
-      label: 'Yoga Resources',
-      children: [
-        {
-          label: 'Asana Library'
-        },
-        {
-          label: 'Meditation Guides'
-        },
-        {
-          label: 'Breathwork Techniques'
-        },
-        {
-          label: 'Philosophy & Sutras'
-        }
-      ]
-    },
-    {
-      label: 'Practice',
-      children: [
-        {
-          label: 'Online Classes'
-        },
-        {
-          label: 'Workshops'
-        },
-        {
-          label: 'Challenges'
-        },
-        {
-          label: 'Community Forum'
-        }
-      ]
-    },
-    {
-      label: 'About Us',
-      children: [
-        {
-          label: 'Our Story'
-        },
-        {
-          label: 'Yoga Retreats'
-        },
-        {
-          label: 'Instructors'
-        },
-        {
-          label: 'Blog'
-        }
-      ]
-    }
-  ]
+  const { t } = useI18n()
+
+  const columns = ref([])
+
+  watchEffect(() => {
+    columns.value = [
+      {
+        label: t('footer.yoga_resources'),
+        children: [
+          { label: t('footer.asana_library') },
+          { label: t('footer.meditation_guides') },
+          { label: t('footer.breathwork_techniques') },
+          { label: t('footer.philosophy_sutras') }
+        ]
+      },
+      {
+        label: t('footer.practice'),
+        children: [
+          { label: t('footer.online_classes') },
+          { label: t('footer.workshops') },
+          { label: t('footer.challenges') },
+          { label: t('footer.community_forum') }
+        ]
+      },
+      {
+        label: t('footer.about_us'),
+        children: [
+          { label: t('footer.our_story') },
+          { label: t('footer.yoga_retreats') },
+          { label: t('footer.instructors') },
+          { label: t('footer.blog') }
+        ]
+      }
+    ]
+  })
 
   const toast = useToast()
   const email = ref('')
@@ -63,16 +45,14 @@
     loading.value = true
 
     toast.add({
-      title: 'Namaste! 🌿',
-      description: 'You’ve joined our yoga journey. Stay mindful!'
+      title: t('footer.namaste_title'),
+      description: t('footer.namaste_description')
     })
   }
 </script>
 
 <template>
-  <USeparator
-    icon="i-ph-flower-duotone"
-    class="h-px" />
+  <USeparator class="h-px" />
   <UFooter :ui="{ top: 'border-b border-[var(--ui-border)]' }">
     <template #top>
       <UContainer>
@@ -83,19 +63,19 @@
             <form @submit.prevent="onSubmit">
               <UFormField
                 name="email"
-                label="Join our Yoga Journey"
+                :label="t('footer.join_journey')"
                 size="lg">
                 <UInput
                   v-model="email"
                   type="email"
                   class="w-full"
-                  placeholder="Enter your email">
+                  :placeholder="t('footer.email_placeholder')">
                   <template #trailing>
                     <UButton
                       type="submit"
                       size="xs"
                       color="primary"
-                      label="Join" />
+                      :label="t('footer.join')" />
                   </template>
                 </UInput>
               </UFormField>
@@ -107,7 +87,9 @@
 
     <template #left>
       <p class="text-sm text-(--ui-text-muted)">
-        © {{ new Date().getFullYear() }} Yogamos! Powered by
+        {{
+          t('footer.copyright', { year: new Date().getFullYear() })
+        }}
         <NuxtLink
           class="font-bold"
           to="https://one-front.com">

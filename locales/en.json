@@ -1,0 +1,40 @@
+{
+  "welcome": "Hello! 🌍",
+  "nav": {
+    "docs": "Docs",
+    "pricing": "Pricing",
+    "about": "About",
+    "blog": "Blog",
+    "login": "Login",
+    "signup": "Sign Up",
+    "banner": "The Yogamos service is currently in development, powered by ONE-FRONT™."
+  },
+  "footer": {
+    "yoga_resources": "Yoga Resources",
+    "asana_library": "Asana Library",
+    "meditation_guides": "Meditation Guides",
+    "breathwork_techniques": "Breathwork Techniques",
+    "philosophy_sutras": "Philosophy & Sutras",
+    "practice": "Practice",
+    "online_classes": "Online Classes",
+    "workshops": "Workshops",
+    "challenges": "Challenges",
+    "community_forum": "Community Forum",
+    "about_us": "About Us",
+    "our_story": "Our Story",
+    "yoga_retreats": "Yoga Retreats",
+    "instructors": "Instructors",
+    "blog": "Blog",
+    "join_journey": "Join our Yoga Journey",
+    "email_placeholder": "Enter your email",
+    "join": "Join",
+    "namaste_title": "Namaste! 🌿",
+    "namaste_description": "You’ve joined our yoga journey. Stay mindful!",
+    "copyright": "© {year} Yogamos! Powered by"
+  },
+  "hero": {
+    "title": "Find Balance with Yogamos!",
+    "description": "Experience the benefits of yoga with Yogamos. Improve flexibility, strength, and mindfulness through guided sessions and community support. It is your space to reconnect with yourself through yoga. Whether you’re just starting or deepening your practice, we provide guided sessions, meditation practices, and wellness insights to support your journey.",
+    "logo_alt": "Yogamos Logo"
+  }
+}

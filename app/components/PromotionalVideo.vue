@@ -1,29 +1,31 @@
 <script setup lang="ts">
+  import { useI18n } from '#imports'
+
+  const { t } = useI18n()
   const colorMode = useColorMode()
+  const spotlightSize = ref('300px')
+
+  onMounted(() => {
+    spotlightSize.value =
+      colorMode.value === 'dark' ? '1000px' : '300px'
+  })
 </script>
 
 <template>
   <div class="relative">
     <UPageCard
       variant="subtle"
-      :class="
-        colorMode.value === 'dark'
-          ? 'rounded-2xl [--spotlight-size:1000px]'
-          : 'rounded-2xl [--spotlight-color:var(--dusk-500)] [--spotlight-size:300px]'
-      "
-      title="Find Balance with Yogamos!"
-      description="Experience the benefits of yoga with Yogamos. Improve flexibility, strength, and mindfulness through guided sessions and community support. It is your space to reconnect with yourself through yoga. Whether you’re just starting or deepening your practice, we provide guided sessions, meditation practices, and wellness insights to support your journey. "
+      :class="`rounded-2xl [--spotlight-size:${spotlightSize}]`"
+      :title="t('hero.title')"
+      :description="t('hero.description')"
       orientation="horizontal"
       icon="i-mdi-yoga"
       spotlight
       layout="responsive"
-      :ui="{
-        description: 'text-[18px]',
-        title: 'text-[24px]'
-      }">
+      :ui="{ description: 'text-[18px]', title: 'text-[24px]' }">
       <NuxtImg
         src="/yogamos_logo.svg"
-        alt="Yogamos Logo"
+        :alt="t('hero.logo_alt')"
         sizes="100vw sm:50vw md:400px"
         densities="x1 x2"
         class="w-full"

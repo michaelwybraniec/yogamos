@@ -1,25 +1,20 @@
-
-# Welcome to YOGAMOS 
+# Welcome to YOGAMOS
 
 YOGAMOS is a modern web application built with Nuxt.js, designed to provide a seamless development experience with powerful tools and features.
 
 **Website URL:** [www.yogamos.es](https://www.yogamos.es)
 
-
-
 <img src="https://www.yogamos.es/screenshots/home.png"  alt="Home Page">
 <img src="https://www.yogamos.es/screenshots/blog.png"  alt="Blog Page">
-<img src="https://www.yogamos.es/screenshots/search.png"  alt="Search Page">
-
-
-
-
 
 ## Features
 
 - **Nuxt 3**: Leverage the power of the latest Nuxt framework for server-side rendering and static site generation.
 - **Nuxt UI Pro**: Build beautiful and responsive user interfaces with premium NuxtUI components.
 - **Nuxt Content**: Manage your content with ease using the Nuxt Content module.
+- **SEO & Performance**: Integrated with `@nuxtjs/seo`, `@nuxtjs/robots`, and `@nuxtjs/sitemap` for improved search engine visibility.
+- **Internationalization**: Powered by `@nuxtjs/i18n` for multilingual support.
+- **Optimized Images**: Uses `@nuxt/image` and `nuxt-og-image` for optimized media handling.
 - **Vitest & Playwright**: Write and run fast, reliable tests for your application.
 - **GitHub Pages Deployment**: Seamlessly deploy your application to GitHub Pages with a structured CI/CD pipeline.
 
@@ -137,6 +132,20 @@ graph TD;
 
 ---
 
+## Translation & SEO Configuration
+
+YOGAMOS uses **@nuxtjs/i18n** to provide a seamless multilingual experience. Content is organized into language-specific folders (`content/en/`, `content/es/`, `content/fr/`), allowing users to access pages in their preferred language.
+
+### SEO & Sitemap Configuration
+
+We enhance discoverability with:
+
+- `@nuxtjs/robots`: Ensures proper indexing and search engine rules.
+- `@nuxtjs/sitemap`: Generates a dynamic sitemap for improved SEO.
+- `@nuxtjs/seo`: Provides meta tags and OpenGraph integration.
+
+---
+
 ## Testing
 
 ### Running Tests
@@ -180,6 +189,4 @@ Visit `http://localhost:7777/` to visualize your ESLint configuration.
 
 ---
 
-
-<img src="https://www.yogamos.es/yogamos_logo.svg" alt="Yogamos Logo"> 
-
+<img src="https://www.yogamos.es/yogamos_logo.svg" alt="Yogamos Logo">

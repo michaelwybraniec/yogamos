@@ -1,12 +1,16 @@
 export default defineNuxtConfig({
   modules: [
+    '@nuxtjs/robots',
+    '@nuxtjs/sitemap',
     '@nuxt/eslint',
     '@nuxt/ui-pro',
     '@nuxt/content',
     'nuxt-og-image',
     '@vueuse/nuxt',
     '@nuxt/image',
-    '@nuxt/test-utils/module'
+    '@nuxt/test-utils/module',
+    '@nuxtjs/i18n',
+    '@nuxtjs/seo'
   ],
 
   devtools: { enabled: true },
@@ -18,15 +22,23 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: 'en'
       },
-      link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-      ]
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
     }
   },
 
   css: ['~/assets/css/main.css'],
 
+  site: {
+    url: 'https://yogamos.es',
+    name: 'Yogamos?',
+    defaultLocale: 'en',
+    indexable: true
+  },
+
   content: {
+    renderer: {
+      anchorLinks: false
+    },
     preview: {
       api: 'https://api.nuxt.studio'
     }
@@ -41,11 +53,15 @@ export default defineNuxtConfig({
     compatibilityVersion: 4
   },
 
+  experimental: {
+    viewTransition: true
+  },
+
   compatibilityDate: '2024-11-01',
 
   nitro: {
     prerender: {
-      routes: ['/', '/docs'],
+      routes: ['/', '/es', '/fr'],
       crawlLinks: true
     }
   },
@@ -61,15 +77,33 @@ export default defineNuxtConfig({
         braceStyle: '1tbs'
       }
     }
-  }
+  },
 
-  // i18n: {
-  //   strategy: 'no_prefix',
-  //   defaultLocale: 'en',
-  //   locales: [
-  //     { code: 'es', iso: 'en-ES', name: 'Español' },
-  //     { code: 'en', iso: 'en-US', name: 'English' },
-  //     { code: 'fr', iso: 'fr-fr', name: 'Français' }
-  //   ]
-  // }
+  i18n: {
+    bundle: {
+      optimizeTranslationDirective: false // recommended by the Nuxt i18n team because it will be deprecated
+    },
+    defaultLocale: 'en',
+    langDir: '../locales/',
+    detectBrowserLanguage: false,
+    lazy: true,
+    // locales: ['en', 'es', 'fr']
+    locales: [
+      {
+        code: 'es',
+        name: 'Español',
+        file: 'es.json'
+      },
+      {
+        code: 'en',
+        name: 'English',
+        file: 'en.json'
+      },
+      {
+        code: 'fr',
+        name: 'Français',
+        file: 'fr.json'
+      }
+    ]
+  }
 })

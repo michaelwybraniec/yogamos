@@ -6,13 +6,8 @@
     queryCollection
   } from '#imports'
 
-  // const { normalizedPath } = useNormalizedPath()
-
   const route = useRoute()
 
-  // const { data: post } = await useAsyncData('single-post', () =>
-  //   queryCollection('posts').where('path', 'LIKE', route.path).first()
-  // )
   const { data: post } = await useAsyncData(route.path, () =>
     queryCollection('posts').path(route.path).first()
   )

@@ -3,8 +3,9 @@
   "trailingComma": "none",
   "tabWidth": 2,
   "htmlWhitespaceSensitivity": "ignore",
-  "printWidth": 70,
   "bracketSpacing": true,
+  "printWidth": 100,
+  "proseWrap": "preserve",
   "arrowParens": "avoid",
   "useTabs": false,
   "vueIndentScriptAndStyle": true,
@@ -13,16 +14,23 @@
   "bracketSameLine": true,
   "singleQuote": true,
   "quoteProps": "as-needed",
-  "plugins": ["prettier-plugin-tailwindcss"],
+  "plugins": [
+    "prettier-plugin-tailwindcss"
+  ],
   "overrides": [
     {
-      "files": ["*.md", "*.mdc"],
+      "files": [
+        "*.md",
+        "*.mdc"
+      ],
       "options": {
         "parser": "markdown"
       }
     },
     {
-      "files": ["*.vue"],
+      "files": [
+        "*.vue"
+      ],
       "options": {
         "parser": "vue",
         "vueIndentScriptAndStyle": true,
@@ -30,7 +38,9 @@
       }
     },
     {
-      "files": ["*.d.ts"],
+      "files": [
+        "*.d.ts"
+      ],
       "options": {
         "parser": "typescript"
       }

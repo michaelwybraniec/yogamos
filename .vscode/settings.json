@@ -35,7 +35,7 @@
   "editor.quickSuggestions": {
     "strings": "on"
   },
-  "i18n-ally.localesPaths": [],
+  "i18n-ally.localesPaths": ["locales"],
   "mdc.enableFormatting": true,
   "[mdc]": {
     "editor.tabSize": 2,

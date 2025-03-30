@@ -1,8 +1,21 @@
 <script setup lang="ts">
+  import { useI18n } from 'vue-i18n'
+  import type { Collections } from '@nuxt/content'
+
+  const { locale } = useI18n()
   const colorMode = useColorMode()
 
-  const { data: page } = await useAsyncData('index', () =>
-    queryCollection('index').first()
+  const collection = computed(() => {
+    return (locale.value === 'en' ? 'index_en' : `index_${locale.value}`) as keyof Collections
+  })
+
+  const { data: page } = await useAsyncData(
+    collection.value,
+    async () =>
+      (await queryCollection(collection.value).first()) as
+        | Collections['index_en']
+        | Collections['index_es']
+        | Collections['index_fr']
   )
 
   useSeoMeta({
@@ -47,12 +60,8 @@
           spotlight
           class="rounded-2xl"
           :style="{
-            '--spotlight-size':
-              colorMode.value === 'dark' ? '1000px' : '300px', // Ensure same value on both SSR and client
-            '--spotlight-color':
-              colorMode.value === 'dark'
-                ? undefined
-                : 'var(--dusk-400)'
+            '--spotlight-size': colorMode.value === 'dark' ? '1000px' : '300px',
+            '--spotlight-color': colorMode.value === 'dark' ? undefined : 'var(--dusk-400)'
           }" />
       </UPageGrid>
     </UPageSection>
@@ -69,8 +78,7 @@
           variant="subtle"
           :description="testimonial.quote"
           :ui="{
-            description:
-              'before:content-[open-quote] after:content-[close-quote]'
+            description: 'before:content-[open-quote] after:content-[close-quote]'
           }">
           <template #footer>
             <UUser

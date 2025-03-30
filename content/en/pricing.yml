@@ -1,3 +1,5 @@
+locale: en
+path: '/pricing'
 title: Pricing
 description: Find the perfect plan to deepen your yoga journey.
 navigation.icon: i-heroicons-credit-card
@@ -23,8 +25,8 @@ plans:
   - title: Inner Balance
     description: Ideal for regular practitioners seeking deeper transformation.
     price:
-      month: $19.9
-      year: $199.9
+      month: €19.9
+      year: €199.9
     highlight: true
     align: top
     button:

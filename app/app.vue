@@ -1,23 +1,13 @@
 <script setup lang="ts">
-const config = useRuntimeConfig()
-  // import * as locales from '@nuxt/ui/locale'
+  import * as locales from '@nuxt/ui-pro/locale'
+  import { useI18n } from '#i18n'
 
-  // const { locale } = useI18n()
-  // const lang = computed(() => locales[locale.value].code)
-  // const dir = computed(() => locales[locale.value].dir)
-
-  // useHead({
-  //   htmlAttrs: {
-  //     lang,
-  //     dir
-  //   }
-  // })
-
-  // const colorMode = useColorMode()
-
-  // const color = computed(() =>
-  //   colorMode.value === 'dark' ? '#111827' : 'white'
-  // )
+  const { locale } = useI18n()
+  const config = useRuntimeConfig()
+  const lang = computed(() => locales[locale.value].code)
+  const dir = computed(() => locales[locale.value].dir)
+  // const { t } = useI18n()
+  // const localePath = useLocalePath()
 
   useHead({
     meta: [
@@ -26,18 +16,18 @@ const config = useRuntimeConfig()
         name: 'viewport',
         content: 'width=device-width, initial-scale=1'
       }
-      // {
-      //   key: 'theme-color',
-      //   name: 'thcoloreme-color',
-      //   content:
-      // }
     ],
-    // link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
-    link: [{ rel: 'icon', type: 'image/x-icon', href: `${config.app.baseURL}favicon.ico` }]
-
-    // htmlAttrs: {
-    //   lang: 'en'
-    // }
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: `${config.app.baseURL}favicon.ico`
+      }
+    ],
+    htmlAttrs: {
+      lang,
+      dir
+    }
   })
 
   useSeoMeta({
@@ -57,59 +47,31 @@ const config = useRuntimeConfig()
       'Discover the power of yoga with Yogamos. Improve flexibility, reduce stress, and build strength with our expert-led sessions.'
   })
 
-  const { data: navigation } = await useAsyncData(
-    'navigation',
-    () => queryCollectionNavigation('docs'),
-    {
-      transform: data =>
-        data.find(item => item.path === '/docs')?.children || []
-    }
-  )
-  const { data: files } = useLazyAsyncData(
-    'search',
-    () => queryCollectionSearchSections('docs'),
-    {
-      server: false
-    }
-  )
-
-  const links = [
-    {
-      label: 'About',
-      icon: 'i-lucide-book',
-      to: '/docs/getting-started'
-    },
-    {
-      label: 'About',
-      icon: 'i-lucide-credit-card',
-      to: '/about'
-    },
-    {
-      label: 'Blog',
-      icon: 'i-lucide-pencil',
-      to: '/blog'
-    }
-  ]
-
-  provide('navigation', navigation)
+  // const links = [
+  //   {
+  //     label: t('nav.about'),
+  //     icon: 'i-lucide-credit-card',
+  //     to: localePath('about')
+  //   },
+  //   {
+  //     label: t('nav.blog'),
+  //     icon: 'i-lucide-pencil',
+  //     to: localePath('blog')
+  //   },
+  //   {
+  //     label: t('nav.pricing'),
+  //     icon: 'i-lucide-money',
+  //     to: localePath('pricing')
+  //   }
+  // ]
 </script>
 
 <template>
-  <!-- <UApp :locale="locales[locale]"> -->
-  <UApp>
-    <NuxtLoadingIndicator />
+  <UApp :locale="locales[locale]">
+    <NuxtLoadingIndicator color="red" />
 
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
-
-    <ClientOnly>
-      <LazyUContentSearch
-        :files="files"
-        shortcut="meta_k"
-        :navigation="navigation"
-        :links="links"
-        :fuse="{ resultLimit: 42 }" />
-    </ClientOnly>
   </UApp>
 </template>

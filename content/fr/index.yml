@@ -1,0 +1,112 @@
+locale: fr
+path: '/'
+title: YOGAMOS? - Yoga pour l'Esprit et le Corps
+description: YOGAMOS? est un sanctuaire pour les pratiquants de yoga de tous niveaux. Rejoignez une communauté bienveillante, accédez à des séances guidées et cultivez la pleine conscience par le mouvement.
+navigation: false
+
+hero:
+  headline: Transformez votre Esprit et votre Corps avec le Yoga
+  title: Trouvez. Réservez. Pratiquez.
+  description: Découvrez la plus grande plateforme de yoga conçue pour la maîtrise intérieure et la transformation.
+  links:
+    - label: Commencer
+      icon: i-lucide-arrow-right
+      trailing: true
+      to: /pricing
+      size: xl
+    - label: Rejoindre notre communauté
+      icon: i-mingcute-group-3-fill
+      size: xl
+      color: neutral
+      variant: subtle
+      to: /community
+
+sections:
+  - title: Reconnectez-vous avec votre Moi Intérieur
+    description: Découvrez le pouvoir transformateur du yoga avec YOGAMOS?. Notre plateforme est conçue pour vous aider à pratiquer la pleine conscience, améliorer votre souplesse et renforcer votre corps.
+    id: features
+    orientation: horizontal
+    features:
+      - name: Yoga pour Tous
+        description: Que vous soyez débutant ou avancé, nos cours guidés et programmes personnalisés s'adaptent à vos besoins.
+        icon: i-lucide-cog
+      - name: Cours en Direct et à la Demande
+        description: Participez à des cours en direct ou accédez à une bibliothèque de séances enregistrées pour pratiquer à tout moment.
+        icon: i-lucide-check
+      - name: Pleine Conscience & Méditation
+        description: Apprenez des techniques de respiration, de méditation guidée et de relaxation pour plus de clarté mentale et de bien-être.
+        icon: i-lucide-lock
+
+  - title: Une Approche Holistique du Bien-Être
+    description: YOGAMOS? est plus qu'un simple yoga—c'est un voyage vers une vie équilibrée et saine. Notre plateforme intègre le mouvement, la respiration et la pleine conscience pour soutenir votre bien-être.
+    orientation: horizontal
+    reverse: true
+    features:
+      - name: Programmes Personnalisés
+        description: Séquences de yoga adaptées à vos objectifs—force, souplesse, relaxation ou gestion du stress.
+        icon: i-lucide-settings
+      - name: Soutien Communautaire
+        description: Connectez-vous avec d'autres yogis, partagez vos progrès et trouvez de la motivation dans notre communauté bienveillante.
+        icon: i-lucide-users
+      - name: Conseils Bien-Être
+        description: Apprenez-en plus sur la nutrition, la pleine conscience et les pratiques d'auto-soin pour enrichir votre parcours de yoga.
+        icon: i-lucide-book
+
+features:
+  title: Qu'est-ce qui Rend YOGAMOS? Unique ?
+  description: YOGAMOS? est conçu pour rendre le yoga accessible, engageant et transformateur pour tous.
+  items:
+    - title: Séances Guidées
+      description: Suivez des séances de yoga structurées animées par des instructeurs expérimentés.
+      icon: i-lucide-play
+    - title: Souplesse & Force
+      description: Développez votre force physique tout en améliorant votre souplesse et votre mobilité.
+      icon: i-lucide-cat
+    - title: Méditation & Relaxation
+      description: Trouvez la paix intérieure grâce à des séances guidées de méditation et de respiration.
+      icon: i-lucide-moon
+    - title: Accès Mobile & Web
+      description: Pratiquez à tout moment, où que vous soyez, grâce à notre plateforme fluide sur mobile et web.
+      icon: i-lucide-smartphone
+    - title: Approche Holistique
+      description: Bien plus que du yoga—nutrition, soins personnels et pleine conscience pour soutenir votre bien-être global.
+      icon: i-lucide-heart
+    - title: Communauté Engageante
+      description: Rejoignez un réseau solidaire de pratiquants de yoga partageant les mêmes valeurs.
+      icon: i-lucide-users
+
+testimonials:
+  headline: Transformez Votre Vie avec le Yoga
+  title: Témoignages de Nos Yogis
+  description: Des milliers de pratiquants dans le monde font confiance à YOGAMOS? pour les guider dans leur parcours de bien-être.
+  items:
+    - quote: "Pratiquer avec YOGAMOS? a changé ma vie. Les séances guidées et les techniques de pleine conscience m'ont aidé à trouver un équilibre au quotidien."
+      user:
+        name: Sebastian
+        description: Professeur de Yoga
+        avatar:
+          src: https://i.pravatar.cc/120?img=1
+    - quote: "J'adore la flexibilité des séances en direct et enregistrées. Je peux pratiquer quand je veux, et le soutien de la communauté me motive."
+      user:
+        name: Yash Joshi
+        description: Passionné de Yoga et de Méditation
+        avatar:
+          src: https://media.licdn.com/dms/image/v2/D4E03AQGcWBxvOnu4tg/profile-displayphoto-shrink_400_400/B4EZRV2x_nHEAg-/0/1736607211888?e=1747872000&v=beta&t=wiasG_U6FaA-SSYqJNa5osMQs_SNA1oJHOQI486Qfj4
+    - quote: "Les leçons de méditation et de respiration m'ont aidé à réduire mon stress et à améliorer ma concentration. Je recommande vivement !"
+      user:
+        name: Michael Wybraniec
+        description: Pratiquant de Yoga
+        avatar:
+          src: https://media.licdn.com/dms/image/v2/C4E03AQEKznnbjsuliQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1656410796143?e=1746662400&v=beta&t=TGYPBD1jyQlXOab9Whmp8A6CGB2aHX-BtZopFRLYUeU
+
+cta:
+  title: Commencez Votre Voyage Yoga avec YOGAMOS?
+  description: Inscrivez-vous dès aujourd'hui et commencez à transformer votre esprit et votre corps grâce au yoga.
+  links:
+    - label: Commencer
+      to: /pricing
+      icon: i-lucide-arrow-right
+    - label: En savoir plus
+      to: /about
+      trailingIcon: i-lucide-info
+      variant: subtle
