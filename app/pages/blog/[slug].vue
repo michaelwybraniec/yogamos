@@ -1,10 +1,6 @@
 <script setup lang="ts">
   import { computed } from 'vue'
-  import {
-    useAsyncData,
-    queryCollectionNavigation,
-    queryCollection
-  } from '#imports'
+  import { useAsyncData, queryCollectionNavigation, queryCollection } from '#imports'
 
   const route = useRoute()
 
@@ -26,17 +22,11 @@
   )
 
   // Helper Functions for Breadcrumbs
-  function findPageBreadcrumb(
-    navigation: any[],
-    path: string
-  ): any[] {
+  function findPageBreadcrumb(navigation: any[], path: string): any[] {
     for (const item of navigation) {
       if (item.path === path) return [item]
       if (item.children) {
-        const childBreadcrumb = findPageBreadcrumb(
-          item.children,
-          path
-        )
+        const childBreadcrumb = findPageBreadcrumb(item.children, path)
         if (childBreadcrumb.length) return [item, ...childBreadcrumb]
       }
     }
@@ -53,19 +43,14 @@
   // Compute Breadcrumbs
   const breadcrumb = computed(() => {
     if (!navigation.value || !post.value) return []
-    return mapContentNavigation(
-      findPageBreadcrumb(navigation.value, post.value.path)
-    )
+    return mapContentNavigation(findPageBreadcrumb(navigation.value, post.value.path))
   })
 
-  const { data: surround } = await useAsyncData(
-    `${route.path}-surround`,
-    () => {
-      return queryCollectionItemSurroundings('posts', route.path, {
-        fields: ['description']
-      })
-    }
-  )
+  const { data: surround } = await useAsyncData(`${route.path}-surround`, () => {
+    return queryCollectionItemSurroundings('posts', route.path, {
+      fields: ['description']
+    })
+  })
 
   // SEO Meta
   useSeoMeta({
@@ -101,9 +86,7 @@
     <UPage>
       <UPageBody prose>
         <UBreadcrumb :items="breadcrumb" />
-        <ContentRenderer
-          v-if="post && post.body"
-          :value="post" />
+        <ContentRenderer :value="post" />
         <hr v-if="surround?.length" />
         <UContentSurround :surround="surround" />
       </UPageBody>
